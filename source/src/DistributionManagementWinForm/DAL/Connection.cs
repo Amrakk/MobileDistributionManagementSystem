@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Configuration;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace DAL
 {
@@ -22,6 +26,7 @@ namespace DAL
             SqlCommand cmd = new SqlCommand(sql, conn);
 
             cmd.ExecuteNonQuery();
+            conn.Close();
         }
 
         public static DataTable selectQuery(string sql)
@@ -30,6 +35,8 @@ namespace DAL
             SqlDataAdapter dataAdapter = new SqlDataAdapter(sql, conn);
             DataTable dt = new DataTable();
             dataAdapter.Fill(dt);
+
+            conn.Close();
             return dt;
         }
     }

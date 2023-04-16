@@ -135,7 +135,7 @@ namespace DistributionManagementWinForm.auth
             this.signupLink.Location = new System.Drawing.Point(148, 330);
             this.signupLink.Name = "signupLink";
             this.signupLink.Size = new System.Drawing.Size(57, 18);
-            this.signupLink.TabIndex = 14;
+            this.signupLink.TabIndex = 5;
             this.signupLink.TabStop = true;
             this.signupLink.Text = "Sign up";
             this.signupLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.signupLink_LinkClicked);
@@ -148,7 +148,7 @@ namespace DistributionManagementWinForm.auth
             this.forgotPasswordLink.Location = new System.Drawing.Point(115, 292);
             this.forgotPasswordLink.Name = "forgotPasswordLink";
             this.forgotPasswordLink.Size = new System.Drawing.Size(123, 18);
-            this.forgotPasswordLink.TabIndex = 13;
+            this.forgotPasswordLink.TabIndex = 4;
             this.forgotPasswordLink.TabStop = true;
             this.forgotPasswordLink.Text = "Forgot Password";
             // 
@@ -171,7 +171,7 @@ namespace DistributionManagementWinForm.auth
             this.loginBtn.Location = new System.Drawing.Point(75, 224);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(203, 51);
-            this.loginBtn.TabIndex = 11;
+            this.loginBtn.TabIndex = 3;
             this.loginBtn.Text = "Login";
             this.loginBtn.UseVisualStyleBackColor = true;
             this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
@@ -197,7 +197,7 @@ namespace DistributionManagementWinForm.auth
             this.passTextBox.Location = new System.Drawing.Point(32, 3);
             this.passTextBox.Name = "passTextBox";
             this.passTextBox.Size = new System.Drawing.Size(280, 20);
-            this.passTextBox.TabIndex = 6;
+            this.passTextBox.TabIndex = 2;
             this.passTextBox.Text = "Password";
             this.passTextBox.TextChanged += new System.EventHandler(this.passTextBox_TextChanged);
             // 
@@ -242,7 +242,7 @@ namespace DistributionManagementWinForm.auth
             this.userTextBox.Location = new System.Drawing.Point(32, 3);
             this.userTextBox.Name = "userTextBox";
             this.userTextBox.Size = new System.Drawing.Size(280, 20);
-            this.userTextBox.TabIndex = 6;
+            this.userTextBox.TabIndex = 1;
             this.userTextBox.Text = "Username";
             this.userTextBox.TextChanged += new System.EventHandler(this.userTextBox_TextChanged);
             // 

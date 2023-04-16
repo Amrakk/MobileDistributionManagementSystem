@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS.User;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +9,6 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 
 
 namespace DistributionManagementWinForm.auth
@@ -30,6 +30,15 @@ namespace DistributionManagementWinForm.auth
 
         private void passTextBox_TextChanged(object sender, EventArgs e)
         {
+            if(passTextBox.Text.Trim() == "")
+            {
+                passTextBox.PasswordChar = '\0';
+                passTextBox.Text = "Password";
+            } 
+            else
+            {
+                passTextBox.PasswordChar = '*';
+            }
             AuthShared.textChangedStyling(passTextBox);
         }
 
@@ -71,7 +80,13 @@ namespace DistributionManagementWinForm.auth
             string user = userTextBox.Text;
             string pass = passTextBox.Text;
 
-            // BUS_Account 
+            BUS_Account BAccount = new BUS_Account(0, "", "", 0, DateTime.Now);
+            DataTable data = BAccount.selectQuery($"select * from Account where username = '{user}'");
+
+            if(data.Rows.Count == 1)
+            {
+                
+            }
             
             Form home = new home.Home();
             home.Show();

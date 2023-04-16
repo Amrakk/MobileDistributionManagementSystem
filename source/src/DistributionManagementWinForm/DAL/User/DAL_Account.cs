@@ -1,10 +1,10 @@
-﻿using System;
+﻿using DTO.User;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DTO.User;
 
 namespace DAL.User
 {
@@ -12,7 +12,7 @@ namespace DAL.User
     {
         private Account account;
 
-        public DAL_Account(int account_id, string username, string password, bool isActivated, DateTime created_date)
+        public DAL_Account(int account_id, string username, string password, int isActivated, DateTime created_date)
         {
             account = new Account(account_id, username, password, isActivated, created_date);
         }
@@ -20,9 +20,9 @@ namespace DAL.User
         public void addQuery()
         {
             string query = "insert into Account (account_id, username, password, created_date) values ('"
-                                + account.Account_id + "', '" 
-                                + account.Username + "', '" 
-                                + account.Password + "', '" 
+                                + account.Account_id + "', '"
+                                + account.Username + "', '"
+                                + account.Password + "', '"
                                 + account.Created_date + "')";
             Connection.actionQuery(query);
         }
@@ -44,19 +44,11 @@ namespace DAL.User
             Connection.actionQuery(query);
         }
 
-        public DataTable selectAllQuery()
+        public DataTable selectQuery(string query)
         {
-            string query = "select * from Account";
             return Connection.selectQuery(query);
         }
 
-        public DataTable selectByIdQuery(int account_id)
-        {
-            string query = "select * from Account where account_id = " + account_id;
-            return Connection.selectQuery(query);
-        }
-
-
-
+        
     }
 }

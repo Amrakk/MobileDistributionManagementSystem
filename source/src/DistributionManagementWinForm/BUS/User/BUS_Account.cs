@@ -12,7 +12,7 @@ namespace BUS.User
     {
         private DAL_Account DAccount;
 
-        public BUS_Account(int account_id, string username, string password, bool isActivated, DateTime created_date)
+        public BUS_Account(int account_id, string username, string password, int isActivated, DateTime created_date)
         {
             DAccount = new DAL_Account(account_id, username, password, isActivated, created_date);
         }
@@ -32,14 +32,11 @@ namespace BUS.User
             DAccount.deleteQuery();
         }
 
-        public DataTable selectAllQuery()
+        public DataTable selectQuery(string query)
         {
-            return DAccount.selectAllQuery();
+            return DAccount.selectQuery(query);
         }
 
-        public DataTable selectByIdQuery(int account_id)
-        {
-            return DAccount.selectByIdQuery(account_id);
-        }
+        
     }
 }

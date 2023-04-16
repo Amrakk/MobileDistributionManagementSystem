@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO.User
 {
-    public class Profile
+    class Profile
     {
         private int profile_id;
         private string firstname;
