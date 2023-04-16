@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A1AE0D7F-C38E-4015-9FD5-8CB2E7BE37D8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DistributionManagementWinForm</RootNamespace>
+    <AssemblyName>DistributionManagementWinForm</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.6.3.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="auth\AuthShared.cs" />
+    <Compile Include="auth\ForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="auth\ForgotPassword.Designer.cs">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="auth\SignupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="auth\SignupForm.Designer.cs">
+      <DependentUpon>SignupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="auth\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="auth\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="home\Admin\AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="home\Admin\AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="home\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="home\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="home\Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="home\Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="home\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="home\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="home\Inventory\DeliveryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="home\Inventory\DeliveryForm.Designer.cs">
+      <DependentUpon>DeliveryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="home\Inventory\ProductListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="home\Inventory\ProductListForm.Designer.cs">
+      <DependentUpon>ProductListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="home\Inventory\ReceiptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="home\Inventory\ReceiptForm.Designer.cs">
+      <DependentUpon>ReceiptForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="home\Inventory\ProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="home\Inventory\ProductForm.Designer.cs">
+      <DependentUpon>ProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="home\Order\PlaceOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="home\Order\PlaceOrderForm.Designer.cs">
+      <DependentUpon>PlaceOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="home\Order\OrderNoteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="home\Order\OrderNoteForm.Designer.cs">
+      <DependentUpon>OrderNoteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="home\Order\OrderListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="home\Order\OrderListForm.Designer.cs">
+      <DependentUpon>OrderListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="home\Report\StockReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="home\Report\StockReportForm.Designer.cs">
+      <DependentUpon>StockReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="home\Report\SaleReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="home\Report\SaleReportForm.Designer.cs">
+      <DependentUpon>SaleReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="auth\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="auth\SignupForm.resx">
+      <DependentUpon>SignupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="home\Admin\AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="home\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="home\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="home\Inventory\DeliveryForm.resx">
+      <DependentUpon>DeliveryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="home\Inventory\ProductForm.resx">
+      <DependentUpon>ProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="home\Inventory\ProductListForm.resx">
+      <DependentUpon>ProductListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="home\Inventory\ReceiptForm.resx">
+      <DependentUpon>ReceiptForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="home\Order\OrderListForm.resx">
+      <DependentUpon>OrderListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="home\Order\OrderNoteForm.resx">
+      <DependentUpon>OrderNoteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="home\Order\PlaceOrderForm.resx">
+      <DependentUpon>PlaceOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="home\Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="home\Report\SaleReportForm.resx">
+      <DependentUpon>SaleReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="home\Report\StockReportForm.resx">
+      <DependentUpon>StockReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{2237e36f-c5e1-40eb-acac-9d88eaa96bca}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
