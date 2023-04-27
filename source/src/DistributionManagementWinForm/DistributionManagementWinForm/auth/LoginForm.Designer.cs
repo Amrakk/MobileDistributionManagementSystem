@@ -64,7 +64,7 @@ namespace DistributionManagementWinForm.auth
             this.loginLabel.Location = new System.Drawing.Point(123, 12);
             this.loginLabel.Name = "loginLabel";
             this.loginLabel.Size = new System.Drawing.Size(106, 39);
-            this.loginLabel.TabIndex = 1;
+            this.loginLabel.TabIndex = 10;
             this.loginLabel.Text = "Login";
             this.loginLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -77,7 +77,7 @@ namespace DistributionManagementWinForm.auth
             this.dragPanel.Name = "dragPanel";
             this.dragPanel.Padding = new System.Windows.Forms.Padding(5);
             this.dragPanel.Size = new System.Drawing.Size(344, 30);
-            this.dragPanel.TabIndex = 2;
+            this.dragPanel.TabIndex = 10;
             this.dragPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dragPanel_MouseDown);
             // 
             // closeBtn
@@ -159,7 +159,7 @@ namespace DistributionManagementWinForm.auth
             this.errorLabel.Location = new System.Drawing.Point(155, 190);
             this.errorLabel.Name = "errorLabel";
             this.errorLabel.Size = new System.Drawing.Size(42, 18);
-            this.errorLabel.TabIndex = 12;
+            this.errorLabel.TabIndex = 10;
             this.errorLabel.Text = "Error";
             // 
             // loginBtn
@@ -207,7 +207,7 @@ namespace DistributionManagementWinForm.auth
             this.panel6.Location = new System.Drawing.Point(32, 24);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(280, 2);
-            this.panel6.TabIndex = 8;
+            this.panel6.TabIndex = 10;
             // 
             // passIcon
             // 
@@ -231,7 +231,7 @@ namespace DistributionManagementWinForm.auth
             this.userPanel.Location = new System.Drawing.Point(20, 70);
             this.userPanel.Name = "userPanel";
             this.userPanel.Size = new System.Drawing.Size(312, 34);
-            this.userPanel.TabIndex = 9;
+            this.userPanel.TabIndex = 10;
             // 
             // userTextBox
             // 
@@ -252,7 +252,7 @@ namespace DistributionManagementWinForm.auth
             this.panel3.Location = new System.Drawing.Point(32, 24);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(280, 2);
-            this.panel3.TabIndex = 8;
+            this.panel3.TabIndex = 10;
             // 
             // userIcon
             // 

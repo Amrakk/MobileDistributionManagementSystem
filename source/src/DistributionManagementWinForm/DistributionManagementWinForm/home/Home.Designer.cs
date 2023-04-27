@@ -49,13 +49,14 @@ namespace DistributionManagementWinForm.home
             this.logoSubPanel = new System.Windows.Forms.Panel();
             this.titlePanel = new System.Windows.Forms.Panel();
             this.welcomeLabel = new System.Windows.Forms.Label();
-            this.userLabel = new System.Windows.Forms.Label();
             this.childFormTitleLabel = new System.Windows.Forms.Label();
             this.returnBtn = new FontAwesome.Sharp.IconPictureBox();
+            this.userLabel = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.userSubPanel = new System.Windows.Forms.Panel();
             this.signOutBtn = new FontAwesome.Sharp.IconButton();
             this.profileBtn = new FontAwesome.Sharp.IconButton();
+            this.closeBtn = new FontAwesome.Sharp.IconPictureBox();
             this.sidePanel.SuspendLayout();
             this.reportSubPanel.SuspendLayout();
             this.inventorySubPanel.SuspendLayout();
@@ -63,6 +64,7 @@ namespace DistributionManagementWinForm.home
             this.titlePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.returnBtn)).BeginInit();
             this.userSubPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // sidePanel
@@ -82,7 +84,7 @@ namespace DistributionManagementWinForm.home
             this.sidePanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidePanel.Location = new System.Drawing.Point(0, 0);
             this.sidePanel.Name = "sidePanel";
-            this.sidePanel.Size = new System.Drawing.Size(180, 811);
+            this.sidePanel.Size = new System.Drawing.Size(180, 850);
             this.sidePanel.TabIndex = 1;
             // 
             // adminBtn
@@ -97,7 +99,7 @@ namespace DistributionManagementWinForm.home
             this.adminBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.adminBtn.IconSize = 25;
             this.adminBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.adminBtn.Location = new System.Drawing.Point(0, 701);
+            this.adminBtn.Location = new System.Drawing.Point(0, 740);
             this.adminBtn.Name = "adminBtn";
             this.adminBtn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.adminBtn.Size = new System.Drawing.Size(180, 55);
@@ -119,7 +121,7 @@ namespace DistributionManagementWinForm.home
             this.settingBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.settingBtn.IconSize = 25;
             this.settingBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.settingBtn.Location = new System.Drawing.Point(0, 756);
+            this.settingBtn.Location = new System.Drawing.Point(0, 795);
             this.settingBtn.Name = "settingBtn";
             this.settingBtn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.settingBtn.Size = new System.Drawing.Size(180, 55);
@@ -409,13 +411,14 @@ namespace DistributionManagementWinForm.home
             // titlePanel
             // 
             this.titlePanel.BackColor = System.Drawing.Color.White;
+            this.titlePanel.Controls.Add(this.closeBtn);
             this.titlePanel.Controls.Add(this.welcomeLabel);
             this.titlePanel.Controls.Add(this.childFormTitleLabel);
             this.titlePanel.Controls.Add(this.returnBtn);
             this.titlePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.titlePanel.Location = new System.Drawing.Point(180, 0);
             this.titlePanel.Name = "titlePanel";
-            this.titlePanel.Size = new System.Drawing.Size(1154, 50);
+            this.titlePanel.Size = new System.Drawing.Size(1170, 50);
             this.titlePanel.TabIndex = 2;
             this.titlePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.titlePanel_MouseDown);
             // 
@@ -424,25 +427,11 @@ namespace DistributionManagementWinForm.home
             this.welcomeLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.welcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcomeLabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.welcomeLabel.Location = new System.Drawing.Point(894, 22);
+            this.welcomeLabel.Location = new System.Drawing.Point(920, 22);
             this.welcomeLabel.Name = "welcomeLabel";
             this.welcomeLabel.Size = new System.Drawing.Size(76, 18);
             this.welcomeLabel.TabIndex = 5;
             this.welcomeLabel.Text = "Welcome,";
-            // 
-            // userLabel
-            // 
-            this.userLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.userLabel.BackColor = System.Drawing.Color.White;
-            this.userLabel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.userLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userLabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.userLabel.Location = new System.Drawing.Point(1150, 17);
-            this.userLabel.Name = "userLabel";
-            this.userLabel.Size = new System.Drawing.Size(126, 25);
-            this.userLabel.TabIndex = 4;
-            this.userLabel.Text = "Dashboard";
-            this.userLabel.Click += new System.EventHandler(this.userLabel_Click);
             // 
             // childFormTitleLabel
             // 
@@ -471,6 +460,20 @@ namespace DistributionManagementWinForm.home
             this.returnBtn.TabStop = false;
             this.returnBtn.Click += new System.EventHandler(this.returnBtn_Click);
             // 
+            // userLabel
+            // 
+            this.userLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.userLabel.BackColor = System.Drawing.Color.White;
+            this.userLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.userLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userLabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.userLabel.Location = new System.Drawing.Point(1170, 17);
+            this.userLabel.Name = "userLabel";
+            this.userLabel.Size = new System.Drawing.Size(126, 25);
+            this.userLabel.TabIndex = 4;
+            this.userLabel.Text = "Dashboard";
+            this.userLabel.Click += new System.EventHandler(this.userLabel_Click);
+            // 
             // mainPanel
             // 
             this.mainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -479,7 +482,7 @@ namespace DistributionManagementWinForm.home
             this.mainPanel.AutoSize = true;
             this.mainPanel.Location = new System.Drawing.Point(180, 50);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1157, 761);
+            this.mainPanel.Size = new System.Drawing.Size(1170, 800);
             this.mainPanel.TabIndex = 3;
             // 
             // userSubPanel
@@ -488,14 +491,14 @@ namespace DistributionManagementWinForm.home
             this.userSubPanel.Controls.Add(this.signOutBtn);
             this.userSubPanel.Controls.Add(this.profileBtn);
             this.userSubPanel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.userSubPanel.Location = new System.Drawing.Point(1150, 50);
+            this.userSubPanel.Location = new System.Drawing.Point(1170, 50);
             this.userSubPanel.Name = "userSubPanel";
             this.userSubPanel.Size = new System.Drawing.Size(180, 115);
             this.userSubPanel.TabIndex = 3;
             // 
             // signOutBtn
             // 
-            this.signOutBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.signOutBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.signOutBtn.FlatAppearance.BorderSize = 0;
             this.signOutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signOutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -535,17 +538,34 @@ namespace DistributionManagementWinForm.home
             this.profileBtn.UseVisualStyleBackColor = true;
             this.profileBtn.Click += new System.EventHandler(this.profileBtn_Click);
             // 
+            // closeBtn
+            // 
+            this.closeBtn.BackColor = System.Drawing.Color.White;
+            this.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.closeBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.closeBtn.IconChar = FontAwesome.Sharp.IconChar.Xmark;
+            this.closeBtn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.closeBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.closeBtn.IconSize = 20;
+            this.closeBtn.Location = new System.Drawing.Point(1147, 3);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.Size = new System.Drawing.Size(20, 20);
+            this.closeBtn.TabIndex = 6;
+            this.closeBtn.TabStop = false;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1334, 811);
-            this.Controls.Add(this.userLabel);
+            this.ClientSize = new System.Drawing.Size(1350, 850);
             this.Controls.Add(this.userSubPanel);
+            this.Controls.Add(this.userLabel);
             this.Controls.Add(this.titlePanel);
             this.Controls.Add(this.sidePanel);
             this.Controls.Add(this.mainPanel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1350, 850);
             this.Name = "Home";
@@ -560,6 +580,7 @@ namespace DistributionManagementWinForm.home
             this.titlePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.returnBtn)).EndInit();
             this.userSubPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -593,5 +614,6 @@ namespace DistributionManagementWinForm.home
         private System.Windows.Forms.Panel userSubPanel;
         private FontAwesome.Sharp.IconButton signOutBtn;
         private FontAwesome.Sharp.IconButton profileBtn;
+        private FontAwesome.Sharp.IconPictureBox closeBtn;
     }
 }

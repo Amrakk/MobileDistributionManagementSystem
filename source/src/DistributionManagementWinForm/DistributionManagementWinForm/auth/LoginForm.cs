@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BCryptNet = BCrypt.Net.BCrypt;
 
 namespace DistributionManagementWinForm.auth
 {
@@ -25,21 +25,17 @@ namespace DistributionManagementWinForm.auth
 
         private void userTextBox_TextChanged(object sender, EventArgs e)
         {
-            AuthShared.textChangedStyling(userTextBox);
+            AuthShared.textChangedStyling(userTextBox); 
         }
 
         private void passTextBox_TextChanged(object sender, EventArgs e)
         {
-            if(passTextBox.Text.Trim() == "")
-            {
+            if(passTextBox.Text == "")
                 passTextBox.PasswordChar = '\0';
-                passTextBox.Text = "Password";
-            } 
             else
-            {
                 passTextBox.PasswordChar = '*';
-            }
             AuthShared.textChangedStyling(passTextBox);
+
         }
 
         private void loginBtn_MouseEnter(object sender, EventArgs e)
@@ -76,21 +72,27 @@ namespace DistributionManagementWinForm.auth
         #region Function
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            // TODO - Validate
             string user = userTextBox.Text;
             string pass = passTextBox.Text;
+            // TODO - Validate
+
 
             BUS_Account BAccount = new BUS_Account(0, "", "", 0, DateTime.Now);
             DataTable data = BAccount.selectQuery($"select * from Account where username = '{user}'");
-
-            if(data.Rows.Count == 1)
+         
+            if (data.Rows.Count == 1)
             {
-                
+                if (BCryptNet.Verify(pass, data.Rows[0].ItemArray[2].ToString()))
+                {
+                    Form home = new home.Home();
+                    home.Show();
+
+                    this.Enabled = false;
+                    this.Hide();
+                }
+                else
+                    MessageBox.Show("Wrong username or password!");
             }
-            
-            Form home = new home.Home();
-            home.Show();
-            this.Hide();
         }
 
         private void closeBtn_Click(object sender, EventArgs e)

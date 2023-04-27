@@ -17,8 +17,8 @@ namespace DistributionManagementWinForm.auth
                 textBox.Text = message;
                 textBox.ForeColor = Color.Gray;
             }
-
-            textBox.ForeColor = Color.Black;
+            else
+                textBox.ForeColor = Color.Black;
         }
 
         public static void textChangedStyling(TextBox textBox)
@@ -26,7 +26,7 @@ namespace DistributionManagementWinForm.auth
             switch (textBox.Name)
             {
                 case "userTextBox": changeTextColor(textBox, "Username"); break;
-                case "passTextBox": changeTextColor(textBox, "Username"); break;
+                case "passTextBox": changeTextColor(textBox, "Password"); break;
                 case "confirmPassTextBox": changeTextColor(textBox, "Confirm Password"); break;
                 case "fNameTextBox": changeTextColor(textBox, "First Name"); break;
                 case "lNameTextBox": changeTextColor(textBox, "Last Name"); break;

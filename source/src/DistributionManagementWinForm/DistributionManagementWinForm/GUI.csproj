@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net, Version=0.1.4141.31969, Culture=neutral, PublicKeyToken=f3bc8f8c31beeb49, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net.0.1.0\lib\net35\BCrypt.Net.dll</HintPath>
+    </Reference>
     <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.6.3.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
@@ -55,67 +58,99 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="auth\AuthShared.cs" />
-    <Compile Include="auth\ForgotPassword.cs" />
+    <Compile Include="auth\ForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="auth\ForgotPassword.Designer.cs">
       <DependentUpon>ForgotPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="auth\SignupForm.cs" />
+    <Compile Include="auth\SignupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="auth\SignupForm.Designer.cs">
       <DependentUpon>SignupForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="auth\LoginForm.cs" />
+    <Compile Include="auth\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="auth\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="home\Admin\AdminForm.cs" />
+    <Compile Include="home\Admin\AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="home\Admin\AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="home\Dashboard.cs" />
+    <Compile Include="home\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="home\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="home\Profile.cs" />
+    <Compile Include="home\Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="home\Profile.Designer.cs">
       <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
-    <Compile Include="home\Home.cs" />
+    <Compile Include="home\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="home\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="home\Inventory\DeliveryForm.cs" />
+    <Compile Include="home\Inventory\DeliveryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="home\Inventory\DeliveryForm.Designer.cs">
       <DependentUpon>DeliveryForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="home\Inventory\ProductListForm.cs" />
+    <Compile Include="home\Inventory\ProductListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="home\Inventory\ProductListForm.Designer.cs">
       <DependentUpon>ProductListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="home\Inventory\ReceiptForm.cs" />
+    <Compile Include="home\Inventory\ReceiptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="home\Inventory\ReceiptForm.Designer.cs">
       <DependentUpon>ReceiptForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="home\Inventory\ProductForm.cs" />
+    <Compile Include="home\Inventory\ProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="home\Inventory\ProductForm.Designer.cs">
       <DependentUpon>ProductForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="home\Order\PlaceOrderForm.cs" />
+    <Compile Include="home\Order\PlaceOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="home\Order\PlaceOrderForm.Designer.cs">
       <DependentUpon>PlaceOrderForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="home\Order\OrderNoteForm.cs" />
+    <Compile Include="home\Order\OrderNoteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="home\Order\OrderNoteForm.Designer.cs">
       <DependentUpon>OrderNoteForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="home\Order\OrderListForm.cs" />
+    <Compile Include="home\Order\OrderListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="home\Order\OrderListForm.Designer.cs">
       <DependentUpon>OrderListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="home\Report\StockReportForm.cs" />
+    <Compile Include="home\Report\StockReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="home\Report\StockReportForm.Designer.cs">
       <DependentUpon>StockReportForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="home\Report\SaleReportForm.cs" />
+    <Compile Include="home\Report\SaleReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="home\Report\SaleReportForm.Designer.cs">
       <DependentUpon>SaleReportForm.cs</DependentUpon>
     </Compile>

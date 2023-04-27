@@ -30,3 +30,5 @@ C:\Users\hoang\OneDrive\Máy tính\SEFinalProject\source\src\DistributionManagem
 C:\Users\hoang\OneDrive\Máy tính\SEFinalProject\source\src\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\BUS.pdb
 C:\Users\hoang\OneDrive\Máy tính\SEFinalProject\source\src\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\DAL.pdb
 C:\Users\hoang\OneDrive\Máy tính\SEFinalProject\source\src\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\DTO.pdb
+C:\Users\hoang\OneDrive\Máy tính\SEFinalProject\source\src\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\BCrypt.Net.dll
+C:\Users\hoang\OneDrive\Máy tính\SEFinalProject\source\src\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\BCrypt.Net.xml
