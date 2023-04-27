@@ -3,18 +3,27 @@
 Nhà phân phối(mã nhà phân phối,tên nhà phân phối,địa chỉ, số điện thoại, mã nhập, mã xuất,mã mặt hàng, mã đại lý)
 Đại lý(mã đại lý, tên đại lý, số điện thoại, địa chỉ, mã mặt hàng)
 Phiếu nhập(mã nhập,mã nhà phân phối,mã đại lý,mã mặt hàng, ngày nhập, số lượng, tổng giá trị phiếu nhập)
-Phiếu xuất(mã xuất,mã nhà phân phối,mã đại lý,mã mặt hàng, ngày xuất, số lượng, tổng giá trị phiếu xuất, tình trạng đơn hàng, tình trạng thanh toán)
+Phiếu xuất(mã xuất,mã nhà phân phối,mã đại lý,mã mặt hàng, ngày xuất, số lượng, tổng giá trị phiếu xuất, 
+tình trạng đơn hàng, tình trạng thanh toán)
 Mặt hàng(mã mặt hàng, tên mặt hàng, số lượng, giá)
 
 
-Một nhà phân phối được xác định bằng (mã nhà phân phối,tên nhà phân phối,địa chỉ, số điện thoại) bán điện thoại cho các Đại Lý cần phần mềm được xác định bằng (mã đại lý, tên đại lý, số điện thoại, địa chỉ) với các chức năng sau:
+Một nhà phân phối được xác định bằng (mã nhà phân phối,tên nhà phân phối,địa chỉ, số điện thoại) bán điện thoại cho các 
+Đại Lý cần phần mềm được xác định bằng (mã đại lý, tên đại lý, số điện thoại, địa chỉ) với các chức năng sau:
 
-- Phát triển chức năng cho kế toán tạo Phiếu nhập kho được xác định bằng (mã nhập,mã mặt hàng nhập,ngày nhập, số lượng, tổng giá trị phiếu nhập) khi công ty nhập khẩu hàng về (1 phiếu nhập kho sẽ gồm nhiều mặt hàng, một nhà phân phối có thể có nhiều phiếu nhập)
+- Phát triển chức năng cho kế toán tạo Phiếu nhập kho được xác định bằng 
+(mã nhập,mã mặt hàng nhập,ngày nhập, số lượng, tổng giá trị phiếu nhập) 
+khi công ty nhập khẩu hàng về (1 phiếu nhập kho sẽ gồm nhiều mặt hàng, một nhà phân phối có thể có nhiều phiếu nhập)
 
-- Phát triển chức năng Web cho phép đại lý có thể đặt danh sách mặt hàng và chọn hình thức thanh toán (Tiền mặt, chuyển khoản, Momo…). Đại lý có thể thanh toán online và xem tình trạng đơn hàng.
+- Phát triển chức năng Web cho phép đại lý có thể đặt danh sách mặt hàng và chọn hình thức thanh toán 
+(Tiền mặt, chuyển khoản, Momo…). Đại lý có thể thanh toán online và xem tình trạng đơn hàng.
 
-- Phát triển chức năng cho kế toán làm phiếu xuất kho được xác định bằng (mã xuất,mã mặt hàng xuất,ngày xuất, số lượng, tổng giá trị phiếu xuất) để chuyển hàng cho các đại lý (in phiếu xuất hàng), cập nhật tình trạng đơn hàng là đang chuyển và cập nhật tình trạng thanh toán của đại lý. (1 phiếu xuất kho sẽ gồm nhiều mặt hàng, một nhà phân phối có thể có nhiều phiếu xuất)
+- Phát triển chức năng cho kế toán làm phiếu xuất kho được xác định bằng 
+(mã xuất,mã mặt hàng xuất,ngày xuất, số lượng, tổng giá trị phiếu xuất) để chuyển hàng cho các đại lý (in phiếu xuất hàng), 
+cập nhật tình trạng đơn hàng là đang chuyển và cập nhật tình trạng thanh toán của đại lý. 
+(1 phiếu xuất kho sẽ gồm nhiều mặt hàng, một nhà phân phối có thể có nhiều phiếu xuất)
 
-- Phát triển chức năng cho kế toán phép xem lại thống kê hàng ra hàng vào, mặt hàng được xác định (mã mặt hàng, tên mặt hàng, số lượng, giá) bán chạy nhất, doanh thu của từng tháng
+- Phát triển chức năng cho kế toán phép xem lại thống kê hàng ra hàng vào, mặt hàng được xác định 
+(mã mặt hàng, tên mặt hàng, số lượng, giá) bán chạy nhất, doanh thu của từng tháng
 
 - Một nhà phân phối có thể phân phối cho nhiều đại lý khác nhau, và có nhiều mặt hàng khác nhau
