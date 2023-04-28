@@ -7,7 +7,7 @@
     <Property Name="account_id" Type="int" Nullable="false" />
     <Property Name="username" Type="varchar" MaxLength="50" />
     <Property Name="password" Type="varchar" MaxLength="100" />
-    <Property Name="isActivated" Type="bit" />
+    <Property Name="is_activated" Type="bit" />
     <Property Name="created_date" Type="datetime" />
   </EntityType>
   <EntityType Name="Goods_Delivery_Note">
@@ -100,7 +100,7 @@
     <Property Name="status_id" Type="int" Nullable="false" />
     <Property Name="status_name" Type="varchar" MaxLength="50" />
   </EntityType>
-  <Association Name="FK__Account__account__29572725">
+  <Association Name="FK__Account__account__286302EC">
     <End Role="Profile" Type="Self.Profile" Multiplicity="1" />
     <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
     <ReferentialConstraint>
@@ -112,7 +112,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Goods_Del__deliv__412EB0B6">
+  <Association Name="FK__Goods_Del__deliv__403A8C7D">
     <End Role="Order_Note" Type="Self.Order_Note" Multiplicity="1" />
     <End Role="Goods_Delivery_Note" Type="Self.Goods_Delivery_Note" Multiplicity="0..1" />
     <ReferentialConstraint>
@@ -124,7 +124,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Order_Ite__order__3D5E1FD2">
+  <Association Name="FK__Order_Ite__order__3C69FB99">
     <End Role="Order_Note" Type="Self.Order_Note" Multiplicity="1" />
     <End Role="Order_Item" Type="Self.Order_Item" Multiplicity="0..1" />
     <ReferentialConstraint>
@@ -136,7 +136,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Order_Ite__produ__3E52440B">
+  <Association Name="FK__Order_Ite__produ__3D5E1FD2">
     <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
     <End Role="Order_Item" Type="Self.Order_Item" Multiplicity="*" />
     <ReferentialConstraint>
@@ -148,7 +148,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Order_Not__resel__398D8EEE">
+  <Association Name="FK__Order_Not__resel__38996AB5">
     <End Role="Reseller" Type="Self.Reseller" Multiplicity="0..1" />
     <End Role="Order_Note" Type="Self.Order_Note" Multiplicity="*" />
     <ReferentialConstraint>
@@ -160,7 +160,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Order_Not__statu__3A81B327">
+  <Association Name="FK__Order_Not__statu__398D8EEE">
     <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
     <End Role="Order_Note" Type="Self.Order_Note" Multiplicity="*" />
     <ReferentialConstraint>
@@ -172,7 +172,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Profile__role_id__267ABA7A">
+  <Association Name="FK__Profile__role_id__25869641">
     <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
     <End Role="Profile" Type="Self.Profile" Multiplicity="*" />
     <ReferentialConstraint>
@@ -184,7 +184,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Received___produ__34C8D9D1">
+  <Association Name="FK__Received___produ__33D4B598">
     <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
     <End Role="Received_Item" Type="Self.Received_Item" Multiplicity="*" />
     <ReferentialConstraint>
@@ -196,7 +196,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Received___recei__33D4B598">
+  <Association Name="FK__Received___recei__32E0915F">
     <End Role="Goods_Received_Note" Type="Self.Goods_Received_Note" Multiplicity="1" />
     <End Role="Received_Item" Type="Self.Received_Item" Multiplicity="0..1" />
     <ReferentialConstraint>
@@ -208,7 +208,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Reseller__resell__2D27B809">
+  <Association Name="FK__Reseller__resell__2C3393D0">
     <End Role="Profile" Type="Self.Profile" Multiplicity="1" />
     <End Role="Reseller" Type="Self.Reseller" Multiplicity="0..1" />
     <ReferentialConstraint>
@@ -232,43 +232,43 @@
     <EntitySet Name="Reseller" EntityType="Self.Reseller" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__Account__account__29572725" Association="Self.FK__Account__account__29572725">
+    <AssociationSet Name="FK__Account__account__286302EC" Association="Self.FK__Account__account__286302EC">
       <End Role="Profile" EntitySet="Profile" />
       <End Role="Account" EntitySet="Account" />
     </AssociationSet>
-    <AssociationSet Name="FK__Goods_Del__deliv__412EB0B6" Association="Self.FK__Goods_Del__deliv__412EB0B6">
+    <AssociationSet Name="FK__Goods_Del__deliv__403A8C7D" Association="Self.FK__Goods_Del__deliv__403A8C7D">
       <End Role="Order_Note" EntitySet="Order_Note" />
       <End Role="Goods_Delivery_Note" EntitySet="Goods_Delivery_Note" />
     </AssociationSet>
-    <AssociationSet Name="FK__Order_Ite__order__3D5E1FD2" Association="Self.FK__Order_Ite__order__3D5E1FD2">
+    <AssociationSet Name="FK__Order_Ite__order__3C69FB99" Association="Self.FK__Order_Ite__order__3C69FB99">
       <End Role="Order_Note" EntitySet="Order_Note" />
       <End Role="Order_Item" EntitySet="Order_Item" />
     </AssociationSet>
-    <AssociationSet Name="FK__Order_Ite__produ__3E52440B" Association="Self.FK__Order_Ite__produ__3E52440B">
+    <AssociationSet Name="FK__Order_Ite__produ__3D5E1FD2" Association="Self.FK__Order_Ite__produ__3D5E1FD2">
       <End Role="Product" EntitySet="Product" />
       <End Role="Order_Item" EntitySet="Order_Item" />
     </AssociationSet>
-    <AssociationSet Name="FK__Order_Not__resel__398D8EEE" Association="Self.FK__Order_Not__resel__398D8EEE">
+    <AssociationSet Name="FK__Order_Not__resel__38996AB5" Association="Self.FK__Order_Not__resel__38996AB5">
       <End Role="Reseller" EntitySet="Reseller" />
       <End Role="Order_Note" EntitySet="Order_Note" />
     </AssociationSet>
-    <AssociationSet Name="FK__Order_Not__statu__3A81B327" Association="Self.FK__Order_Not__statu__3A81B327">
+    <AssociationSet Name="FK__Order_Not__statu__398D8EEE" Association="Self.FK__Order_Not__statu__398D8EEE">
       <End Role="Status" EntitySet="Status" />
       <End Role="Order_Note" EntitySet="Order_Note" />
     </AssociationSet>
-    <AssociationSet Name="FK__Profile__role_id__267ABA7A" Association="Self.FK__Profile__role_id__267ABA7A">
+    <AssociationSet Name="FK__Profile__role_id__25869641" Association="Self.FK__Profile__role_id__25869641">
       <End Role="Role" EntitySet="Role" />
       <End Role="Profile" EntitySet="Profile" />
     </AssociationSet>
-    <AssociationSet Name="FK__Received___produ__34C8D9D1" Association="Self.FK__Received___produ__34C8D9D1">
+    <AssociationSet Name="FK__Received___produ__33D4B598" Association="Self.FK__Received___produ__33D4B598">
       <End Role="Product" EntitySet="Product" />
       <End Role="Received_Item" EntitySet="Received_Item" />
     </AssociationSet>
-    <AssociationSet Name="FK__Received___recei__33D4B598" Association="Self.FK__Received___recei__33D4B598">
+    <AssociationSet Name="FK__Received___recei__32E0915F" Association="Self.FK__Received___recei__32E0915F">
       <End Role="Goods_Received_Note" EntitySet="Goods_Received_Note" />
       <End Role="Received_Item" EntitySet="Received_Item" />
     </AssociationSet>
-    <AssociationSet Name="FK__Reseller__resell__2D27B809" Association="Self.FK__Reseller__resell__2D27B809">
+    <AssociationSet Name="FK__Reseller__resell__2C3393D0" Association="Self.FK__Reseller__resell__2C3393D0">
       <End Role="Profile" EntitySet="Profile" />
       <End Role="Reseller" EntitySet="Reseller" />
     </AssociationSet>

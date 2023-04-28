@@ -17,7 +17,7 @@ namespace DistributionManagementWebForm.Models
         public int account_id { get; set; }
         public string username { get; set; }
         public string password { get; set; }
-        public Nullable<bool> isActivated { get; set; }
+        public Nullable<bool> is_activated { get; set; }
         public Nullable<System.DateTime> created_date { get; set; }
     
         public virtual Profile Profile { get; set; }
