@@ -57,34 +57,23 @@ INSERT INTO Account (account_id, username, password, created_date)
 VALUES
 (10000, 'admin', '$2a$10$xylW4Lb15pNtiPjG8.huXOBmnXOhsPeD9V4H5mKTdR3etAvzpNVbu', '2022-01-01 10:00:00'),
 (10001, 'accountant', 'm123456', '2022-01-02 11:00:00'),
-(10002, 'reseller', 's123456', '2022-01-03 12:00:00');
+(10002, 'reseller', 's123456', '2022-01-03 12:00:00'),
+(10003, 'reseller1', 's123456', '2022-01-03 12:00:00');
 
 -- Insert data into Reseller table
 INSERT INTO Reseller (reseller_id, reseller_name, address)
 VALUES
-(10000, 'Reseller A', '123 Main St, Anytown USA'),
-(10001, 'Reseller B', '456 Broad St, Anytown USA'),
-(10002, 'Reseller C', '789 Elm St, Anytown USA');
-
-
-
-
-
-
-
-
-
-
+(10002, 'Reseller A', '456 Broad St, Anytown USA'),
+(10003, 'Reseller B', '789 Elm St, Anytown USA');
 
 
 -- Create Product table
 CREATE TABLE Product (
     product_id INT PRIMARY KEY,
     product_name VARCHAR(50),
-    brand VARCHAR(50),
     model VARCHAR(50),
     product_description VARCHAR(255),
-    product_price DECIMAL(18,2),
+    product_price INT,
     product_quantity INT
 );
 
@@ -93,6 +82,15 @@ CREATE TABLE Status (
     status_id INT PRIMARY KEY,
     status_name VARCHAR(50)
 );
+
+INSERT INTO Status (status_id, status_name) 
+VALUES (1, 'Confirmed'),
+       (2, 'Packaging'),
+       (3, 'Shipping'),
+       (4, 'Delivered'),
+       (5, 'Unpaid'),
+       (6, 'Paid'),
+       (7, 'Completed');
 
 -- Create Order table
 CREATE TABLE Order_Note (
@@ -118,7 +116,7 @@ CREATE TABLE Goods_Received_Note (
     received_date DATETIME,
     received_from VARCHAR(50),
     total_quantity INT,
-    total_cost DECIMAL(18,2)
+    total_cost INT
 );
 
 -- Create Received_Item table
@@ -127,7 +125,7 @@ CREATE TABLE Received_Item (
     received_id INT FOREIGN KEY REFERENCES Goods_Received_Note(received_id),
     product_id INT FOREIGN KEY REFERENCES Product(product_id),
     quantity INT,
-    cost_per_unit DECIMAL(18,2)
+    cost_per_unit INT
 );
 
 -- Create Goods_Delivery_Note table
@@ -145,54 +143,7 @@ CREATE TABLE Delivery_Item (
     quantity INT
 );
 
--- Insert data into Role table
-INSERT INTO Role (role_id, role_name) VALUES 
-    (1, 'admin'), 
-    (2, 'accountant'), 
-    (3, 'reseller');
 
--- Insert data into Profile table
-INSERT INTO Profile (profile_id, first_name, last_name, email, phone, role_id) VALUES 
-    (1, 'Duy', 'Nguyen', 'hoangduy12823@gmail.com', '0902529803', 3), 
-    (2, 'Accountant 1', 'Lastname', 'accountant1@example.com', '1234567890', 2), 
-    (3, 'Accountant 2', 'Lastname', 'accountant2@example.com', '1234567890', 2), 
-    (4, 'Accountant 3', 'Lastname', 'accountant3@example.com', '1234567890', 2), 
-    (5, 'Accountant 4', 'Lastname', 'accountant4@example.com', '1234567890', 2), 
-    (6, 'Accountant 5', 'Lastname', 'accountant5@example.com', '1234567890', 2), 
-    (7, 'Reseller 1', 'Lastname', 'reseller1@example.com', '1234567890', 3), 
-    (8, 'Reseller 2', 'Lastname', 'reseller2@example.com', '1234567890', 3), 
-    (9, 'Reseller 3', 'Lastname', 'reseller3@example.com', '1234567890', 3), 
-    (10, 'Reseller 4', 'Lastname', 'reseller4@example.com', '1234567890', 3), 
-    (11, 'Reseller 5', 'Lastname', 'reseller5@example.com', '1234567890', 3);
 
--- Insert data into Account table
-INSERT INTO Account (account_id, profile_id, username, password, created_date) VALUES 
-    (1, 1, 'admin', '123456', GETDATE()), 
-    (2, 2, 'accountant1', '123456', GETDATE()), 
-    (3, 3, 'accountant2', '123456', GETDATE()), 
-    (4, 4, 'accountant3', '123456', GETDATE()), 
-    (5, 5, 'accountant4', '123456', GETDATE()), 
-    (6, 6, 'accountant5', '123456', GETDATE()), 
-    (7, 7, 'reseller1', '123456', GETDATE()), 
-    (8, 8, 'reseller2', '123456', GETDATE()), 
-    (9, 9, 'reseller3', '123456', GETDATE()), 
-    (10, 10, 'reseller4', '123456', GETDATE()), 
-    (11, 11, 'reseller5', '123456', GETDATE());
 
--- Insert data into Product table
-INSERT INTO Product (product_id, product_name, brand, model, product_description, product_price, product_quantity) 
-VALUES (1, 'iPhone 13 Pro Max', 'Apple', '13 Pro Max', 'The latest iPhone model', 1299.00, 100),
-       (2, 'Galaxy S21 Ultra', 'Samsung', 'S21 Ultra', 'The latest Galaxy model', 1199.00, 75),
-       (3, 'Pixel 6 Pro', 'Google', 'Pixel 6 Pro', 'The latest Pixel model', 999.00, 50),
-       (4, 'OnePlus 10 Pro', 'OnePlus', '10 Pro', 'The latest OnePlus model', 899.00, 25),
-       (5, 'Mi 12 Ultra', 'Xiaomi', 'Mi 12 Ultra', 'The latest Xiaomi model', 1099.00, 80);
 
--- Insert data into Status table
-INSERT INTO Status (status_id, status_name) 
-VALUES (1, 'Confirmed'),
-       (2, 'Packaging'),
-       (3, 'Shipping'),
-       (4, 'Delivered'),
-       (5, 'Unpaid'),
-       (6, 'Paid'),
-       (7, 'Completed');
