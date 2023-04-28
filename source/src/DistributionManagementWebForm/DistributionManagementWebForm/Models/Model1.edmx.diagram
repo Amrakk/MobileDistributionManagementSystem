@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f8f55d8ddec54672b512bd99e17fe86c" Name="Diagram1">
+        <EntityTypeShape EntityType="MobileDistributionManagementModel.Account" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileDistributionManagementModel.Goods_Delivery_Note" Width="1.5" PointX="9.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileDistributionManagementModel.Goods_Received_Note" Width="1.5" PointX="7.5" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileDistributionManagementModel.Order_Item" Width="1.5" PointX="9.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileDistributionManagementModel.Order_Note" Width="1.5" PointX="7.5" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileDistributionManagementModel.Product" Width="1.5" PointX="7.5" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileDistributionManagementModel.Profile" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileDistributionManagementModel.Received_Item" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileDistributionManagementModel.Reseller" Width="1.5" PointX="5.25" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileDistributionManagementModel.Role" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileDistributionManagementModel.Status" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
+        <AssociationConnector Association="MobileDistributionManagementModel.FK__Account__account__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileDistributionManagementModel.FK__Goods_Del__deliv__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileDistributionManagementModel.FK__Received___recei__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileDistributionManagementModel.FK__Order_Ite__order__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileDistributionManagementModel.FK__Order_Ite__produ__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileDistributionManagementModel.FK__Order_Not__resel__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileDistributionManagementModel.FK__Order_Not__statu__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileDistributionManagementModel.FK__Received___produ__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileDistributionManagementModel.FK__Profile__role_id__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileDistributionManagementModel.FK__Reseller__resell__2D27B809" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

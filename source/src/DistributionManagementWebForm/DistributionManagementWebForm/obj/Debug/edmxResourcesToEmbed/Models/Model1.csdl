@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MobileDistributionManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="account_id" />
+    </Key>
+    <Property Name="account_id" Type="Int32" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="isActivated" Type="Boolean" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Profile" Relationship="Self.FK__Account__account__29572725" FromRole="Account" ToRole="Profile" />
+  </EntityType>
+  <EntityType Name="Goods_Delivery_Note">
+    <Key>
+      <PropertyRef Name="delivery_id" />
+    </Key>
+    <Property Name="delivery_id" Type="Int32" Nullable="false" />
+    <Property Name="delivery_date" Type="DateTime" Precision="3" />
+    <Property Name="delivery_method" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Order_Note" Relationship="Self.FK__Goods_Del__deliv__412EB0B6" FromRole="Goods_Delivery_Note" ToRole="Order_Note" />
+  </EntityType>
+  <EntityType Name="Goods_Received_Note">
+    <Key>
+      <PropertyRef Name="received_id" />
+    </Key>
+    <Property Name="received_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="received_date" Type="DateTime" Precision="3" />
+    <Property Name="received_from" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="total_quantity" Type="Int32" />
+    <Property Name="total_cost" Type="Int32" />
+    <NavigationProperty Name="Received_Item" Relationship="Self.FK__Received___recei__33D4B598" FromRole="Goods_Received_Note" ToRole="Received_Item" />
+  </EntityType>
+  <EntityType Name="Order_Item">
+    <Key>
+      <PropertyRef Name="order_id" />
+    </Key>
+    <Property Name="order_id" Type="Int32" Nullable="false" />
+    <Property Name="product_id" Type="Int32" />
+    <Property Name="quantity" Type="Int32" />
+    <NavigationProperty Name="Order_Note" Relationship="Self.FK__Order_Ite__order__3D5E1FD2" FromRole="Order_Item" ToRole="Order_Note" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Order_Ite__produ__3E52440B" FromRole="Order_Item" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Order_Note">
+    <Key>
+      <PropertyRef Name="order_id" />
+    </Key>
+    <Property Name="order_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="order_date" Type="DateTime" Precision="3" />
+    <Property Name="reseller_id" Type="Int32" />
+    <Property Name="status_id" Type="Int32" />
+    <Property Name="total_price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="payment_method" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Goods_Delivery_Note" Relationship="Self.FK__Goods_Del__deliv__412EB0B6" FromRole="Order_Note" ToRole="Goods_Delivery_Note" />
+    <NavigationProperty Name="Order_Item" Relationship="Self.FK__Order_Ite__order__3D5E1FD2" FromRole="Order_Note" ToRole="Order_Item" />
+    <NavigationProperty Name="Reseller" Relationship="Self.FK__Order_Not__resel__398D8EEE" FromRole="Order_Note" ToRole="Reseller" />
+    <NavigationProperty Name="Status" Relationship="Self.FK__Order_Not__statu__3A81B327" FromRole="Order_Note" ToRole="Status" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="product_id" />
+    </Key>
+    <Property Name="product_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="product_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="product_description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="product_price" Type="Int32" />
+    <Property Name="product_quantity" Type="Int32" />
+    <NavigationProperty Name="Order_Item" Relationship="Self.FK__Order_Ite__produ__3E52440B" FromRole="Product" ToRole="Order_Item" />
+    <NavigationProperty Name="Received_Item" Relationship="Self.FK__Received___produ__34C8D9D1" FromRole="Product" ToRole="Received_Item" />
+  </EntityType>
+  <EntityType Name="Profile">
+    <Key>
+      <PropertyRef Name="profile_id" />
+    </Key>
+    <Property Name="profile_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="role_id" Type="Int32" />
+    <NavigationProperty Name="Account" Relationship="Self.FK__Account__account__29572725" FromRole="Profile" ToRole="Account" />
+    <NavigationProperty Name="Role" Relationship="Self.FK__Profile__role_id__267ABA7A" FromRole="Profile" ToRole="Role" />
+    <NavigationProperty Name="Reseller" Relationship="Self.FK__Reseller__resell__2D27B809" FromRole="Profile" ToRole="Reseller" />
+  </EntityType>
+  <EntityType Name="Received_Item">
+    <Key>
+      <PropertyRef Name="received_id" />
+    </Key>
+    <Property Name="received_id" Type="Int32" Nullable="false" />
+    <Property Name="product_id" Type="Int32" />
+    <Property Name="quantity" Type="Int32" />
+    <Property Name="cost_per_unit" Type="Int32" />
+    <NavigationProperty Name="Goods_Received_Note" Relationship="Self.FK__Received___recei__33D4B598" FromRole="Received_Item" ToRole="Goods_Received_Note" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Received___produ__34C8D9D1" FromRole="Received_Item" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Reseller">
+    <Key>
+      <PropertyRef Name="reseller_id" />
+    </Key>
+    <Property Name="reseller_id" Type="Int32" Nullable="false" />
+    <Property Name="reseller_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Order_Note" Relationship="Self.FK__Order_Not__resel__398D8EEE" FromRole="Reseller" ToRole="Order_Note" />
+    <NavigationProperty Name="Profile" Relationship="Self.FK__Reseller__resell__2D27B809" FromRole="Reseller" ToRole="Profile" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="role_id" />
+    </Key>
+    <Property Name="role_id" Type="Int32" Nullable="false" />
+    <Property Name="role_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Profiles" Relationship="Self.FK__Profile__role_id__267ABA7A" FromRole="Role" ToRole="Profile" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="status_id" />
+    </Key>
+    <Property Name="status_id" Type="Int32" Nullable="false" />
+    <Property Name="status_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Order_Note" Relationship="Self.FK__Order_Not__statu__3A81B327" FromRole="Status" ToRole="Order_Note" />
+  </EntityType>
+  <Association Name="FK__Account__account__29572725">
+    <End Role="Profile" Type="Self.Profile" Multiplicity="1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Profile">
+        <PropertyRef Name="profile_id" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="account_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Goods_Del__deliv__412EB0B6">
+    <End Role="Order_Note" Type="Self.Order_Note" Multiplicity="1" />
+    <End Role="Goods_Delivery_Note" Type="Self.Goods_Delivery_Note" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Order_Note">
+        <PropertyRef Name="order_id" />
+      </Principal>
+      <Dependent Role="Goods_Delivery_Note">
+        <PropertyRef Name="delivery_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Received___recei__33D4B598">
+    <End Role="Goods_Received_Note" Type="Self.Goods_Received_Note" Multiplicity="1" />
+    <End Role="Received_Item" Type="Self.Received_Item" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Goods_Received_Note">
+        <PropertyRef Name="received_id" />
+      </Principal>
+      <Dependent Role="Received_Item">
+        <PropertyRef Name="received_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Order_Ite__order__3D5E1FD2">
+    <End Role="Order_Note" Type="Self.Order_Note" Multiplicity="1" />
+    <End Role="Order_Item" Type="Self.Order_Item" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Order_Note">
+        <PropertyRef Name="order_id" />
+      </Principal>
+      <Dependent Role="Order_Item">
+        <PropertyRef Name="order_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Order_Ite__produ__3E52440B">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Order_Item" Type="Self.Order_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="product_id" />
+      </Principal>
+      <Dependent Role="Order_Item">
+        <PropertyRef Name="product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Order_Not__resel__398D8EEE">
+    <End Role="Reseller" Type="Self.Reseller" Multiplicity="0..1" />
+    <End Role="Order_Note" Type="Self.Order_Note" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reseller">
+        <PropertyRef Name="reseller_id" />
+      </Principal>
+      <Dependent Role="Order_Note">
+        <PropertyRef Name="reseller_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Order_Not__statu__3A81B327">
+    <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+    <End Role="Order_Note" Type="Self.Order_Note" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="status_id" />
+      </Principal>
+      <Dependent Role="Order_Note">
+        <PropertyRef Name="status_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Received___produ__34C8D9D1">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Received_Item" Type="Self.Received_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="product_id" />
+      </Principal>
+      <Dependent Role="Received_Item">
+        <PropertyRef Name="product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Profile__role_id__267ABA7A">
+    <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+    <End Role="Profile" Type="Self.Profile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="role_id" />
+      </Principal>
+      <Dependent Role="Profile">
+        <PropertyRef Name="role_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reseller__resell__2D27B809">
+    <End Role="Profile" Type="Self.Profile" Multiplicity="1" />
+    <End Role="Reseller" Type="Self.Reseller" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Profile">
+        <PropertyRef Name="profile_id" />
+      </Principal>
+      <Dependent Role="Reseller">
+        <PropertyRef Name="reseller_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MobileDistributionManagementEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accounts" EntityType="Self.Account" />
+    <EntitySet Name="Goods_Delivery_Note" EntityType="Self.Goods_Delivery_Note" />
+    <EntitySet Name="Goods_Received_Note" EntityType="Self.Goods_Received_Note" />
+    <EntitySet Name="Order_Item" EntityType="Self.Order_Item" />
+    <EntitySet Name="Order_Note" EntityType="Self.Order_Note" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="Profiles" EntityType="Self.Profile" />
+    <EntitySet Name="Received_Item" EntityType="Self.Received_Item" />
+    <EntitySet Name="Resellers" EntityType="Self.Reseller" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="Status" EntityType="Self.Status" />
+    <AssociationSet Name="FK__Account__account__29572725" Association="Self.FK__Account__account__29572725">
+      <End Role="Profile" EntitySet="Profiles" />
+      <End Role="Account" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Goods_Del__deliv__412EB0B6" Association="Self.FK__Goods_Del__deliv__412EB0B6">
+      <End Role="Order_Note" EntitySet="Order_Note" />
+      <End Role="Goods_Delivery_Note" EntitySet="Goods_Delivery_Note" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Received___recei__33D4B598" Association="Self.FK__Received___recei__33D4B598">
+      <End Role="Goods_Received_Note" EntitySet="Goods_Received_Note" />
+      <End Role="Received_Item" EntitySet="Received_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Order_Ite__order__3D5E1FD2" Association="Self.FK__Order_Ite__order__3D5E1FD2">
+      <End Role="Order_Note" EntitySet="Order_Note" />
+      <End Role="Order_Item" EntitySet="Order_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Order_Ite__produ__3E52440B" Association="Self.FK__Order_Ite__produ__3E52440B">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Order_Item" EntitySet="Order_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Order_Not__resel__398D8EEE" Association="Self.FK__Order_Not__resel__398D8EEE">
+      <End Role="Reseller" EntitySet="Resellers" />
+      <End Role="Order_Note" EntitySet="Order_Note" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Order_Not__statu__3A81B327" Association="Self.FK__Order_Not__statu__3A81B327">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Order_Note" EntitySet="Order_Note" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Received___produ__34C8D9D1" Association="Self.FK__Received___produ__34C8D9D1">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Received_Item" EntitySet="Received_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Profile__role_id__267ABA7A" Association="Self.FK__Profile__role_id__267ABA7A">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="Profile" EntitySet="Profiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reseller__resell__2D27B809" Association="Self.FK__Reseller__resell__2D27B809">
+      <End Role="Profile" EntitySet="Profiles" />
+      <End Role="Reseller" EntitySet="Resellers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

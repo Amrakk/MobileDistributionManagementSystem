@@ -50,7 +50,8 @@ INSERT INTO Profile (first_name, last_name, email, phone, role_id)
 VALUES
 ('Duy', 'Nguyen', 'duynguyen@example.com', '0902529803', 1),
 ('Jane', 'Doe', 'janedoe@example.com', '555-555-5555', 2),
-('Bob', 'Smith', 'bobsmith@example.com', '555-123-4567', 3);
+('Bob', 'Smith', 'bobsmith@example.com', '555-123-4567', 3),
+('Jame', 'King', 'jameking@example.com', '555-123-4567', 3);
 
 -- Insert data into Account table
 INSERT INTO Account (account_id, username, password, created_date)
@@ -59,7 +60,7 @@ VALUES
 (10001, 'accountant', 'm123456', '2022-01-02 11:00:00'),
 (10002, 'reseller', 's123456', '2022-01-03 12:00:00'),
 (10003, 'reseller1', 's123456', '2022-01-03 12:00:00');
-
+GO
 -- Insert data into Reseller table
 INSERT INTO Reseller (reseller_id, reseller_name, address)
 VALUES
@@ -67,15 +68,49 @@ VALUES
 (10003, 'Reseller B', '789 Elm St, Anytown USA');
 
 
+-------------------------------------------------
+
 -- Create Product table
 CREATE TABLE Product (
-    product_id INT PRIMARY KEY,
+    product_id INT IDENTITY(30000, 1) PRIMARY KEY,
     product_name VARCHAR(50),
     model VARCHAR(50),
     product_description VARCHAR(255),
     product_price INT,
     product_quantity INT
 );
+
+INSERT INTO Product (product_name, model, product_description, product_price, product_quantity)
+VALUES
+('iPhone XR', 'XR', '6.1-inch Liquid Retina display', 749, 59),
+('iPhone XS', 'XS', '5.8-inch Super Retina display', 999, 68),
+('iPhone 11', '11', '6.1-inch Liquid Retina display', 699, 41),
+('iPhone 12', '12', '6.1-inch Super Retina XDR display', 799, 57),
+('iPhone SE', 'SE', '4.7-inch Retina HD display', 399, 75),
+('iPhone 13', '13', '6.1-inch Super Retina XDR display', 799, 63),
+('iPhone 11 Pro', '11 Pro', '5.8-inch Super Retina XDR display', 999, 82),
+('iPhone 12 Pro', '12 Pro', '6.1-inch Super Retina XDR display', 999, 49),
+('iPhone 8', '8', '4.7-inch Retina HD display', 449, 52),
+('iPhone 13 Pro', '13 Pro', '6.1-inch Super Retina XDR display', 999, 71);
+
+-- Create Good_Received_Note table
+CREATE TABLE Goods_Received_Note (
+    received_id INT IDENTITY(50000, 1) PRIMARY KEY,
+    received_date DATETIME,
+    received_from VARCHAR(50),
+    total_quantity INT,
+    total_cost INT
+);
+
+-- Create Received_Item table
+CREATE TABLE Received_Item (
+    received_id INT FOREIGN KEY REFERENCES Goods_Received_Note(received_id) PRIMARY KEY,
+    product_id INT FOREIGN KEY REFERENCES Product(product_id),
+    quantity INT,
+    cost_per_unit INT
+);
+
+
 
 -- Create Status table
 CREATE TABLE Status (
@@ -92,56 +127,32 @@ VALUES (1, 'Confirmed'),
        (6, 'Paid'),
        (7, 'Completed');
 
+
+
 -- Create Order table
 CREATE TABLE Order_Note (
-    order_id INT PRIMARY KEY,
-    status_id INT FOREIGN KEY REFERENCES Status(status_id),
-    reseller_id INT FOREIGN KEY REFERENCES Reseller(reseller_id),
+    order_id INT IDENTITY(100000, 1) PRIMARY KEY,
     order_date DATETIME,
+    reseller_id INT FOREIGN KEY REFERENCES Reseller(reseller_id),
+    status_id INT FOREIGN KEY REFERENCES Status(status_id),
     total_price DECIMAL(18,2),
     payment_method VARCHAR(50)
 );
 
 -- Create Order_Item table
 CREATE TABLE Order_Item (
-    order_item_id INT PRIMARY KEY,
-    order_id INT FOREIGN KEY REFERENCES Order_Note(order_id),
+    order_id INT FOREIGN KEY REFERENCES Order_Note(order_id) PRIMARY KEY,
     product_id INT FOREIGN KEY REFERENCES Product(product_id),
     quantity INT
-);
-
--- Create Good_Received_Note table
-CREATE TABLE Goods_Received_Note (
-    received_id INT PRIMARY KEY,
-    received_date DATETIME,
-    received_from VARCHAR(50),
-    total_quantity INT,
-    total_cost INT
-);
-
--- Create Received_Item table
-CREATE TABLE Received_Item (
-    received_item_id INT PRIMARY KEY,
-    received_id INT FOREIGN KEY REFERENCES Goods_Received_Note(received_id),
-    product_id INT FOREIGN KEY REFERENCES Product(product_id),
-    quantity INT,
-    cost_per_unit INT
 );
 
 -- Create Goods_Delivery_Note table
 CREATE TABLE Goods_Delivery_Note (
-    delivery_note_id INT PRIMARY KEY,
+    delivery_id INT FOREIGN KEY REFERENCES Order_Note(order_id) PRIMARY KEY,
     delivery_date DATETIME,
-    order_id INT FOREIGN KEY REFERENCES Order_Note(order_id)
+    delivery_method VARCHAR(50)
 );
 
--- Create Delivery_Item table
-CREATE TABLE Delivery_Item (
-    delivery_item_id INT PRIMARY KEY,
-    delivery_note_id INT FOREIGN KEY REFERENCES Goods_Delivery_Note(delivery_note_id),
-    product_id INT FOREIGN KEY REFERENCES Product(product_id),
-    quantity INT
-);
 
 
 

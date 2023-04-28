@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MobileDistributionManagementModelStoreContainer" CdmEntityContainer="MobileDistributionManagementEntities">
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="MobileDistributionManagementModel.Account">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="account_id" ColumnName="account_id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="isActivated" ColumnName="isActivated" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Goods_Delivery_Note">
+      <EntityTypeMapping TypeName="MobileDistributionManagementModel.Goods_Delivery_Note">
+        <MappingFragment StoreEntitySet="Goods_Delivery_Note">
+          <ScalarProperty Name="delivery_id" ColumnName="delivery_id" />
+          <ScalarProperty Name="delivery_date" ColumnName="delivery_date" />
+          <ScalarProperty Name="delivery_method" ColumnName="delivery_method" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Goods_Received_Note">
+      <EntityTypeMapping TypeName="MobileDistributionManagementModel.Goods_Received_Note">
+        <MappingFragment StoreEntitySet="Goods_Received_Note">
+          <ScalarProperty Name="received_id" ColumnName="received_id" />
+          <ScalarProperty Name="received_date" ColumnName="received_date" />
+          <ScalarProperty Name="received_from" ColumnName="received_from" />
+          <ScalarProperty Name="total_quantity" ColumnName="total_quantity" />
+          <ScalarProperty Name="total_cost" ColumnName="total_cost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order_Item">
+      <EntityTypeMapping TypeName="MobileDistributionManagementModel.Order_Item">
+        <MappingFragment StoreEntitySet="Order_Item">
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order_Note">
+      <EntityTypeMapping TypeName="MobileDistributionManagementModel.Order_Note">
+        <MappingFragment StoreEntitySet="Order_Note">
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="order_date" ColumnName="order_date" />
+          <ScalarProperty Name="reseller_id" ColumnName="reseller_id" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="total_price" ColumnName="total_price" />
+          <ScalarProperty Name="payment_method" ColumnName="payment_method" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="MobileDistributionManagementModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="product_name" ColumnName="product_name" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="product_description" ColumnName="product_description" />
+          <ScalarProperty Name="product_price" ColumnName="product_price" />
+          <ScalarProperty Name="product_quantity" ColumnName="product_quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Profiles">
+      <EntityTypeMapping TypeName="MobileDistributionManagementModel.Profile">
+        <MappingFragment StoreEntitySet="Profile">
+          <ScalarProperty Name="profile_id" ColumnName="profile_id" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Received_Item">
+      <EntityTypeMapping TypeName="MobileDistributionManagementModel.Received_Item">
+        <MappingFragment StoreEntitySet="Received_Item">
+          <ScalarProperty Name="received_id" ColumnName="received_id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="cost_per_unit" ColumnName="cost_per_unit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Resellers">
+      <EntityTypeMapping TypeName="MobileDistributionManagementModel.Reseller">
+        <MappingFragment StoreEntitySet="Reseller">
+          <ScalarProperty Name="reseller_id" ColumnName="reseller_id" />
+          <ScalarProperty Name="reseller_name" ColumnName="reseller_name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="MobileDistributionManagementModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="role_name" ColumnName="role_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="MobileDistributionManagementModel.Status">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="status_name" ColumnName="status_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
