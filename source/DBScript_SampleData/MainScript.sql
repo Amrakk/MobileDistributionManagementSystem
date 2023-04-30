@@ -26,7 +26,7 @@ CREATE TABLE Account (
     account_id INT FOREIGN KEY REFERENCES Profile(profile_id) PRIMARY KEY,
     username VARCHAR(50),
     password VARCHAR(100),
-	isActivated BIT DEFAULT 0,
+	is_activated BIT DEFAULT 0,
     created_date DATETIME
 );
 
@@ -141,13 +141,14 @@ CREATE TABLE Order_Note (
 
 -- Create Order_Item table
 CREATE TABLE Order_Item (
-    order_id INT FOREIGN KEY REFERENCES Order_Note(order_id) PRIMARY KEY,
+    order_id INT FOREIGN KEY REFERENCES Order_Note(order_id),
     product_id INT FOREIGN KEY REFERENCES Product(product_id),
-    quantity INT
+    quantity INT,
+	CONSTRAINT PK_Order_Item PRIMARY KEY (order_id, product_id)
 );
 
 -- Create Goods_Delivery_Note table
-CREATE TABLE Goods_Delivery_Note (
+CREATE TABLE Delivery_Note (
     delivery_id INT FOREIGN KEY REFERENCES Order_Note(order_id) PRIMARY KEY,
     delivery_date DATETIME,
     delivery_method VARCHAR(50)

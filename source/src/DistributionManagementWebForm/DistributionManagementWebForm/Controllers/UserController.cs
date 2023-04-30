@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using DistributionManagementWebForm.Models;
 using System.Web.Security;
+using DistributionManagementWebForm.Models;
 
 namespace DistributionManagementWebForm.Controllers
 {
@@ -33,6 +33,7 @@ namespace DistributionManagementWebForm.Controllers
                         ModelState.AddModelError("", "Resellers only!");
                         return View();
                     }
+                    Session["id"] = user.account_id;
                     FormsAuthentication.SetAuthCookie(reseller.reseller_name, false);
                     return RedirectToAction("Index", "Home");
                 }

@@ -1,48 +1,86 @@
-﻿@{
+﻿@using DistributionManagementWebForm.Models;
+
+@{
     ViewBag.Title = "Home Page";
+    Account account = ViewBag.Account;
+    Reseller reseller = ViewBag.Reseller;
+    Profile profile = ViewBag.Profile;
+    List<Product> products = ViewBag.Products;
+
+    List<SelectListItem> productList = new List<SelectListItem>();
+    foreach (var product in products)
+    {
+        int id = product.product_id;
+        string name = product.product_name;
+        int price = (int)product.product_price;
+        int quantity = (int)product.product_quantity;
+        string display = $"{name} - Quantity: {quantity} - Price: {price}";
+
+        productList.Add(new SelectListItem
+        {
+            Text = display,
+            Value = id.ToString()
+        });
+    }
 }
+
 <style>
     body {
         margin-top: 20px;
         background: #eee;
     }
 
-    .invoice {
+    .main-form {
         padding: 30px;
     }
 
-        .invoice h2 {
+        .main-form h2 {
             margin-top: 0px;
             line-height: 0.8em;
         }
 
-        .invoice .small {
+        .main-form .small {
             font-weight: 300;
         }
 
-        .invoice hr {
+        .main-form hr {
             margin-top: 10px;
             border-color: #ddd;
         }
 
-        .invoice .table tr.line {
+        .main-form .table tr.line {
             border-bottom: 1px solid #ccc;
         }
 
-        .invoice .table td {
+        .main-form .table td {
             border: none;
         }
 
-        .invoice .identity {
+        .main-form .identity {
             margin-top: 10px;
             font-size: 1.1em;
             font-weight: 300;
         }
 
-            .invoice .identity strong {
+            .main-form .identity strong {
                 font-weight: 600;
             }
 
+    td .form-control {
+        display: inline;
+    }
+
+    .form-control.quantity {
+        max-width: 25%;
+    }
+
+    .drop-down {
+        max-width: 75%;
+    }
+
+    .label-custom {
+        display: flex;
+    }
 
     .grid {
         position: relative;
@@ -58,125 +96,462 @@
 <h2>Place Order</h2>
 
 <div class="container">
-    <div class="text-right">
-        <input id="cancelBtn" type="button" value="Cancel" class="btn btn-success" />
-        <input id="createBtn" type="button" value="Create" class="btn btn-success" />
+
+    <div class="text-right" style="margin-bottom: 5px;">
+        <input id="cancel-btn" type="button" value="Cancel" class="btn btn-default" style="margin-right: 2px;" />
+        <input id="create-btn" type="button" value="Create" class="btn btn-success" />
     </div>
+
     <div class="row">
-        <!-- BEGIN INVOICE -->
         <div class="col-xs-12">
-            <div class="grid invoice">
+            <div class="grid main-form">
                 <div class="grid-body">
-                    <div class="invoice-title">
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <img src="http://vergo-kertas.herokuapp.com/assets/img/logo.png" alt="" height="35">
+                    <div id="reseller-info">
+
+                        <div class="reseller-title">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <h3>Reseller Information</h3>
+                                </div>
                             </div>
                         </div>
-                        <br>
+
+                        <hr>
+
                         <div class="row">
-                            <div class="col-xs-12">
-                                <h2>
-                                    invoice<br>
-                                    <span class="small">order #1082</span>
-                                </h2>
+
+                            <div class="col-xs-6">
+                                <div class="label-custom">
+                                    <label style="margin-right: 10px;">First name:</label>
+                                    <p>@profile.first_name</p>
+                                </div>
+                                <div class="label-custom">
+                                    <label style="margin-right: 10px;">Last name:</label>
+                                    <p>@profile.last_name</p>
+                                </div>
+                                <div class="label-custom">
+                                    <label style="margin-right: 10px;">Email:</label>
+                                    <p>@profile.email</p>
+                                </div>
+                                <div class="label-custom">
+                                    <label style="margin-right: 10px;">Phone Number:</label>
+                                    <p>@profile.phone</p>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-6 text-right">
+                                <strong>Reseller Name:</strong>
+                                <p>@reseller.reseller_name</p>
+                                <br />
+                                <address>
+                                    <strong>Shipped To:</strong><br>
+                                    <p>@reseller.address</p>
+                                </address>
                             </div>
                         </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <address>
-                                <strong>Billed To:</strong><br>
-                                Twitter, Inc.<br>
-                                795 Folsom Ave, Suite 600<br>
-                                San Francisco, CA 94107<br>
-                                <abbr title="Phone">P:</abbr> (123) 456-7890
-                            </address>
+
+                        <div class="empty">
+                            <br />
                         </div>
-                        <div class="col-xs-6 text-right">
-                            <address>
-                                <strong>Shipped To:</strong><br>
-                                Elaine Hernandez<br>
-                                P. Sherman 42,<br>
-                                Wallaby Way, Sidney<br>
-                                <abbr title="Phone">P:</abbr> (123) 345-6789
-                            </address>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-6">
-                            <address>
-                                <strong>Payment Method:</strong><br>
-                                Visa ending **** 1234<br>
-                                h.elaine@gmail.com<br>
-                            </address>
-                        </div>
-                        <div class="col-xs-6 text-right">
-                            <address>
+
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <strong>Payment Method:</strong>
+                                <select class="form-control" id="payment-method" style="margin-top: 5px;">
+                                    <option>Credit/debit card</option>
+                                    <option>Digital wallet</option>
+                                    <option>Bank transfer</option>
+                                    <option>Buy now, pay later</option>
+                                </select>
+                                <div class="empty">
+                                    <br />
+                                </div>
+                                <strong>Delivery Method:</strong>
+                                <select class="form-control" id="delivery-method" style="margin-top: 5px;">
+                                    <option>Standard shipping</option>
+                                    <option>Express shipping</option>
+                                    <option>Third-party service</option>
+                                </select>
+
+                            </div>
+
+                            <div class="col-xs-6 text-right">
                                 <strong>Order Date:</strong><br>
-                                17/06/14
-                            </address>
+                                <p id="create-date">@DateTime.Now.ToString("yyyy/MM/dd")</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h3>ORDER SUMMARY</h3>
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr class="line">
-                                        <td><strong>#</strong></td>
-                                        <td class="text-center"><strong>PROJECT</strong></td>
-                                        <td class="text-center"><strong>HRS</strong></td>
-                                        <td class="text-right"><strong>RATE</strong></td>
-                                        <td class="text-right"><strong>SUBTOTAL</strong></td>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td><strong>Template Design</strong><br>A website template is a pre-designed webpage, or set of webpages, that anyone can modify with their own content and images to setup a website.</td>
-                                        <td class="text-center">15</td>
-                                        <td class="text-center">$75</td>
-                                        <td class="text-right">$1,125.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td><strong>Template Development</strong><br>Web development is a broad term for the work involved in developing a web site for the Internet (World Wide Web) or an intranet (a private network).</td>
-                                        <td class="text-center">15</td>
-                                        <td class="text-center">$75</td>
-                                        <td class="text-right">$1,125.00</td>
-                                    </tr>
-                                    <tr class="line">
-                                        <td>3</td>
-                                        <td><strong>Testing</strong><br>Take measures to check the quality, performance, or reliability of (something), especially before putting it into widespread use or practice.</td>
-                                        <td class="text-center">2</td>
-                                        <td class="text-center">$75</td>
-                                        <td class="text-right">$150.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="3"></td>
-                                        <td class="text-right"><strong>Taxes</strong></td>
-                                        <td class="text-right"><strong>N/A</strong></td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="3">
-                                        </td>
-                                        <td class="text-right"><strong>Total</strong></td>
-                                        <td class="text-right"><strong>$2,400.00</strong></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+
+                    <div class="line-break">
+                        <br />
+                        <br />
                     </div>
-                    <div class="row">
-                        <div class="col-md-12 text-right identity">
-                            <p>Designer identity<br><strong>Jeffrey Williams</strong></p>
+
+                    <div id="product-info">
+
+                        <div class="products-title">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <h3>Product Information</h3>
+                                </div>
+                            </div>
                         </div>
+
+                        <hr>
+
+                        <div class="dropdown-list row">
+                            <div class="col-xs-12">
+                                @Html.DropDownList("ProductList", productList, "Select a product", new { @class = "form-control drop-down" })
+                            </div>
+                        </div>
+
+                        <div class="line-break">
+                            <br />
+                            <br />
+                        </div>
+
+                        <div class="product-table row">
+                            <div class="col-md-12">
+                                <table id="productTable" class="table table-striped">
+                                    <thead>
+                                        <tr class="line">
+                                            <td><strong>#</strong></td>
+                                            <td class="text-left"><strong>PRODUCT</strong></td>
+                                            <td class="text-center"><strong>QUANTITY</strong></td>
+                                            <td class="text-right"><strong>PRICE</strong></td>
+                                            <td class="text-right"><strong>TOTAL PRICE</strong></td>
+                                            <td class="text-right invisible"><strong>X</strong></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Selected Products -->
+                                    </tbody>
+
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="4" class="text-right"><strong>TOTAL</strong></td>
+                                            <td class="text-right"><strong id="total-price">$0.00</strong></td>
+                                            <td></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+
                     </div>
+
                 </div>
             </div>
         </div>
-        <!-- END INVOICE -->
     </div>
 </div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="confirmation-modal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmationModalLabel">Confirmation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to create the order?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" id="confirm-create">Create</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="messageModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="messageModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="messageModalBody"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    $(document).ready(function () {
+        var productNames = {};
+        var productPrices = {};
+        var productQuantities = {};
+
+        // Populate product dictionary
+        @foreach (var product in products)
+        {
+            @:productNames[@product.product_id] = '@product.product_name';
+            @:productPrices[@product.product_id] = @product.product_price;
+            @:productQuantities[@product.product_id] = @product.product_quantity;
+        }
+
+        // Event listener for "Product list" change
+        $('#ProductList').change(function () {
+            var selectedProduct = $("#ProductList option:selected");
+            var selectedProductId = selectedProduct.val();
+            var selectedProductName = productNames[selectedProductId];
+            var selectedProductQuantity = productQuantities[selectedProductId];
+            var selectedProductPrice = productPrices[selectedProductId];
+
+            console.log(selectedProductName);
+            if (selectedProductId != "") {
+
+                // create HTML string for new row
+                var newRowHtml = '<tr class="line" data-value="' + selectedProductId +'">' +
+                    '<td></td > ' +
+                    '<td class="text-left name">' + selectedProductName + '</td>' +
+                    '<td class="text-center"><input type="number" min="1" max="' + selectedProductQuantity + '" value="1" class="form-control quantity"></td>' +
+                    '<td class="text-right price">$' + selectedProductPrice + '</td>' +
+                    '<td class="text-right subtotal">' + selectedProductPrice + '</td>' +
+                    '<td class="text-right"><button class="btn btn-default remove-row">x</button></td>' +
+                    '</tr>';
+
+
+                // append new row to table
+                $('#productTable tbody').append(newRowHtml);
+
+                // Remove the selected option
+                $('#ProductList option:selected').remove();
+
+                // Clear the dropdown list
+                selectedProduct.removeAttr("selected");
+                $("#ProductList option:first").attr("selected", "selected");
+
+
+
+                updatePrices();
+                updateRowCount();
+            }
+        });
+
+        // Event listener for "Remove" button click
+        $(document).on("click", ".remove-row", function () {
+
+            // Add the product name back to the dropdown list
+            var id = $(this).closest("tr").data('value');
+            var display = productNames[id] + " - Quantity: " + productQuantities[id] + " - Price: " + productPrices[id];
+            $("<option>").val(id).text(display).appendTo("#ProductList");
+
+            $(this).closest("tr").remove();
+
+            updatePrices();
+            updateRowCount();
+        });
+
+        // Event listener for "Quantity" change
+        $("#productTable").on("change", ".quantity", function () {
+            var quantity = parseInt($(this).val());
+            var max = parseInt($(this).attr("max"));
+            if (quantity < 1) {
+                quantity = 1;
+                $(this).val(1);
+            }
+
+            if (quantity > max) {
+                quantity = max;
+                $(this).val(max);
+            }
+
+            var price = $(this).closest("tr").find(".price").text().substr(1);
+            var subtotalForRow = quantity * price;
+            $(this).closest("tr").find(".subtotal").text("$" + subtotalForRow.toFixed(2));
+
+            updatePrices();
+        });
+
+        // Event listener for "Cancel" button
+        $("#cancel-btn").click(function () {
+            $('#productTable tbody').empty();
+            $('#ProductList').val('').find('option:first').prop('selected', true);
+
+            updatePrices();
+            updateRowCount();
+        });
+
+        // Event listener for "Create" button
+        $("#create-btn").click(function () {
+            if ($("table tbody tr").length < 1)
+                showMessageModal('Empty order', 'Please add some products', 'error');
+            else
+                $("#confirmation-modal").modal("show");
+        });
+
+        // Event listener for "Confirm create" button
+        $("#confirm-create").click(async function () {
+            $("#confirmation-modal").modal("hide");
+
+            const order = {
+                order_date: $("#create-date").text(),
+                reseller_id: @reseller.reseller_id,
+                status_id: 1,
+                total_price: $("#total-price").text().substr(1),
+                payment_method: $('#payment-method').val()
+            };
+
+            var order_id = await addOrder(order);
+            if (!order_id)
+                showMessageModal("Place order", "There is an error while process your request, try again later!", "error");
+            else {
+                const items = [];
+                $("table tbody tr").each(function () {
+                    const id = $(this).data('value');
+                    var quantity = $(this).find(".quantity").val();
+                    items.push({ id, quantity });
+                });
+
+                var addOrderItemsResult = await addOrderItems(order_id, items);
+                if (!addOrderItemsResult)
+                    showMessageModal("Place order", "There is an error while process your request, try again later!", "error");
+                else {
+                    const delivery = {
+                        delivery_id = order_id,
+                        delivery_date = null,
+                        delivery_method = $("#delivery-method").val()
+                    }
+
+                    var addDeliveryNoteResult = await addDeliveryNote(delivery);
+                    if (!addDeliveryNoteResult)
+                        showMessageModal("Place order", "There is an error while process your request, try again later!", "error");
+                    else {
+                        showMessageModal("Place order", "Your order is processed!", "success");
+                    }
+                }
+                
+            }
+            
+
+        });
+
+    });
+
+
+    function updatePrices() {
+        // Recalculate subtotal and total prices
+        var subtotal = 0;
+        $("table tbody tr").each(function () {
+            var quantity = $(this).find(".quantity").val();
+            var price = $(this).find(".price").text().substr(1);
+            var subtotalForRow = quantity * price;
+            $(this).find(".subtotal").text("$" + subtotalForRow.toFixed(2));
+            subtotal += subtotalForRow;
+        });
+
+        $("#total-price").text("$" + subtotal.toFixed(2));
+    }
+
+    function updateRowCount() {
+        // Update the row number for each row
+        $('#productTable tbody tr').each(function (index, row) {
+            $(row).find('td:first').text(index + 1);
+        });
+
+    }
+
+    function addOrder(order) {
+        return fetch('/Order_Note/Create', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(order)
+        })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Failed to add order.');
+                }
+            })
+            .then(data => {
+                return data.order_id;
+            })
+            .catch(error => {
+                console.error('Error adding order:', error);
+                return null;
+            });
+    }
+
+    async function addOrderItems(order_id, items) {
+        for (let i = 0; i < items.length; i++) {
+            const item = items[i];
+            const order_item = {
+                order_id: order_id,
+                product_id: item.id,
+                quantity: item.quantity
+            };
+            const response = await fetch('/Order_Item/Create', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(order_item)
+            });
+            if (!response.ok) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function addDeliveryNote(delivery) {
+        return fetch('/Goods_Delivery_Note/Create', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(delivery)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to add delivery note.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                return data.delivery_id;
+            })
+            .catch(error => {
+                console.error(error);
+                return false;
+            });
+    }
+
+    function showMessageModal(title, message, type) {
+        // Set the title of the modal
+        $('#messageModalLabel').text(title);
+
+        // Set the message of the modal
+        $('#messageModalBody').html(message);
+
+        // Set the type of the modal (e.g. success, warning, error)
+        if (type === 'success') {
+            $('#messageModal .modal-header').addClass('bg-success');
+        } else if (type === 'warning') {
+            $('#messageModal .modal-header').addClass('bg-warning');
+        } else if (type === 'error') {
+            $('#messageModal .modal-header').addClass('bg-danger');
+        }
+
+        // Show the modal
+        $('#messageModal').modal('show');
+    }
+
+
+</script>

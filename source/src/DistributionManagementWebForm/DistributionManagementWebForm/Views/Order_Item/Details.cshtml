@@ -1,0 +1,42 @@
+﻿@model DistributionManagementWebForm.Models.Order_Item
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Order_Item</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Order_Note.payment_method)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order_Note.payment_method)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.product_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.product_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.order_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

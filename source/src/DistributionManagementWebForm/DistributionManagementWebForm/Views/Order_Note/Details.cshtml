@@ -1,0 +1,74 @@
+﻿@model DistributionManagementWebForm.Models.Order_Note
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Order_Note</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.order_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.order_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.total_price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.total_price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.payment_method)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.payment_method)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Goods_Delivery_Note.delivery_method)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Goods_Delivery_Note.delivery_method)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Order_Item.order_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order_Item.order_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reseller.reseller_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reseller.reseller_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status.status_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status.status_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.order_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

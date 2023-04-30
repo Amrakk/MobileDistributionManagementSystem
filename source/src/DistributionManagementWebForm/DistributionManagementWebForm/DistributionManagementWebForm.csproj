@@ -129,7 +129,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountsController.cs" />
+    <Compile Include="Controllers\Goods_Delivery_NoteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Order_ItemController.cs" />
+    <Compile Include="Controllers\Order_NoteController.cs" />
     <Compile Include="Controllers\ProfilesController.cs" />
     <Compile Include="Controllers\ResellersController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -253,6 +256,21 @@
     <Content Include="Views\Resellers\Edit.cshtml" />
     <Content Include="Views\Resellers\Index.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\Goods_Delivery_Note\Create.cshtml" />
+    <Content Include="Views\Goods_Delivery_Note\Delete.cshtml" />
+    <Content Include="Views\Goods_Delivery_Note\Details.cshtml" />
+    <Content Include="Views\Goods_Delivery_Note\Edit.cshtml" />
+    <Content Include="Views\Goods_Delivery_Note\Index.cshtml" />
+    <Content Include="Views\Order_Item\Create.cshtml" />
+    <Content Include="Views\Order_Item\Delete.cshtml" />
+    <Content Include="Views\Order_Item\Details.cshtml" />
+    <Content Include="Views\Order_Item\Edit.cshtml" />
+    <Content Include="Views\Order_Item\Index.cshtml" />
+    <Content Include="Views\Order_Note\Create.cshtml" />
+    <Content Include="Views\Order_Note\Delete.cshtml" />
+    <Content Include="Views\Order_Note\Details.cshtml" />
+    <Content Include="Views\Order_Note\Edit.cshtml" />
+    <Content Include="Views\Order_Note\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

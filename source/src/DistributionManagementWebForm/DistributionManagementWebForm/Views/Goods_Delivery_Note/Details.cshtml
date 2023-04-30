@@ -1,0 +1,42 @@
+﻿@model DistributionManagementWebForm.Models.Goods_Delivery_Note
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Goods_Delivery_Note</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.delivery_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.delivery_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.delivery_method)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.delivery_method)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Order_Note.payment_method)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order_Note.payment_method)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.delivery_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
