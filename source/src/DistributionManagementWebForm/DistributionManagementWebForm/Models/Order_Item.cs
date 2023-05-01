@@ -15,7 +15,7 @@ namespace DistributionManagementWebForm.Models
     public partial class Order_Item
     {
         public int order_id { get; set; }
-        public Nullable<int> product_id { get; set; }
+        public int product_id { get; set; }
         public Nullable<int> quantity { get; set; }
     
         public virtual Order_Note Order_Note { get; set; }

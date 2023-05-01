@@ -17,7 +17,7 @@ namespace DistributionManagementWebForm.Controllers
         // GET: Order_Note
         public ActionResult Index()
         {
-            var order_Note = db.Order_Note.Include(o => o.Goods_Delivery_Note).Include(o => o.Order_Item).Include(o => o.Reseller).Include(o => o.Status);
+            var order_Note = db.Order_Note.Include(o => o.Delivery_Note).Include(o => o.Order_Item).Include(o => o.Reseller).Include(o => o.Status);
             return View(order_Note.ToList());
         }
 
@@ -39,7 +39,7 @@ namespace DistributionManagementWebForm.Controllers
         // GET: Order_Note/Create
         public ActionResult Create()
         {
-            ViewBag.order_id = new SelectList(db.Goods_Delivery_Note, "delivery_id", "delivery_method");
+            ViewBag.order_id = new SelectList(db.Delivery_Note, "delivery_id", "delivery_method");
             ViewBag.order_id = new SelectList(db.Order_Item, "order_id", "order_id");
             ViewBag.reseller_id = new SelectList(db.Resellers, "reseller_id", "reseller_name");
             ViewBag.status_id = new SelectList(db.Status, "status_id", "status_name");
@@ -59,7 +59,7 @@ namespace DistributionManagementWebForm.Controllers
                 return Json(new { order_id = order_Note.order_id });
             }
 
-            ViewBag.order_id = new SelectList(db.Goods_Delivery_Note, "delivery_id", "delivery_method", order_Note.order_id);
+            ViewBag.order_id = new SelectList(db.Delivery_Note, "delivery_id", "delivery_method", order_Note.order_id);
             ViewBag.order_id = new SelectList(db.Order_Item, "order_id", "order_id", order_Note.order_id);
             ViewBag.reseller_id = new SelectList(db.Resellers, "reseller_id", "reseller_name", order_Note.reseller_id);
             ViewBag.status_id = new SelectList(db.Status, "status_id", "status_name", order_Note.status_id);
@@ -78,7 +78,7 @@ namespace DistributionManagementWebForm.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.order_id = new SelectList(db.Goods_Delivery_Note, "delivery_id", "delivery_method", order_Note.order_id);
+            ViewBag.order_id = new SelectList(db.Delivery_Note, "delivery_id", "delivery_method", order_Note.order_id);
             ViewBag.order_id = new SelectList(db.Order_Item, "order_id", "order_id", order_Note.order_id);
             ViewBag.reseller_id = new SelectList(db.Resellers, "reseller_id", "reseller_name", order_Note.reseller_id);
             ViewBag.status_id = new SelectList(db.Status, "status_id", "status_name", order_Note.status_id);
@@ -98,7 +98,7 @@ namespace DistributionManagementWebForm.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.order_id = new SelectList(db.Goods_Delivery_Note, "delivery_id", "delivery_method", order_Note.order_id);
+            ViewBag.order_id = new SelectList(db.Delivery_Note, "delivery_id", "delivery_method", order_Note.order_id);
             ViewBag.order_id = new SelectList(db.Order_Item, "order_id", "order_id", order_Note.order_id);
             ViewBag.reseller_id = new SelectList(db.Resellers, "reseller_id", "reseller_name", order_Note.reseller_id);
             ViewBag.status_id = new SelectList(db.Status, "status_id", "status_name", order_Note.status_id);

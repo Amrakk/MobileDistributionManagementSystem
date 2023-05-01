@@ -253,14 +253,14 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="confirmationModalLabel">Confirmation</h5>
+                <h2 class="modal-title" id="confirmationModalLabel">Confirmation</h2>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
+            <h4 class="modal-body">
                 Are you sure you want to create the order?
-            </div>
+            </h4>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                 <button type="button" class="btn btn-primary" id="confirm-create">Create</button>
@@ -273,12 +273,12 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="messageModalLabel"></h5>
+                <h2 class="modal-title" id="messageModalLabel"></h2>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body" id="messageModalBody"></div>
+            <h4 class="modal-body" id="messageModalBody"></h4>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
@@ -310,7 +310,6 @@
             var selectedProductQuantity = productQuantities[selectedProductId];
             var selectedProductPrice = productPrices[selectedProductId];
 
-            console.log(selectedProductName);
             if (selectedProductId != "") {
 
                 // create HTML string for new row
@@ -412,8 +411,8 @@
                 const items = [];
                 $("table tbody tr").each(function () {
                     const id = $(this).data('value');
-                    var quantity = $(this).find(".quantity").val();
-                    items.push({ id, quantity });
+                    var order_quantity = $(this).find(".quantity").val();
+                    items.push({ id, order_quantity });
                 });
 
                 var addOrderItemsResult = await addOrderItems(order_id, items);
@@ -421,9 +420,9 @@
                     showMessageModal("Place order", "There is an error while process your request, try again later!", "error");
                 else {
                     const delivery = {
-                        delivery_id = order_id,
-                        delivery_date = null,
-                        delivery_method = $("#delivery-method").val()
+                        delivery_id: order_id,
+                        delivery_date: null,
+                        delivery_method: $("#delivery-method").val()
                     }
 
                     var addDeliveryNoteResult = await addDeliveryNote(delivery);
@@ -431,6 +430,9 @@
                         showMessageModal("Place order", "There is an error while process your request, try again later!", "error");
                     else {
                         showMessageModal("Place order", "Your order is processed!", "success");
+                        $('#messageModal').on('hidden.bs.modal', function () {
+                            location.reload();
+                        });
                     }
                 }
                 
@@ -494,8 +496,9 @@
             const order_item = {
                 order_id: order_id,
                 product_id: item.id,
-                quantity: item.quantity
+                quantity: item.order_quantity
             };
+            
             const response = await fetch('/Order_Item/Create', {
                 method: 'POST',
                 headers: {
@@ -503,15 +506,17 @@
                 },
                 body: JSON.stringify(order_item)
             });
-            if (!response.ok) {
-                return false;
-            }
+
+            if (!response.ok) return false;
+            
+            var editResult = await editQuantity(item.id, item.order_quantity);
+            if (!editResult) return false;
         }
         return true;
     }
 
     function addDeliveryNote(delivery) {
-        return fetch('/Goods_Delivery_Note/Create', {
+        return fetch('/Delivery_Note/Create', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -522,16 +527,50 @@
                 if (!response.ok) {
                     throw new Error('Failed to add delivery note.');
                 }
-                return response.json();
-            })
-            .then(data => {
-                return data.delivery_id;
+                return true;
             })
             .catch(error => {
                 console.error(error);
                 return false;
             });
     }
+
+    function editQuantity(id, order_quantity) {
+        return fetch(`/Products/Details/${id}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(product => {
+                const newQuantity = parseInt(product.product_quantity) - parseInt(order_quantity);
+                return fetch(`/Products/Edit/${id}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        product_id: product.product_id,
+                        product_name: product.product_name,
+                        model: product.model,
+                        product_description: product.product_description,
+                        product_price: product.product_price,
+                        product_quantity: newQuantity
+                    })
+                });
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return true;
+            })
+            .catch(error => {
+                return false;
+            });
+    }
+
 
     function showMessageModal(title, message, type) {
         // Set the title of the modal
@@ -542,12 +581,18 @@
 
         // Set the type of the modal (e.g. success, warning, error)
         if (type === 'success') {
-            $('#messageModal .modal-header').addClass('bg-success');
+            $('#messageModal .modal-header')
+                .removeClass('bg-warning bg-danger')
+                .addClass('bg-success');
         } else if (type === 'warning') {
-            $('#messageModal .modal-header').addClass('bg-warning');
+            $('#messageModal .modal-header')
+                .removeClass('bg-success bg-danger')
+                .addClass('bg-warning');
         } else if (type === 'error') {
-            $('#messageModal .modal-header').addClass('bg-danger');
-        }
+            $('#messageModal .modal-header')
+                .removeClass('bg-success bg-warning')
+                .addClass('bg-danger');
+        } 
 
         // Show the modal
         $('#messageModal').modal('show');

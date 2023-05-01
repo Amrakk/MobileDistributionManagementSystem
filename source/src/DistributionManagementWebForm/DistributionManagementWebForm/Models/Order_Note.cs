@@ -14,6 +14,12 @@ namespace DistributionManagementWebForm.Models
     
     public partial class Order_Note
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Order_Note()
+        {
+            this.Order_Item = new HashSet<Order_Item>();
+        }
+    
         public int order_id { get; set; }
         public Nullable<System.DateTime> order_date { get; set; }
         public Nullable<int> reseller_id { get; set; }
@@ -21,8 +27,9 @@ namespace DistributionManagementWebForm.Models
         public Nullable<decimal> total_price { get; set; }
         public string payment_method { get; set; }
     
-        public virtual Goods_Delivery_Note Goods_Delivery_Note { get; set; }
-        public virtual Order_Item Order_Item { get; set; }
+        public virtual Delivery_Note Delivery_Note { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order_Item> Order_Item { get; set; }
         public virtual Reseller Reseller { get; set; }
         public virtual Status Status { get; set; }
     }

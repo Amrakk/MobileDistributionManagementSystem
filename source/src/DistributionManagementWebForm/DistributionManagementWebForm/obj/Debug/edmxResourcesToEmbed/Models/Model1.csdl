@@ -11,14 +11,14 @@
     <Property Name="created_date" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Profile" Relationship="Self.FK__Account__account__286302EC" FromRole="Account" ToRole="Profile" />
   </EntityType>
-  <EntityType Name="Goods_Delivery_Note">
+  <EntityType Name="Delivery_Note">
     <Key>
       <PropertyRef Name="delivery_id" />
     </Key>
     <Property Name="delivery_id" Type="Int32" Nullable="false" />
     <Property Name="delivery_date" Type="DateTime" Precision="3" />
     <Property Name="delivery_method" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Order_Note" Relationship="Self.FK__Goods_Del__deliv__403A8C7D" FromRole="Goods_Delivery_Note" ToRole="Order_Note" />
+    <NavigationProperty Name="Order_Note" Relationship="Self.FK__Delivery___deliv__403A8C7D" FromRole="Delivery_Note" ToRole="Order_Note" />
   </EntityType>
   <EntityType Name="Goods_Received_Note">
     <Key>
@@ -34,9 +34,10 @@
   <EntityType Name="Order_Item">
     <Key>
       <PropertyRef Name="order_id" />
+      <PropertyRef Name="product_id" />
     </Key>
     <Property Name="order_id" Type="Int32" Nullable="false" />
-    <Property Name="product_id" Type="Int32" />
+    <Property Name="product_id" Type="Int32" Nullable="false" />
     <Property Name="quantity" Type="Int32" />
     <NavigationProperty Name="Order_Note" Relationship="Self.FK__Order_Ite__order__3C69FB99" FromRole="Order_Item" ToRole="Order_Note" />
     <NavigationProperty Name="Product" Relationship="Self.FK__Order_Ite__produ__3D5E1FD2" FromRole="Order_Item" ToRole="Product" />
@@ -51,7 +52,7 @@
     <Property Name="status_id" Type="Int32" />
     <Property Name="total_price" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="payment_method" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Goods_Delivery_Note" Relationship="Self.FK__Goods_Del__deliv__403A8C7D" FromRole="Order_Note" ToRole="Goods_Delivery_Note" />
+    <NavigationProperty Name="Delivery_Note" Relationship="Self.FK__Delivery___deliv__403A8C7D" FromRole="Order_Note" ToRole="Delivery_Note" />
     <NavigationProperty Name="Order_Item" Relationship="Self.FK__Order_Ite__order__3C69FB99" FromRole="Order_Note" ToRole="Order_Item" />
     <NavigationProperty Name="Reseller" Relationship="Self.FK__Order_Not__resel__38996AB5" FromRole="Order_Note" ToRole="Reseller" />
     <NavigationProperty Name="Status" Relationship="Self.FK__Order_Not__statu__398D8EEE" FromRole="Order_Note" ToRole="Status" />
@@ -132,14 +133,14 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Goods_Del__deliv__403A8C7D">
+  <Association Name="FK__Delivery___deliv__403A8C7D">
     <End Role="Order_Note" Type="Self.Order_Note" Multiplicity="1" />
-    <End Role="Goods_Delivery_Note" Type="Self.Goods_Delivery_Note" Multiplicity="0..1" />
+    <End Role="Delivery_Note" Type="Self.Delivery_Note" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="Order_Note">
         <PropertyRef Name="order_id" />
       </Principal>
-      <Dependent Role="Goods_Delivery_Note">
+      <Dependent Role="Delivery_Note">
         <PropertyRef Name="delivery_id" />
       </Dependent>
     </ReferentialConstraint>
@@ -158,7 +159,7 @@
   </Association>
   <Association Name="FK__Order_Ite__order__3C69FB99">
     <End Role="Order_Note" Type="Self.Order_Note" Multiplicity="1" />
-    <End Role="Order_Item" Type="Self.Order_Item" Multiplicity="0..1" />
+    <End Role="Order_Item" Type="Self.Order_Item" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Order_Note">
         <PropertyRef Name="order_id" />
@@ -169,7 +170,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK__Order_Ite__produ__3D5E1FD2">
-    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
     <End Role="Order_Item" Type="Self.Order_Item" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Product">
@@ -242,7 +243,7 @@
   </Association>
   <EntityContainer Name="MobileDistributionManagementEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Accounts" EntityType="Self.Account" />
-    <EntitySet Name="Goods_Delivery_Note" EntityType="Self.Goods_Delivery_Note" />
+    <EntitySet Name="Delivery_Note" EntityType="Self.Delivery_Note" />
     <EntitySet Name="Goods_Received_Note" EntityType="Self.Goods_Received_Note" />
     <EntitySet Name="Order_Item" EntityType="Self.Order_Item" />
     <EntitySet Name="Order_Note" EntityType="Self.Order_Note" />
@@ -256,9 +257,9 @@
       <End Role="Profile" EntitySet="Profiles" />
       <End Role="Account" EntitySet="Accounts" />
     </AssociationSet>
-    <AssociationSet Name="FK__Goods_Del__deliv__403A8C7D" Association="Self.FK__Goods_Del__deliv__403A8C7D">
+    <AssociationSet Name="FK__Delivery___deliv__403A8C7D" Association="Self.FK__Delivery___deliv__403A8C7D">
       <End Role="Order_Note" EntitySet="Order_Note" />
-      <End Role="Goods_Delivery_Note" EntitySet="Goods_Delivery_Note" />
+      <End Role="Delivery_Note" EntitySet="Delivery_Note" />
     </AssociationSet>
     <AssociationSet Name="FK__Received___recei__32E0915F" Association="Self.FK__Received___recei__32E0915F">
       <End Role="Goods_Received_Note" EntitySet="Goods_Received_Note" />

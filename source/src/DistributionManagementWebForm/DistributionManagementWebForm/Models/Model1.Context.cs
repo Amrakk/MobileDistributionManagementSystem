@@ -26,7 +26,7 @@ namespace DistributionManagementWebForm.Models
         }
     
         public virtual DbSet<Account> Accounts { get; set; }
-        public virtual DbSet<Goods_Delivery_Note> Goods_Delivery_Note { get; set; }
+        public virtual DbSet<Delivery_Note> Delivery_Note { get; set; }
         public virtual DbSet<Goods_Received_Note> Goods_Received_Note { get; set; }
         public virtual DbSet<Order_Item> Order_Item { get; set; }
         public virtual DbSet<Order_Note> Order_Note { get; set; }

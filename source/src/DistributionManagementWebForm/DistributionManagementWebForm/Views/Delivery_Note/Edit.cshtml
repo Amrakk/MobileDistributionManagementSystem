@@ -1,4 +1,4 @@
-﻿@model DistributionManagementWebForm.Models.Goods_Delivery_Note
+﻿@model DistributionManagementWebForm.Models.Delivery_Note
 
 @{
     ViewBag.Title = "Edit";
@@ -11,7 +11,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Goods_Delivery_Note</h4>
+        <h4>Delivery_Note</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.delivery_id)

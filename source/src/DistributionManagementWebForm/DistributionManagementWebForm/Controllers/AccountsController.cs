@@ -47,8 +47,8 @@ namespace DistributionManagementWebForm.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "account_id,username,password,isActivated,created_date")] Account account)
+        
+        public ActionResult Create([Bind(Include = "account_id,username,password,is_activated,created_date")] Account account)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace DistributionManagementWebForm.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "account_id,username,password,isActivated,created_date")] Account account)
+        public ActionResult Edit([Bind(Include = "account_id,username,password,is_activated,created_date")] Account account)
         {
             if (ModelState.IsValid)
             {

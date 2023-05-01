@@ -7,115 +7,121 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DistributionManagementWebForm.Models;
+using Newtonsoft.Json;
 
 namespace DistributionManagementWebForm.Controllers
 {
-    public class ResellersController : Controller
+    public class ProductsController : Controller
     {
         private MobileDistributionManagementEntities db = new MobileDistributionManagementEntities();
 
-        // GET: Resellers
+        // GET: Products
         public ActionResult Index()
         {
-            var resellers = db.Resellers.Include(r => r.Profile);
-            return View(resellers.ToList());
+            return View(db.Products.ToList());
         }
 
-        // GET: Resellers/Details/5
+        // GET: Products/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Reseller reseller = db.Resellers.Find(id);
-            if (reseller == null)
+
+            Product product = db.Products.Find(id);
+            if (product == null)
             {
                 return HttpNotFound();
             }
-            return View(reseller);
+
+            var serializerSettings = new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            };
+
+            var json = JsonConvert.SerializeObject(product, serializerSettings);
+            return Content(json, "application/json");
+
         }
 
-        // GET: Resellers/Create
+
+
+        // GET: Products/Create
         public ActionResult Create()
         {
-            ViewBag.reseller_id = new SelectList(db.Profiles, "profile_id", "first_name");
             return View();
         }
 
-        // POST: Resellers/Create
+        // POST: Products/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "reseller_id,reseller_name,address")] Reseller reseller)
+        public ActionResult Create([Bind(Include = "product_id,product_name,model,product_description,product_price,product_quantity")] Product product)
         {
             if (ModelState.IsValid)
             {
-                db.Resellers.Add(reseller);
+                db.Products.Add(product);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.reseller_id = new SelectList(db.Profiles, "profile_id", "first_name", reseller.reseller_id);
-            return View(reseller);
+            return View(product);
         }
 
-        // GET: Resellers/Edit/5
+        // GET: Products/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Reseller reseller = db.Resellers.Find(id);
-            if (reseller == null)
+            Product product = db.Products.Find(id);
+            if (product == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.reseller_id = new SelectList(db.Profiles, "profile_id", "first_name", reseller.reseller_id);
-            return View(reseller);
+            return View(product);
         }
 
-        // POST: Resellers/Edit/5
+        // POST: Products/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "reseller_id,reseller_name,address")] Reseller reseller)
+        public ActionResult Edit([Bind(Include = "product_id,product_name,model,product_description,product_price,product_quantity")] Product product)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(reseller).State = EntityState.Modified;
+                db.Entry(product).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.reseller_id = new SelectList(db.Profiles, "profile_id", "first_name", reseller.reseller_id);
-            return View(reseller);
+            return View(product);
         }
 
-        // GET: Resellers/Delete/5
+        // GET: Products/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Reseller reseller = db.Resellers.Find(id);
-            if (reseller == null)
+            Product product = db.Products.Find(id);
+            if (product == null)
             {
                 return HttpNotFound();
             }
-            return View(reseller);
+            return View(product);
         }
 
-        // POST: Resellers/Delete/5
+        // POST: Products/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Reseller reseller = db.Resellers.Find(id);
-            db.Resellers.Remove(reseller);
+            Product product = db.Products.Find(id);
+            db.Products.Remove(product);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -12,9 +12,9 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Goods_Delivery_Note">
-      <EntityTypeMapping TypeName="MobileDistributionManagementModel.Goods_Delivery_Note">
-        <MappingFragment StoreEntitySet="Goods_Delivery_Note">
+    <EntitySetMapping Name="Delivery_Note">
+      <EntityTypeMapping TypeName="MobileDistributionManagementModel.Delivery_Note">
+        <MappingFragment StoreEntitySet="Delivery_Note">
           <ScalarProperty Name="delivery_id" ColumnName="delivery_id" />
           <ScalarProperty Name="delivery_date" ColumnName="delivery_date" />
           <ScalarProperty Name="delivery_method" ColumnName="delivery_method" />

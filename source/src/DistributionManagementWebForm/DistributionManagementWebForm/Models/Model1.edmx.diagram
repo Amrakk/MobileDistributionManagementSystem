@@ -4,9 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a0bbdc0f097e40539d867b5fe7d3f808" Name="Diagram1">
+      <Diagram DiagramId="344a49f6aa9141689b0447aa7278faf1" Name="Diagram1">
         <EntityTypeShape EntityType="MobileDistributionManagementModel.Account" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="MobileDistributionManagementModel.Goods_Delivery_Note" Width="1.5" PointX="9.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="MobileDistributionManagementModel.Delivery_Note" Width="1.5" PointX="9.75" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="MobileDistributionManagementModel.Goods_Received_Note" Width="1.5" PointX="7.5" PointY="10.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MobileDistributionManagementModel.Order_Item" Width="1.5" PointX="9.75" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="MobileDistributionManagementModel.Order_Note" Width="1.5" PointX="7.5" PointY="6.375" IsExpanded="true" />
@@ -17,7 +17,7 @@
         <EntityTypeShape EntityType="MobileDistributionManagementModel.Role" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
         <EntityTypeShape EntityType="MobileDistributionManagementModel.Status" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
         <AssociationConnector Association="MobileDistributionManagementModel.FK__Account__account__286302EC" ManuallyRouted="false" />
-        <AssociationConnector Association="MobileDistributionManagementModel.FK__Goods_Del__deliv__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="MobileDistributionManagementModel.FK__Delivery___deliv__403A8C7D" ManuallyRouted="false" />
         <AssociationConnector Association="MobileDistributionManagementModel.FK__Received___recei__32E0915F" ManuallyRouted="false" />
         <AssociationConnector Association="MobileDistributionManagementModel.FK__Order_Ite__order__3C69FB99" ManuallyRouted="false" />
         <AssociationConnector Association="MobileDistributionManagementModel.FK__Order_Ite__produ__3D5E1FD2" ManuallyRouted="false" />

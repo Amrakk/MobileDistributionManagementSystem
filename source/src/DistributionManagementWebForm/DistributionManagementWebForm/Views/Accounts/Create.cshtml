@@ -39,11 +39,11 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.isActivated, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.is_activated, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
-                    @Html.EditorFor(model => model.isActivated)
-                    @Html.ValidationMessageFor(model => model.isActivated, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.is_activated)
+                    @Html.ValidationMessageFor(model => model.is_activated, "", new { @class = "text-danger" })
                 </div>
             </div>
         </div>

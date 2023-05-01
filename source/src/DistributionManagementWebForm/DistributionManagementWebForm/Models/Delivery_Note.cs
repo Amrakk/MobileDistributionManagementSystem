@@ -12,7 +12,7 @@ namespace DistributionManagementWebForm.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Goods_Delivery_Note
+    public partial class Delivery_Note
     {
         public int delivery_id { get; set; }
         public Nullable<System.DateTime> delivery_date { get; set; }
