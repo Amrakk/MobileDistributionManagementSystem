@@ -1,0 +1,69 @@
+﻿@model IEnumerable<DistributionManagementWebForm.Models.Order_Note>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.order_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.total_price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.payment_method)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Goods_Delivery_Note.delivery_method)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order_Item.order_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Reseller.reseller_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status.status_name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.order_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.total_price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.payment_method)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Goods_Delivery_Note.delivery_method)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Order_Item.order_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reseller.reseller_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status.status_name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.order_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.order_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.order_id })
+        </td>
+    </tr>
+}
+
+</table>

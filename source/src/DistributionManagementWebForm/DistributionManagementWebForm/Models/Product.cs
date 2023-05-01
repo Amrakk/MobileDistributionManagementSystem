@@ -9,6 +9,7 @@
 
 namespace DistributionManagementWebForm.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     
@@ -25,9 +26,11 @@ namespace DistributionManagementWebForm.Models
         public string product_name { get; set; }
         public string model { get; set; }
         public string product_description { get; set; }
-        public Nullable<int> product_price { get; set; }
-        public Nullable<int> product_quantity { get; set; }
-    
+        public int product_price { get; set; }
+        public int product_quantity { get; set; }
+
+        [JsonIgnore]
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order_Item> Order_Item { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
