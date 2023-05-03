@@ -10,3 +10,9 @@ C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src
 C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DTO\obj\Debug\DTO.dll
 C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DTO\obj\Debug\DTO.pdb
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DTO\bin\Debug\DTO.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DTO\bin\Debug\DTO.pdb
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DTO\obj\Debug\DTO.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DTO\obj\Debug\DTO.pdb

@@ -36,3 +36,22 @@ C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src
 C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\obj\Debug\DAL.dll
 C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\obj\Debug\DAL.pdb
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\bin\Debug\DAL.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\bin\Debug\DAL.pdb
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\bin\Debug\DTO.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\bin\Debug\System.Configuration.ConfigurationManager.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\bin\Debug\System.Data.SqlClient.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\bin\Debug\System.Security.AccessControl.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\bin\Debug\System.Security.Permissions.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\bin\Debug\System.Security.Principal.Windows.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\bin\Debug\DTO.pdb
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\bin\Debug\System.Configuration.ConfigurationManager.xml
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\bin\Debug\System.Data.SqlClient.xml
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\bin\Debug\System.Security.AccessControl.xml
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\bin\Debug\System.Security.Permissions.xml
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\bin\Debug\System.Security.Principal.Windows.xml
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\obj\Debug\DAL.csproj.CopyComplete
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\obj\Debug\DAL.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\obj\Debug\DAL.pdb

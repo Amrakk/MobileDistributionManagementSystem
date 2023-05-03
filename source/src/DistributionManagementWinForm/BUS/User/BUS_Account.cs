@@ -12,9 +12,9 @@ namespace BUS.User
     {
         private DAL_Account DAccount;
 
-        public BUS_Account(int account_id, string username, string password, int isActivated, DateTime created_date)
+        public BUS_Account(int account_id, string username, string password, int is_activated, DateTime created_date)
         {
-            DAccount = new DAL_Account(account_id, username, password, isActivated, created_date);
+            DAccount = new DAL_Account(account_id, username, password, is_activated, created_date);
         }
 
         public void addQuery()

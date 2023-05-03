@@ -80,7 +80,22 @@ namespace DistributionManagementWinForm.home
 
         private void signOutBtn_Click(object sender, EventArgs e)
         {
+            Form login = null;
+            List<Form> openForms = Application.OpenForms.Cast<Form>().ToList();
 
+            foreach (Form openForm in openForms)
+            {
+                if (openForm.Name == "LoginForm")
+                    login = openForm;
+                else if (openForm.Name == "Home")
+                    continue;
+                else
+                    openForm.Close();
+            }
+            login.Show();
+            login.Enabled = true;
+
+            this.Hide();
         }
 
         #endregion

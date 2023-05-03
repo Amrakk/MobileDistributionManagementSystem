@@ -104,10 +104,11 @@ CREATE TABLE Goods_Received_Note (
 
 -- Create Received_Item table
 CREATE TABLE Received_Item (
-    received_id INT FOREIGN KEY REFERENCES Goods_Received_Note(received_id) PRIMARY KEY,
+    received_id INT FOREIGN KEY REFERENCES Goods_Received_Note(received_id),
     product_id INT FOREIGN KEY REFERENCES Product(product_id),
     quantity INT,
-    cost_per_unit INT
+    cost_per_unit INT,
+	CONSTRAINT PK_Received_Item PRIMARY KEY (received_id, product_id)
 );
 
 
@@ -125,7 +126,7 @@ VALUES (1, 'Confirmed'),
        (4, 'Delivered'),
        (5, 'Unpaid'),
        (6, 'Paid'),
-       (7, 'Completed');
+       (7, 'Completed') ;
 
 
 
