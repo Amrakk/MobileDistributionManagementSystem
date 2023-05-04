@@ -44,10 +44,15 @@
     <Compile Include="Inventory\BUS_GoodsReceivedNote.cs" />
     <Compile Include="Inventory\BUS_Product.cs" />
     <Compile Include="Inventory\BUS_ReceivedItem.cs" />
+    <Compile Include="Order\BUS_DeliveryNote.cs" />
+    <Compile Include="Order\BUS_OrderItem.cs" />
+    <Compile Include="Order\BUS_OrderNote.cs" />
+    <Compile Include="Order\BUS_Status.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User\BUS_Account.cs" />
     <Compile Include="User\BUS_Profile.cs" />
     <Compile Include="User\BUS_Reseller.cs" />
+    <Compile Include="User\BUS_Role.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">

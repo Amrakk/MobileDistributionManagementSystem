@@ -1,4 +1,4 @@
-drop database MobileDistributionManagement
+
 
 create database MobileDistributionManagement
 go

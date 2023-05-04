@@ -19,11 +19,11 @@ namespace DAL.Inventory
         public void addQuery()
         {
             string sql = $"INSERT INTO Product (product_name, model, product_description, product_price, product_quantity) VALUES " +
-                                             $"('{ product.Name }', " +
-                                             $"'{ product.Model }', " +
-                                             $"'{ product.Description }', " +
-                                             $"{ product.Price }, " +
-                                             $"{ product.Quantity })";
+                                             $"('{product.Name}', " +
+                                             $"'{product.Model}', " +
+                                             $"'{product.Description}', " +
+                                             $"{product.Price}, " +
+                                             $"{product.Quantity})";
             Connection.actionQuery(sql);
         }
 

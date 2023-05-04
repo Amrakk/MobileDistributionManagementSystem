@@ -44,10 +44,16 @@
     <Compile Include="Inventory\GoodsReceivedNote.cs" />
     <Compile Include="Inventory\Product.cs" />
     <Compile Include="Inventory\ReceivedItem.cs" />
+    <Compile Include="Order\DeliveryNote.cs" />
+    <Compile Include="Order\OrderItem.cs" />
+    <Compile Include="Order\OrderNote.cs" />
+    <Compile Include="Order\Status.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User\Account.cs" />
     <Compile Include="User\Profile.cs" />
     <Compile Include="User\Reseller.cs" />
+    <Compile Include="User\Role.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

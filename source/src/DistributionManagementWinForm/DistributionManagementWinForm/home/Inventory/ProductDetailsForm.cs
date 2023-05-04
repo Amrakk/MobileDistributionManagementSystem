@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DistributionManagementWinForm.auth
+namespace DistributionManagementWinForm.home.Inventory
 {
-    public partial class ForgotPassword : Form
+    public partial class ProductDetailsForm : Form
     {
-        public ForgotPassword()
+        public ProductDetailsForm()
         {
             InitializeComponent();
         }

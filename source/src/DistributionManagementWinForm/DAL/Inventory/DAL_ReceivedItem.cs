@@ -19,19 +19,27 @@ namespace DAL.Inventory
 
         public void addQuery()
         {
-            string sql = $"INSERT INTO Received_Item (received_id, product_id, quantity, cost_per_unit) VALUES ({receivedItem.ReceivedId}, {receivedItem.ProductId}, {receivedItem.Quantity}, {receivedItem.CostPerUnit})";
+            string sql = $"INSERT INTO Received_Item (received_id, product_id, quantity, cost_per_unit) VALUES " +
+                                                   $"({receivedItem.ReceivedId}, " +
+                                                   $"{receivedItem.ProductId}, " +
+                                                   $"{receivedItem.Quantity}, " +
+                                                   $"{receivedItem.CostPerUnit})";
             Connection.actionQuery(sql);
         }
 
         public void updateQuery()
         {
-            string sql = $"UPDATE Received_Item SET quantity = {receivedItem.Quantity}, cost_per_unit = {receivedItem.CostPerUnit} WHERE received_id = {receivedItem.ReceivedId} AND product_id = {receivedItem.ProductId}";
+            string sql = $"UPDATE Received_Item SET quantity = {receivedItem.Quantity}, " +
+                                                  $"cost_per_unit = {receivedItem.CostPerUnit} " +
+                                                  $"WHERE received_id = {receivedItem.ReceivedId} " +
+                                                  $"AND product_id = {receivedItem.ProductId}";
             Connection.actionQuery(sql);
         }
 
         public void deleteQuery()
         {
-            string sql = $"DELETE FROM Received_Item WHERE received_id = {receivedItem.ReceivedId} AND product_id = {receivedItem.ProductId}";
+            string sql = $"DELETE FROM Received_Item WHERE received_id = {receivedItem.ReceivedId} AND " +
+                                                         $"product_id = {receivedItem.ProductId}";
             Connection.actionQuery(sql);
         }
 

@@ -21,16 +21,18 @@ namespace DistributionManagementWinForm.home.Admin
 
         private void AdminForm_Load(object sender, EventArgs e)
         {
-            BUS_Account BAccount = new BUS_Account(0, "", "", 0, DateTime.Now);
             BUS_Profile BProfile = new BUS_Profile(0, "", "", "", "", 0);
-            BUS_Product BProduct = new BUS_Product(0, "", "", "", 0, 0);
 
-            accountGridView.DataSource = BProfile.selectQuery("SELECT * FROM Profile");
+            accountGridView.DataSource = BProfile.SelectProfiles();
             accountGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-            productGridView.DataSource = BProduct.selectProducts("SELECT * FROM Product");
-            productGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            
         }
 
+        private void btn_CreateAccount_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(accountGridView.CurrentRow.Cells[0].Value.ToString());
+            AccountDetailsForm accDetail = new AccountDetailsForm(id);
+            accDetail.Show();
+        }
     }
 }

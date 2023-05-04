@@ -10,32 +10,50 @@ namespace BUS.User
 {
     public class BUS_Profile
     {
-        private DAL_Profile DProfile;
+        private readonly DAL_Profile DProfile;
 
         public BUS_Profile(int profile_id, string firstname, string lastname, string email, string phone_number, int role_id)
         {
             DProfile = new DAL_Profile(profile_id, firstname, lastname, email, phone_number, role_id);
         }
 
-        public void addQuery()
+        public void AddProfile()
         {
             DProfile.addQuery();
         }
 
-        public void updateQuere()
+        public void UpdateProfile()
         {
             DProfile.updateQuery();
         }
 
-        public void deleteQuery()
+        public void DeleteProfile()
         {
             DProfile.deleteQuery();
         }
 
-        public DataTable selectQuery(string query)
+        public DataTable SelectProfiles()
         {
+            string query = "SELECT * FROM Profile";
             return DProfile.selectQuery(query);
         }
 
+        public DataTable SelectProfileById(int id)
+        {
+            string query = $"SELECT * FROM Profile WHERE profile_id = {id}";
+            return DProfile.selectQuery(query);
+        }
+
+        public DataTable SelectProfileByEmail(string email)
+        {
+            string query = $"SELECT * FROM Profile WHERE email LIKE '%{email}%'";
+            return DProfile.selectQuery(query);
+        }
+
+        public DataTable SelectProfileByPhone(string phone)
+        {
+            string query = $"SELECT * FROM Profile WHERE phone LIKE ' %{phone}%'";
+            return DProfile.selectQuery(query);
+        }
     }
 }

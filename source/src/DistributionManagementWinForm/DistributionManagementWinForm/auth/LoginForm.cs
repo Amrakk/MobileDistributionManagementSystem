@@ -78,7 +78,7 @@ namespace DistributionManagementWinForm.auth
 
 
             BUS_Account BAccount = new BUS_Account(0, "", "", 0, DateTime.Now);
-            DataTable data = BAccount.selectQuery($"select * from Account where username = '{user}'");
+            DataTable data = BAccount.SelectAccountByUsername(user);
          
             if (data.Rows.Count == 1)
             {

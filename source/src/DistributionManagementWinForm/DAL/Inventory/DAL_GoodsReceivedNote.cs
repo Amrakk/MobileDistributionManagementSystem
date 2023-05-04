@@ -10,7 +10,7 @@ namespace DAL.Inventory
 {
     public class DAL_GoodsReceivedNote
     {
-        private GoodsReceivedNote GRN;
+        private readonly GoodsReceivedNote GRN;
 
         public DAL_GoodsReceivedNote(int receivedId, DateTime receivedDate, string receivedFrom, int totalQuantity, int totalCost)
         {
@@ -19,13 +19,21 @@ namespace DAL.Inventory
 
         public void addQuery()
         {
-            string sql = $"INSERT INTO Goods_Received_Note (received_date, received_from, total_quantity, total_cost) VALUES ('{GRN.ReceivedDate}', '{GRN.ReceivedFrom}', {GRN.TotalQuantity}, {GRN.TotalCost})";
+            string sql = $"INSERT INTO Goods_Received_Note (received_date, received_from, total_quantity, total_cost) VALUES " +
+                                                         $"('{GRN.ReceivedDate}', " +
+                                                         $"'{GRN.ReceivedFrom}', " +
+                                                         $"{GRN.TotalQuantity}, " +
+                                                         $"{GRN.TotalCost})";
             Connection.actionQuery(sql);
         }
 
         public void updateQuery()
         {
-            string sql = $"UPDATE Goods_Received_Note SET received_date = '{GRN.ReceivedDate}', received_from = '{GRN.ReceivedFrom}', total_quantity = {GRN.TotalQuantity}, total_cost = {GRN.TotalCost} WHERE received_id = {GRN.ReceivedId}";
+            string sql = $"UPDATE Goods_Received_Note SET received_date = '{GRN.ReceivedDate}', " +
+                                                        $"received_from = '{GRN.ReceivedFrom}', " +
+                                                        $"total_quantity = {GRN.TotalQuantity}, " +
+                                                        $"total_cost = {GRN.TotalCost} " +
+                                                        $"WHERE received_id = {GRN.ReceivedId}";
             Connection.actionQuery(sql);
         }
 

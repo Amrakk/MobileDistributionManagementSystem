@@ -58,12 +58,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="auth\AuthShared.cs" />
-    <Compile Include="auth\ForgotPassword.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="auth\ForgotPassword.Designer.cs">
-      <DependentUpon>ForgotPassword.cs</DependentUpon>
-    </Compile>
     <Compile Include="auth\SignupForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +70,12 @@
     <Compile Include="auth\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="home\Admin\AccountDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="home\Admin\AccountDetailsForm.Designer.cs">
+      <DependentUpon>AccountDetailsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="home\Admin\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +87,18 @@
     </Compile>
     <Compile Include="home\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="home\Inventory\DeliveryDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="home\Inventory\DeliveryDetailsForm.Designer.cs">
+      <DependentUpon>DeliveryDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="home\Inventory\ReceiptDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="home\Inventory\ReceiptDetailsForm.Designer.cs">
+      <DependentUpon>ReceiptDetailsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="home\Profile.cs">
       <SubType>Form</SubType>
@@ -118,11 +130,11 @@
     <Compile Include="home\Inventory\ReceiptForm.Designer.cs">
       <DependentUpon>ReceiptForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="home\Inventory\ProductForm.cs">
+    <Compile Include="home\Inventory\ProductDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="home\Inventory\ProductForm.Designer.cs">
-      <DependentUpon>ProductForm.cs</DependentUpon>
+    <Compile Include="home\Inventory\ProductDetailsForm.Designer.cs">
+      <DependentUpon>ProductDetailsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="home\Order\PlaceOrderForm.cs">
       <SubType>Form</SubType>
@@ -130,11 +142,11 @@
     <Compile Include="home\Order\PlaceOrderForm.Designer.cs">
       <DependentUpon>PlaceOrderForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="home\Order\OrderNoteForm.cs">
+    <Compile Include="home\Order\OrderDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="home\Order\OrderNoteForm.Designer.cs">
-      <DependentUpon>OrderNoteForm.cs</DependentUpon>
+    <Compile Include="home\Order\OrderDetailsForm.Designer.cs">
+      <DependentUpon>OrderDetailsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="home\Order\OrderListForm.cs">
       <SubType>Form</SubType>
@@ -162,6 +174,9 @@
     <EmbeddedResource Include="auth\SignupForm.resx">
       <DependentUpon>SignupForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="home\Admin\AccountDetailsForm.resx">
+      <DependentUpon>AccountDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="home\Admin\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,14 +186,20 @@
     <EmbeddedResource Include="home\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="home\Inventory\DeliveryDetailsForm.resx">
+      <DependentUpon>DeliveryDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="home\Inventory\DeliveryForm.resx">
       <DependentUpon>DeliveryForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="home\Inventory\ProductForm.resx">
-      <DependentUpon>ProductForm.cs</DependentUpon>
+    <EmbeddedResource Include="home\Inventory\ProductDetailsForm.resx">
+      <DependentUpon>ProductDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="home\Inventory\ProductListForm.resx">
       <DependentUpon>ProductListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="home\Inventory\ReceiptDetailsForm.resx">
+      <DependentUpon>ReceiptDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="home\Inventory\ReceiptForm.resx">
       <DependentUpon>ReceiptForm.cs</DependentUpon>
@@ -186,8 +207,8 @@
     <EmbeddedResource Include="home\Order\OrderListForm.resx">
       <DependentUpon>OrderListForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="home\Order\OrderNoteForm.resx">
-      <DependentUpon>OrderNoteForm.cs</DependentUpon>
+    <EmbeddedResource Include="home\Order\OrderDetailsForm.resx">
+      <DependentUpon>OrderDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="home\Order\PlaceOrderForm.resx">
       <DependentUpon>PlaceOrderForm.cs</DependentUpon>

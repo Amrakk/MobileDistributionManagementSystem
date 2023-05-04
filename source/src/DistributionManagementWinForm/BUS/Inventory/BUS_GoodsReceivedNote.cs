@@ -11,32 +11,38 @@ namespace BUS.Inventory
 {
     public class BUS_GoodsReceivedNote
     {
-        private DAL_GoodsReceivedNote DGoodsReceivedNote;
+        private readonly DAL_GoodsReceivedNote DGoodsReceivedNote;
 
         public BUS_GoodsReceivedNote(int received_id, DateTime received_date, string received_from, int total_quantity, int total_cost)
         {
             DGoodsReceivedNote = new DAL_GoodsReceivedNote(received_id, received_date, received_from, total_quantity, total_cost);
         }
 
-        public void addQuery()
+        public void AddGRN()
         {
             DGoodsReceivedNote.addQuery();
         }
 
-        public void updateQuery()
+        public void UpdateGRN()
         {
             DGoodsReceivedNote.updateQuery();
         }
 
-        public void deleteQuery()
+        public void DeleteGRN()
         {
             DGoodsReceivedNote.deleteQuery();
         }
 
-        public DataTable selectQuery(string query)
+        public DataTable SelectGRNs()
         {
+            string query = "SELECT * FROM Goods_Received_Note";
             return DGoodsReceivedNote.selectQuery(query);
         }
 
+        public DataTable SelectGRNsById(int id)
+        {
+            string query = $"SELECT * FROM Goods_Received_Note WHERE received_id = {id}";
+            return DGoodsReceivedNote.selectQuery(query);
+        }
     }
 }

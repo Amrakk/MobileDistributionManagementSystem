@@ -11,7 +11,7 @@ namespace BUS.Inventory
 {
     public class BUS_Product
     {
-        private DAL_Product DProduct;
+        private readonly DAL_Product DProduct;
 
         public BUS_Product(int productId, string productName, string model, string productDescription, int productPrice, int productQuantity)
         {
@@ -28,13 +28,26 @@ namespace BUS.Inventory
             DProduct.updateQuery();
         }
 
-        public void DeleteProduct()
+        public void deleteProduct()
         {
             DProduct.deleteQuery();
         }
 
-        public DataTable selectProducts(string query)
+        public DataTable selectProducts()
         {
+            string query = $"SELECT * FROM Product";
+            return DProduct.selectQuery(query);
+        }
+
+        public DataTable selectProductById(int id)
+        {
+            string query = $"SELECT * FROM Product WHERE product_id = {id}";
+            return DProduct.selectQuery(query);
+        }
+
+        public DataTable selectProductByName(string name)
+        {
+            string query = $"SELECT * FROM Product WHERE product_name LIKE '%{name}%'";
             return DProduct.selectQuery(query);
         }
     }

@@ -30,29 +30,25 @@ namespace DistributionManagementWinForm.home.Admin
         private void InitializeComponent()
         {
             this.panelAccount = new System.Windows.Forms.Panel();
+            this.btn_DeleteAccount = new System.Windows.Forms.Button();
+            this.btn_EditAccount = new System.Windows.Forms.Button();
+            this.btn_CreateAccount = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.accountGridView = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btnCreateAccount = new System.Windows.Forms.Button();
-            this.btnDeleteAccount = new System.Windows.Forms.Button();
-            this.btnEditAccount = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.productGridView = new System.Windows.Forms.DataGridView();
-            this.panelProduct = new System.Windows.Forms.Panel();
-            this.btnEditProduct = new System.Windows.Forms.Button();
-            this.btnDeleteProduct = new System.Windows.Forms.Button();
-            this.btnCreateProduct = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panelAccount.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productGridView)).BeginInit();
-            this.panelProduct.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelAccount
             // 
-            this.panelAccount.Controls.Add(this.btnEditAccount);
-            this.panelAccount.Controls.Add(this.btnDeleteAccount);
-            this.panelAccount.Controls.Add(this.btnCreateAccount);
+            this.panelAccount.Controls.Add(this.button1);
+            this.panelAccount.Controls.Add(this.textBox1);
+            this.panelAccount.Controls.Add(this.btn_DeleteAccount);
+            this.panelAccount.Controls.Add(this.btn_EditAccount);
+            this.panelAccount.Controls.Add(this.btn_CreateAccount);
             this.panelAccount.Controls.Add(this.panel3);
             this.panelAccount.Controls.Add(this.accountGridView);
             this.panelAccount.Controls.Add(this.label2);
@@ -62,23 +58,33 @@ namespace DistributionManagementWinForm.home.Admin
             this.panelAccount.Size = new System.Drawing.Size(1170, 800);
             this.panelAccount.TabIndex = 6;
             // 
-            // accountGridView
+            // btn_DeleteAccount
             // 
-            this.accountGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.accountGridView.Location = new System.Drawing.Point(60, 85);
-            this.accountGridView.Name = "accountGridView";
-            this.accountGridView.Size = new System.Drawing.Size(1050, 550);
-            this.accountGridView.TabIndex = 0;
+            this.btn_DeleteAccount.Location = new System.Drawing.Point(525, 700);
+            this.btn_DeleteAccount.Name = "btn_DeleteAccount";
+            this.btn_DeleteAccount.Size = new System.Drawing.Size(175, 40);
+            this.btn_DeleteAccount.TabIndex = 6;
+            this.btn_DeleteAccount.Text = "Delete";
+            this.btn_DeleteAccount.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // btn_EditAccount
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(60, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(239, 25);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Account Management";
+            this.btn_EditAccount.Location = new System.Drawing.Point(730, 700);
+            this.btn_EditAccount.Name = "btn_EditAccount";
+            this.btn_EditAccount.Size = new System.Drawing.Size(175, 40);
+            this.btn_EditAccount.TabIndex = 5;
+            this.btn_EditAccount.Text = "Edit";
+            this.btn_EditAccount.UseVisualStyleBackColor = true;
+            // 
+            // btn_CreateAccount
+            // 
+            this.btn_CreateAccount.Location = new System.Drawing.Point(935, 700);
+            this.btn_CreateAccount.Name = "btn_CreateAccount";
+            this.btn_CreateAccount.Size = new System.Drawing.Size(175, 40);
+            this.btn_CreateAccount.TabIndex = 4;
+            this.btn_CreateAccount.Text = "Create";
+            this.btn_CreateAccount.UseVisualStyleBackColor = true;
+            this.btn_CreateAccount.Click += new System.EventHandler(this.btn_CreateAccount_Click);
             // 
             // panel3
             // 
@@ -89,111 +95,60 @@ namespace DistributionManagementWinForm.home.Admin
             this.panel3.Size = new System.Drawing.Size(1170, 1);
             this.panel3.TabIndex = 3;
             // 
-            // btnCreateAccount
+            // accountGridView
             // 
-            this.btnCreateAccount.Location = new System.Drawing.Point(935, 700);
-            this.btnCreateAccount.Name = "btnCreateAccount";
-            this.btnCreateAccount.Size = new System.Drawing.Size(175, 40);
-            this.btnCreateAccount.TabIndex = 4;
-            this.btnCreateAccount.Text = "Create";
-            this.btnCreateAccount.UseVisualStyleBackColor = true;
+            this.accountGridView.AllowUserToAddRows = false;
+            this.accountGridView.AllowUserToDeleteRows = false;
+            this.accountGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.accountGridView.Location = new System.Drawing.Point(60, 110);
+            this.accountGridView.Name = "accountGridView";
+            this.accountGridView.ReadOnly = true;
+            this.accountGridView.Size = new System.Drawing.Size(1050, 550);
+            this.accountGridView.TabIndex = 0;
             // 
-            // btnDeleteAccount
+            // label2
             // 
-            this.btnDeleteAccount.Location = new System.Drawing.Point(730, 700);
-            this.btnDeleteAccount.Name = "btnDeleteAccount";
-            this.btnDeleteAccount.Size = new System.Drawing.Size(175, 40);
-            this.btnDeleteAccount.TabIndex = 5;
-            this.btnDeleteAccount.Text = "Delete";
-            this.btnDeleteAccount.UseVisualStyleBackColor = true;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(60, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(142, 25);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Account List";
             // 
-            // btnEditAccount
+            // button1
             // 
-            this.btnEditAccount.Location = new System.Drawing.Point(525, 700);
-            this.btnEditAccount.Name = "btnEditAccount";
-            this.btnEditAccount.Size = new System.Drawing.Size(175, 40);
-            this.btnEditAccount.TabIndex = 6;
-            this.btnEditAccount.Text = "Edit";
-            this.btnEditAccount.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(1005, 70);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(105, 24);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Search";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // textBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(60, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(235, 25);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Product Management";
-            // 
-            // productGridView
-            // 
-            this.productGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.productGridView.Location = new System.Drawing.Point(60, 85);
-            this.productGridView.Name = "productGridView";
-            this.productGridView.Size = new System.Drawing.Size(1050, 550);
-            this.productGridView.TabIndex = 0;
-            // 
-            // panelProduct
-            // 
-            this.panelProduct.Controls.Add(this.btnEditProduct);
-            this.panelProduct.Controls.Add(this.productGridView);
-            this.panelProduct.Controls.Add(this.btnDeleteProduct);
-            this.panelProduct.Controls.Add(this.label1);
-            this.panelProduct.Controls.Add(this.btnCreateProduct);
-            this.panelProduct.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelProduct.Location = new System.Drawing.Point(0, 800);
-            this.panelProduct.Name = "panelProduct";
-            this.panelProduct.Size = new System.Drawing.Size(1170, 800);
-            this.panelProduct.TabIndex = 5;
-            // 
-            // btnEditProduct
-            // 
-            this.btnEditProduct.Location = new System.Drawing.Point(525, 700);
-            this.btnEditProduct.Name = "btnEditProduct";
-            this.btnEditProduct.Size = new System.Drawing.Size(175, 40);
-            this.btnEditProduct.TabIndex = 9;
-            this.btnEditProduct.Text = "Edit";
-            this.btnEditProduct.UseVisualStyleBackColor = true;
-            // 
-            // btnDeleteProduct
-            // 
-            this.btnDeleteProduct.Location = new System.Drawing.Point(730, 700);
-            this.btnDeleteProduct.Name = "btnDeleteProduct";
-            this.btnDeleteProduct.Size = new System.Drawing.Size(175, 40);
-            this.btnDeleteProduct.TabIndex = 8;
-            this.btnDeleteProduct.Text = "Delete";
-            this.btnDeleteProduct.UseVisualStyleBackColor = true;
-            // 
-            // btnCreateProduct
-            // 
-            this.btnCreateProduct.Location = new System.Drawing.Point(935, 700);
-            this.btnCreateProduct.Name = "btnCreateProduct";
-            this.btnCreateProduct.Size = new System.Drawing.Size(175, 40);
-            this.btnCreateProduct.TabIndex = 7;
-            this.btnCreateProduct.Text = "Create";
-            this.btnCreateProduct.UseVisualStyleBackColor = true;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(60, 70);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(925, 24);
+            this.textBox1.TabIndex = 12;
             // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1170, 1600);
-            this.Controls.Add(this.panelProduct);
+            this.ClientSize = new System.Drawing.Size(1170, 800);
             this.Controls.Add(this.panelAccount);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AdminForm";
             this.Text = "Admin";
             this.Load += new System.EventHandler(this.AdminForm_Load);
             this.panelAccount.ResumeLayout(false);
             this.panelAccount.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productGridView)).EndInit();
-            this.panelProduct.ResumeLayout(false);
-            this.panelProduct.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -202,15 +157,11 @@ namespace DistributionManagementWinForm.home.Admin
         private System.Windows.Forms.DataGridView accountGridView;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnEditAccount;
-        private System.Windows.Forms.Button btnDeleteAccount;
-        private System.Windows.Forms.Button btnCreateAccount;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView productGridView;
-        private System.Windows.Forms.Panel panelProduct;
-        private System.Windows.Forms.Button btnEditProduct;
-        private System.Windows.Forms.Button btnDeleteProduct;
-        private System.Windows.Forms.Button btnCreateProduct;
+        private System.Windows.Forms.Button btn_DeleteAccount;
+        private System.Windows.Forms.Button btn_EditAccount;
+        private System.Windows.Forms.Button btn_CreateAccount;
         private System.Windows.Forms.Panel panelAccount;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

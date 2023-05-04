@@ -19,30 +19,30 @@ namespace DAL.User
 
         public void addQuery()
         {
-            string query = "insert into Account (account_id, username, password, created_date) values ('"
-                                + account.Account_id + "', '"
-                                + account.Username + "', '"
-                                + account.Password + "', '"
-                                + account.Created_date + "')";
+            string query = $"INSERT INTO Account (account_id, username, password, created_date) VALUES " +
+                                               $"('{account.Account_id}', " +
+                                               $"'{account.Username}', " +
+                                               $"'{account.Password}'," +
+                                               $"'{account.Created_date}')";
             Connection.actionQuery(query);
         }
 
         public void updateQuery()
         {
-            string query = "update Account set "
-                                + "username = " + account.Username + "', '"
-                                + "password = " + account.Password + "', '"
-                                + "isActivated = " + account.Is_Activated + "', '"
-                                + "created_date = " + account.Created_date + "', '"
-                                + "where account_id = " + account.Account_id;
+            string query = $"UPDATE Account SET username = '{account.Username}', " +
+                                              $"password = '{account.Password}'," +
+                                              $"is_activated = {account.Is_Activated}," +
+                                              $"created_date = '{account.Created_date}' " +
+                                              $"WHERE account_id = {account.Account_id}";
             Connection.actionQuery(query);
         }
 
         public void deleteQuery()
         {
-            string query = "delete from Account where account_id = " + account.Account_id;
+            string query = $"DELETE FROM Account WHERE account_id = {account.Account_id}";
             Connection.actionQuery(query);
         }
+
 
         public DataTable selectQuery(string query)
         {
