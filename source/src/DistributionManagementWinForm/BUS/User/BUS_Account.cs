@@ -10,33 +10,43 @@ namespace BUS.User
 {
     public class BUS_Account
     {
-        private DAL_Account DAccount;
+        private readonly DAL_Account DAccount;
 
-        public BUS_Account(int account_id, string username, string password, int isActivated, DateTime created_date)
+        public BUS_Account(int account_id, string username, string password, int is_activated, DateTime created_date)
         {
-            DAccount = new DAL_Account(account_id, username, password, isActivated, created_date);
+            DAccount = new DAL_Account(account_id, username, password, is_activated, created_date);
         }
 
-        public void addQuery()
+        public void AddAccount()
         {
             DAccount.addQuery();
         }
 
-        public void updateQuere()
+        public void UpdateAccount()
         {
             DAccount.updateQuery();
         }
 
-        public void deleteQuery()
+        public void DeleteAccount()
         {
             DAccount.deleteQuery();
         }
 
-        public DataTable selectQuery(string query)
+        public DataTable SelectAccounts()
         {
+            string query = $"SELECT * FROM Account";
             return DAccount.selectQuery(query);
         }
 
-        
+        public DataTable SelectAccountById(int id)
+        {
+            string query = $"SELECT * FROM Account WHERE account_id = {id}";
+            return DAccount.selectQuery(query);
+        }
+        public DataTable SelectAccountByUsername(string username)
+        {
+            string query = $"SELECT * FROM Account WHERE username = '{username}'";
+            return DAccount.selectQuery(query);
+        }
     }
 }

@@ -64,8 +64,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection.cs" />
+    <Compile Include="Inventory\DAL_GoodsReceivedNote.cs" />
+    <Compile Include="Inventory\DAL_Product.cs" />
+    <Compile Include="Inventory\DAL_ReceivedItem.cs" />
+    <Compile Include="Order\DAL_DeliveryNote.cs" />
+    <Compile Include="Order\DAL_OrderItem.cs" />
+    <Compile Include="Order\DAL_OrderNote.cs" />
+    <Compile Include="Order\DAL_Status.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User\DAL_Account.cs" />
+    <Compile Include="User\DAL_Profile.cs" />
+    <Compile Include="User\DAL_Reseller.cs" />
+    <Compile Include="User\DAL_Role.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -76,5 +86,6 @@
       <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

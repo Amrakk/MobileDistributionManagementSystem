@@ -87,7 +87,7 @@ namespace DistributionManagementWinForm.auth
             this.dragPanel.Location = new System.Drawing.Point(0, 0);
             this.dragPanel.Name = "dragPanel";
             this.dragPanel.Padding = new System.Windows.Forms.Padding(5);
-            this.dragPanel.Size = new System.Drawing.Size(819, 30);
+            this.dragPanel.Size = new System.Drawing.Size(820, 30);
             this.dragPanel.TabIndex = 3;
             this.dragPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dragPanel_MouseDown);
             // 
@@ -129,7 +129,7 @@ namespace DistributionManagementWinForm.auth
             this.loginPanel.ForeColor = System.Drawing.Color.Black;
             this.loginPanel.Location = new System.Drawing.Point(0, 30);
             this.loginPanel.Name = "loginPanel";
-            this.loginPanel.Size = new System.Drawing.Size(819, 495);
+            this.loginPanel.Size = new System.Drawing.Size(820, 495);
             this.loginPanel.TabIndex = 5;
             // 
             // resellerAddPanel
@@ -483,7 +483,7 @@ namespace DistributionManagementWinForm.auth
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(819, 525);
+            this.ClientSize = new System.Drawing.Size(820, 525);
             this.Controls.Add(this.loginPanel);
             this.Controls.Add(this.dragPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

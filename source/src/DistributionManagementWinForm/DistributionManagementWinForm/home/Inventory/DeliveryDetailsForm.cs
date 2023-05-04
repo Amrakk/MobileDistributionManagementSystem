@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DistributionManagementWinForm.home.Inventory
 {
-    public partial class ProductForm : Form
+    public partial class DeliveryDetailsForm : Form
     {
-        public ProductForm()
+        public DeliveryDetailsForm()
         {
             InitializeComponent();
         }

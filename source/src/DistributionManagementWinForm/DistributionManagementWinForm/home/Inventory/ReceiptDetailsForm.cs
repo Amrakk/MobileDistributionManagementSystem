@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DistributionManagementWinForm.home.Order
+namespace DistributionManagementWinForm.home.Inventory
 {
-    public partial class OrderNoteForm : Form
+    public partial class ReceiptDetailsForm : Form
     {
-        public OrderNoteForm()
+        public ReceiptDetailsForm()
         {
             InitializeComponent();
         }

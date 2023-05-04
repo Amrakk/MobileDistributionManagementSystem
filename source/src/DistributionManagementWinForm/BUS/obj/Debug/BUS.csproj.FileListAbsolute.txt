@@ -20,3 +20,14 @@ C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src
 C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\obj\Debug\BUS.csproj.CopyComplete
 C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\obj\Debug\BUS.dll
 C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\obj\Debug\BUS.pdb
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\bin\Debug\BUS.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\bin\Debug\BUS.pdb
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\bin\Debug\DAL.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\bin\Debug\DTO.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\bin\Debug\DAL.pdb
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\bin\Debug\DTO.pdb
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\obj\Debug\BUS.csproj.CopyComplete
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\obj\Debug\BUS.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\obj\Debug\BUS.pdb
