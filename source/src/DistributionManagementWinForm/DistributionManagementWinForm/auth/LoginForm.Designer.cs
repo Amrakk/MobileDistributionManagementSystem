@@ -29,14 +29,12 @@ namespace DistributionManagementWinForm.auth
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.loginLabel = new System.Windows.Forms.Label();
             this.dragPanel = new System.Windows.Forms.Panel();
             this.closeBtn = new FontAwesome.Sharp.IconPictureBox();
             this.logoBox = new FontAwesome.Sharp.IconPictureBox();
             this.loginPanel = new System.Windows.Forms.Panel();
-            this.signupLink = new System.Windows.Forms.LinkLabel();
-            this.forgotPasswordLink = new System.Windows.Forms.LinkLabel();
-            this.errorLabel = new System.Windows.Forms.Label();
             this.loginBtn = new System.Windows.Forms.Button();
             this.passPanel = new System.Windows.Forms.Panel();
             this.passTextBox = new System.Windows.Forms.TextBox();
@@ -46,6 +44,8 @@ namespace DistributionManagementWinForm.auth
             this.userTextBox = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.userIcon = new FontAwesome.Sharp.IconPictureBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.dragPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
@@ -98,69 +98,34 @@ namespace DistributionManagementWinForm.auth
             // 
             // logoBox
             // 
-            this.logoBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.logoBox.BackColor = System.Drawing.SystemColors.Window;
+            this.logoBox.BackgroundImage = global::DistributionManagementWinForm.Properties.Resources.logo_no_background;
+            this.logoBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.logoBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.logoBox.ForeColor = System.Drawing.SystemColors.ControlText;
             this.logoBox.IconChar = FontAwesome.Sharp.IconChar.None;
             this.logoBox.IconColor = System.Drawing.SystemColors.ControlText;
             this.logoBox.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.logoBox.IconSize = 100;
+            this.logoBox.IconSize = 109;
             this.logoBox.Location = new System.Drawing.Point(0, 30);
             this.logoBox.Name = "logoBox";
-            this.logoBox.Size = new System.Drawing.Size(344, 100);
+            this.logoBox.Size = new System.Drawing.Size(344, 109);
             this.logoBox.TabIndex = 3;
             this.logoBox.TabStop = false;
             // 
             // loginPanel
             // 
-            this.loginPanel.Controls.Add(this.signupLink);
-            this.loginPanel.Controls.Add(this.forgotPasswordLink);
-            this.loginPanel.Controls.Add(this.errorLabel);
+            this.loginPanel.BackColor = System.Drawing.SystemColors.Window;
             this.loginPanel.Controls.Add(this.loginBtn);
             this.loginPanel.Controls.Add(this.passPanel);
             this.loginPanel.Controls.Add(this.userPanel);
             this.loginPanel.Controls.Add(this.loginLabel);
             this.loginPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.loginPanel.ForeColor = System.Drawing.Color.Black;
-            this.loginPanel.Location = new System.Drawing.Point(0, 130);
+            this.loginPanel.Location = new System.Drawing.Point(0, 139);
             this.loginPanel.Name = "loginPanel";
-            this.loginPanel.Size = new System.Drawing.Size(344, 370);
-            this.loginPanel.TabIndex = 4;
-            // 
-            // signupLink
-            // 
-            this.signupLink.AutoSize = true;
-            this.signupLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signupLink.LinkColor = System.Drawing.SystemColors.GrayText;
-            this.signupLink.Location = new System.Drawing.Point(148, 330);
-            this.signupLink.Name = "signupLink";
-            this.signupLink.Size = new System.Drawing.Size(57, 18);
-            this.signupLink.TabIndex = 5;
-            this.signupLink.TabStop = true;
-            this.signupLink.Text = "Sign up";
-            this.signupLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.signupLink_LinkClicked);
-            // 
-            // forgotPasswordLink
-            // 
-            this.forgotPasswordLink.AutoSize = true;
-            this.forgotPasswordLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.forgotPasswordLink.LinkColor = System.Drawing.SystemColors.GrayText;
-            this.forgotPasswordLink.Location = new System.Drawing.Point(115, 292);
-            this.forgotPasswordLink.Name = "forgotPasswordLink";
-            this.forgotPasswordLink.Size = new System.Drawing.Size(123, 18);
-            this.forgotPasswordLink.TabIndex = 4;
-            this.forgotPasswordLink.TabStop = true;
-            this.forgotPasswordLink.Text = "Forgot Password";
-            // 
-            // errorLabel
-            // 
-            this.errorLabel.AutoSize = true;
-            this.errorLabel.ForeColor = System.Drawing.Color.Red;
-            this.errorLabel.Location = new System.Drawing.Point(155, 190);
-            this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(42, 18);
-            this.errorLabel.TabIndex = 10;
-            this.errorLabel.Text = "Error";
+            this.loginPanel.Size = new System.Drawing.Size(344, 361);
+            this.loginPanel.TabIndex = 10;
             // 
             // loginBtn
             // 
@@ -186,11 +151,11 @@ namespace DistributionManagementWinForm.auth
             this.passPanel.Location = new System.Drawing.Point(20, 136);
             this.passPanel.Name = "passPanel";
             this.passPanel.Size = new System.Drawing.Size(312, 34);
-            this.passPanel.TabIndex = 10;
+            this.passPanel.TabIndex = 2;
             // 
             // passTextBox
             // 
-            this.passTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.passTextBox.BackColor = System.Drawing.Color.White;
             this.passTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.passTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passTextBox.ForeColor = System.Drawing.Color.Gray;
@@ -199,7 +164,10 @@ namespace DistributionManagementWinForm.auth
             this.passTextBox.Size = new System.Drawing.Size(280, 20);
             this.passTextBox.TabIndex = 2;
             this.passTextBox.Text = "Password";
+            this.passTextBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.passTextBox_MouseClick);
             this.passTextBox.TextChanged += new System.EventHandler(this.passTextBox_TextChanged);
+            this.passTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passTextBox_KeyDown);
+            this.passTextBox.Leave += new System.EventHandler(this.passTextBox_Leave);
             // 
             // panel6
             // 
@@ -211,7 +179,7 @@ namespace DistributionManagementWinForm.auth
             // 
             // passIcon
             // 
-            this.passIcon.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.passIcon.BackColor = System.Drawing.Color.White;
             this.passIcon.ForeColor = System.Drawing.Color.Black;
             this.passIcon.IconChar = FontAwesome.Sharp.IconChar.Lock;
             this.passIcon.IconColor = System.Drawing.Color.Black;
@@ -231,11 +199,11 @@ namespace DistributionManagementWinForm.auth
             this.userPanel.Location = new System.Drawing.Point(20, 70);
             this.userPanel.Name = "userPanel";
             this.userPanel.Size = new System.Drawing.Size(312, 34);
-            this.userPanel.TabIndex = 10;
+            this.userPanel.TabIndex = 1;
             // 
             // userTextBox
             // 
-            this.userTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.userTextBox.BackColor = System.Drawing.Color.White;
             this.userTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.userTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userTextBox.ForeColor = System.Drawing.Color.Gray;
@@ -244,7 +212,9 @@ namespace DistributionManagementWinForm.auth
             this.userTextBox.Size = new System.Drawing.Size(280, 20);
             this.userTextBox.TabIndex = 1;
             this.userTextBox.Text = "Username";
+            this.userTextBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.userTextBox_MouseClick);
             this.userTextBox.TextChanged += new System.EventHandler(this.userTextBox_TextChanged);
+            this.userTextBox.Leave += new System.EventHandler(this.userTextBox_Leave);
             // 
             // panel3
             // 
@@ -256,7 +226,7 @@ namespace DistributionManagementWinForm.auth
             // 
             // userIcon
             // 
-            this.userIcon.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.userIcon.BackColor = System.Drawing.Color.White;
             this.userIcon.ForeColor = System.Drawing.Color.Black;
             this.userIcon.IconChar = FontAwesome.Sharp.IconChar.CircleUser;
             this.userIcon.IconColor = System.Drawing.Color.Black;
@@ -313,9 +283,8 @@ namespace DistributionManagementWinForm.auth
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel userPanel;
         private System.Windows.Forms.Button loginBtn;
-        private System.Windows.Forms.Label errorLabel;
-        private System.Windows.Forms.LinkLabel forgotPasswordLink;
         private FontAwesome.Sharp.IconPictureBox closeBtn;
-        private System.Windows.Forms.LinkLabel signupLink;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
     }
 }

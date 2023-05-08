@@ -16,7 +16,7 @@ namespace DistributionManagementWinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new home.Home());
+            Application.Run(new auth.LoginForm());
         }
     }
 }

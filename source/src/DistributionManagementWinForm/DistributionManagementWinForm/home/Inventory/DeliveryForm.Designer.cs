@@ -29,137 +29,87 @@ namespace DistributionManagementWinForm.home.Inventory
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelAccount = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btn_DeleteAccount = new System.Windows.Forms.Button();
-            this.btn_EditAccount = new System.Windows.Forms.Button();
-            this.btn_CreateAccount = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.productGridView = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panelAccount.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productGridView)).BeginInit();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.dataGridView_deliveryList = new System.Windows.Forms.DataGridView();
+            this.textBox_search = new Guna.UI2.WinForms.Guna2TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_deliveryList)).BeginInit();
             this.SuspendLayout();
             // 
-            // panelAccount
+            // dataGridView_deliveryList
             // 
-            this.panelAccount.Controls.Add(this.button1);
-            this.panelAccount.Controls.Add(this.textBox1);
-            this.panelAccount.Controls.Add(this.btn_DeleteAccount);
-            this.panelAccount.Controls.Add(this.btn_EditAccount);
-            this.panelAccount.Controls.Add(this.btn_CreateAccount);
-            this.panelAccount.Controls.Add(this.panel3);
-            this.panelAccount.Controls.Add(this.productGridView);
-            this.panelAccount.Controls.Add(this.label2);
-            this.panelAccount.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAccount.Location = new System.Drawing.Point(0, 0);
-            this.panelAccount.Name = "panelAccount";
-            this.panelAccount.Size = new System.Drawing.Size(1170, 800);
-            this.panelAccount.TabIndex = 9;
+            this.dataGridView_deliveryList.AllowUserToAddRows = false;
+            this.dataGridView_deliveryList.AllowUserToDeleteRows = false;
+            this.dataGridView_deliveryList.AllowUserToResizeColumns = false;
+            this.dataGridView_deliveryList.AllowUserToResizeRows = false;
+            this.dataGridView_deliveryList.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView_deliveryList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(154)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(154)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_deliveryList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView_deliveryList.ColumnHeadersHeight = 40;
+            this.dataGridView_deliveryList.Location = new System.Drawing.Point(60, 105);
+            this.dataGridView_deliveryList.Name = "dataGridView_deliveryList";
+            this.dataGridView_deliveryList.ReadOnly = true;
+            this.dataGridView_deliveryList.RowHeadersVisible = false;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView_deliveryList.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView_deliveryList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_deliveryList.Size = new System.Drawing.Size(1050, 668);
+            this.dataGridView_deliveryList.TabIndex = 22;
+            this.dataGridView_deliveryList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_deliveryList_CellDoubleClick);
             // 
-            // button1
+            // textBox_search
             // 
-            this.button1.Location = new System.Drawing.Point(1005, 70);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 24);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(60, 70);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(925, 24);
-            this.textBox1.TabIndex = 12;
-            // 
-            // btn_DeleteAccount
-            // 
-            this.btn_DeleteAccount.Location = new System.Drawing.Point(525, 700);
-            this.btn_DeleteAccount.Name = "btn_DeleteAccount";
-            this.btn_DeleteAccount.Size = new System.Drawing.Size(175, 40);
-            this.btn_DeleteAccount.TabIndex = 6;
-            this.btn_DeleteAccount.Text = "Delete";
-            this.btn_DeleteAccount.UseVisualStyleBackColor = true;
-            // 
-            // btn_EditAccount
-            // 
-            this.btn_EditAccount.Location = new System.Drawing.Point(730, 700);
-            this.btn_EditAccount.Name = "btn_EditAccount";
-            this.btn_EditAccount.Size = new System.Drawing.Size(175, 40);
-            this.btn_EditAccount.TabIndex = 5;
-            this.btn_EditAccount.Text = "Edit";
-            this.btn_EditAccount.UseVisualStyleBackColor = true;
-            // 
-            // btn_CreateAccount
-            // 
-            this.btn_CreateAccount.Location = new System.Drawing.Point(935, 700);
-            this.btn_CreateAccount.Name = "btn_CreateAccount";
-            this.btn_CreateAccount.Size = new System.Drawing.Size(175, 40);
-            this.btn_CreateAccount.TabIndex = 4;
-            this.btn_CreateAccount.Text = "Create";
-            this.btn_CreateAccount.UseVisualStyleBackColor = true;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 799);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1170, 1);
-            this.panel3.TabIndex = 3;
-            // 
-            // productGridView
-            // 
-            this.productGridView.AllowUserToAddRows = false;
-            this.productGridView.AllowUserToDeleteRows = false;
-            this.productGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.productGridView.Location = new System.Drawing.Point(60, 110);
-            this.productGridView.Name = "productGridView";
-            this.productGridView.ReadOnly = true;
-            this.productGridView.Size = new System.Drawing.Size(1050, 550);
-            this.productGridView.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(60, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(199, 25);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Delivery Note List";
+            this.textBox_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(154)))), ((int)(((byte)(73)))));
+            this.textBox_search.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(154)))), ((int)(((byte)(73)))));
+            this.textBox_search.BorderThickness = 2;
+            this.textBox_search.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox_search.DefaultText = "";
+            this.textBox_search.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBox_search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBox_search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox_search.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox_search.FillColor = System.Drawing.SystemColors.Control;
+            this.textBox_search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox_search.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_search.ForeColor = System.Drawing.Color.Black;
+            this.textBox_search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox_search.Location = new System.Drawing.Point(60, 50);
+            this.textBox_search.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.textBox_search.Name = "textBox_search";
+            this.textBox_search.PasswordChar = '\0';
+            this.textBox_search.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.textBox_search.PlaceholderText = " Search By";
+            this.textBox_search.SelectedText = "";
+            this.textBox_search.Size = new System.Drawing.Size(536, 37);
+            this.textBox_search.TabIndex = 21;
             // 
             // DeliveryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1170, 800);
-            this.Controls.Add(this.panelAccount);
+            this.Controls.Add(this.dataGridView_deliveryList);
+            this.Controls.Add(this.textBox_search);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DeliveryForm";
             this.Text = "Delivery";
-            this.panelAccount.ResumeLayout(false);
-            this.panelAccount.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productGridView)).EndInit();
+            this.Load += new System.EventHandler(this.DeliveryForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_deliveryList)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelAccount;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btn_DeleteAccount;
-        private System.Windows.Forms.Button btn_EditAccount;
-        private System.Windows.Forms.Button btn_CreateAccount;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView productGridView;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dataGridView_deliveryList;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_search;
     }
 }

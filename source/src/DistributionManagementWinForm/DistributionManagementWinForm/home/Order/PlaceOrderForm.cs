@@ -16,5 +16,20 @@ namespace DistributionManagementWinForm.home.Order
         {
             InitializeComponent();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PlaceOrderForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_lastName_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

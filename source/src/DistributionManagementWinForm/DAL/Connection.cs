@@ -11,7 +11,7 @@ namespace DAL
 {
     public class Connection
     {
-        private static SqlConnection conn;
+        public static SqlConnection conn;
         public static void connect()
         {
             string s = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
@@ -27,6 +27,25 @@ namespace DAL
 
             cmd.ExecuteNonQuery();
             conn.Close();
+        }
+
+        public static List<string> listProductName()
+        {
+            string sql = "SELECT product_name FROM Product";
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            conn.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            var data = new List<string>();
+            data.Add("None");
+            while (reader.Read())
+            {
+                string product_name = reader.GetString(0);
+                data.Add(product_name);
+            }
+            conn.Close();
+            return data;
+
+
         }
 
         public static DataTable selectQuery(string sql)

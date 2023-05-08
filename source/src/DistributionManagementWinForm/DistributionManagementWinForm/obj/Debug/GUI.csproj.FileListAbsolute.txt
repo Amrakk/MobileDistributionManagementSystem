@@ -80,7 +80,6 @@ E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\D
 E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\DTO.pdb
 E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\GUI.csproj.AssemblyReference.cache
 E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.auth.LoginForm.resources
-E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.auth.SignupForm.resources
 E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Admin.AdminForm.resources
 E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Dashboard.resources
 E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Home.resources
@@ -89,7 +88,6 @@ E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\D
 E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Inventory.ReceiptForm.resources
 E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Order.OrderListForm.resources
 E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Order.PlaceOrderForm.resources
-E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Profile.resources
 E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Report.SaleReportForm.resources
 E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Report.StockReportForm.resources
 E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.Properties.Resources.resources
@@ -103,3 +101,79 @@ E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\D
 E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Order.OrderDetailsForm.resources
 E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Inventory.DeliveryDetailsForm.resources
 E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Inventory.ReceiptDetailsForm.resources
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\DistributionManagementWinForm.exe.config
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\DistributionManagementWinForm.exe
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\DistributionManagementWinForm.pdb
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\BCrypt.Net.dll
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\BUS.dll
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\DAL.dll
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\FontAwesome.Sharp.dll
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\Guna.UI2.dll
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\DTO.dll
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\BUS.pdb
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\DAL.pdb
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\BCrypt.Net.xml
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\DTO.pdb
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\GUI.csproj.AssemblyReference.cache
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\GUI.csproj.SuggestedBindingRedirects.cache
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.auth.LoginForm.resources
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.auth.SignupForm.resources
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Admin.AccountDetailsForm.resources
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Admin.AdminForm.resources
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Dashboard.resources
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Home.resources
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Inventory.DeliveryDetailsForm.resources
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Inventory.DeliveryForm.resources
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Inventory.ProductDetailsForm.resources
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Inventory.ProductListForm.resources
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Inventory.ReceiptDetailsForm.resources
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Inventory.ReceiptForm.resources
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Order.OrderListForm.resources
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Order.OrderDetailsForm.resources
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Order.PlaceOrderForm.resources
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Profile.resources
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Report.SaleReportForm.resources
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Report.StockReportForm.resources
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.Properties.Resources.resources
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\GUI.csproj.GenerateResource.cache
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\GUI.csproj.CopyComplete
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.exe
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.pdb
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\DistributionManagementWinForm.exe.config
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\DistributionManagementWinForm.exe
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\DistributionManagementWinForm.pdb
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\BCrypt.Net.dll
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\BUS.dll
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\DAL.dll
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\Guna.UI2.dll
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\DTO.dll
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\BUS.pdb
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\DAL.pdb
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\BCrypt.Net.xml
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\DTO.pdb
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\GUI.csproj.AssemblyReference.cache
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.auth.LoginForm.resources
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Admin.AccountDetailsForm.resources
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Admin.AdminForm.resources
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Dashboard.resources
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Home.resources
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Inventory.DeliveryDetailsForm.resources
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Inventory.DeliveryForm.resources
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Inventory.ProductDetailsForm.resources
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Inventory.ProductListForm.resources
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Inventory.ReceiptDetailsForm.resources
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Inventory.ReceiptForm.resources
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Order.OrderListForm.resources
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Order.OrderDetailsForm.resources
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Order.PlaceOrderForm.resources
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Report.SaleReportForm.resources
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Report.StockReportForm.resources
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.Properties.Resources.resources
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\GUI.csproj.CopyComplete
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.exe
+C:\Users\hoang\Downloads\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.pdb
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\Guna.UI2.dll

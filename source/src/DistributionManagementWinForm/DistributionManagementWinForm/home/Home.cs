@@ -14,11 +14,13 @@ namespace DistributionManagementWinForm.home
     public partial class Home : Form
     {
         private string userName;
+        private bool isAdmin;
         private Form currentChildForm;
-        public Home(string userName = "Admin")
+        public Home(string userName = "Admin", bool isAdmin = false)
         {
             InitializeComponent();
             this.userName = userName;
+            this.isAdmin = isAdmin;
         }
 
         private void OpenChildForm(Form childForm)
@@ -44,7 +46,7 @@ namespace DistributionManagementWinForm.home
 
         private void hideSubPanel()
         {
-            if(orderSubPanel.Visible == true)
+            if (orderSubPanel.Visible == true)
                 orderSubPanel.Visible = false;
             if (inventorySubPanel.Visible == true)
                 inventorySubPanel.Visible = false;
@@ -71,11 +73,6 @@ namespace DistributionManagementWinForm.home
         private void userLabel_Click(object sender, EventArgs e)
         {
             showSubPanel(userSubPanel);
-        }
-
-        private void profileBtn_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Profile());
         }
 
         private void signOutBtn_Click(object sender, EventArgs e)
@@ -116,7 +113,7 @@ namespace DistributionManagementWinForm.home
             OpenChildForm(new Order.PlaceOrderForm());
         }
 
-        
+
 
         #endregion
 
@@ -126,11 +123,11 @@ namespace DistributionManagementWinForm.home
             showSubPanel(inventorySubPanel);
         }
 
-        private void productBtn_Click(object sender, EventArgs e)
+        public void productBtn_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Inventory.ProductListForm());
         }
-        private void receiptsBtn_Click(object sender, EventArgs e)
+        public void receiptsBtn_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Inventory.ReceiptForm());
         }
@@ -189,7 +186,12 @@ namespace DistributionManagementWinForm.home
         private void Home_Load(object sender, EventArgs e)
         {
             dashboardBtn_Click(sender, e);
-            userLabel.Text = userName; 
+            userLabel.Text = userName;
+            if(!isAdmin)
+            {
+                adminBtn.Visible = false;
+                adminBtn.Enabled = false;
+            }
         }
 
         private void returnBtn_Click(object sender, EventArgs e)

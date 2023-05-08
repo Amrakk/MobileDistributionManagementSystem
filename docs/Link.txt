@@ -1,4 +1,2 @@
-Link github:
-
-
-Link youtube:
+Link github: 
+https://github.com/Amrakk/MobileDistributionManagementSystem
