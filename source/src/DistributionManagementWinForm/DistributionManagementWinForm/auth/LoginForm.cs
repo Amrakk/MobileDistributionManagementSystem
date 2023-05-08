@@ -10,12 +10,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BCryptNet = BCrypt.Net.BCrypt;
-
+using DAL;
 namespace DistributionManagementWinForm.auth
 {
     public partial class LoginForm : Form
     {
-        
+
         public LoginForm()
         {
             InitializeComponent();
@@ -25,16 +25,16 @@ namespace DistributionManagementWinForm.auth
 
         private void userTextBox_TextChanged(object sender, EventArgs e)
         {
-            AuthShared.textChangedStyling(userTextBox); 
+            //AuthShared.textChangedStyling(userTextBox);
         }
 
         private void passTextBox_TextChanged(object sender, EventArgs e)
         {
-            if(passTextBox.Text == "")
+            if (passTextBox.Text == "" || passTextBox.Text == "Password")
                 passTextBox.PasswordChar = '\0';
             else
-                passTextBox.PasswordChar = '*';
-            AuthShared.textChangedStyling(passTextBox);
+                passTextBox.PasswordChar = '•';
+            //AuthShared.textChangedStyling(passTextBox);
 
         }
 
@@ -52,7 +52,7 @@ namespace DistributionManagementWinForm.auth
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            errorLabel.Visible = false;
+
         }
 
         // Drag from title bar
@@ -74,17 +74,20 @@ namespace DistributionManagementWinForm.auth
         {
             string user = userTextBox.Text;
             string pass = passTextBox.Text;
-            // TODO - Validate
-
 
             BUS_Account BAccount = new BUS_Account(0, "", "", 0, DateTime.Now);
-            DataTable data = BAccount.SelectAccountByUsername(user);
-         
+            DataTable data = Connection.selectQuery($"select * from Account where username = '{user}'");
+
             if (data.Rows.Count == 1)
             {
-                if (BCryptNet.Verify(pass, data.Rows[0].ItemArray[2].ToString()))
+                if (pass == data.Rows[0].ItemArray[2].ToString())
                 {
-                    Form home = new home.Home();
+                    BUS_Profile BProfile = new BUS_Profile(0, "", "", "", "", 0);
+                    DataTable profile = BProfile.SelectProfileById(Convert.ToInt32(data.Rows[0][0].ToString()));
+                    string name = profile.Rows[0][1].ToString() + " " + profile.Rows[0][2].ToString();
+                    bool isAdmin = (Convert.ToInt32(profile.Rows[0][5].ToString()) == 1);
+
+                    Form home = new home.Home(name, isAdmin);
                     home.Show();
 
                     this.Enabled = false;
@@ -100,13 +103,48 @@ namespace DistributionManagementWinForm.auth
             this.Close();
         }
 
-        private void signupLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        #endregion
+
+        private void userTextBox_MouseClick(object sender, MouseEventArgs e)
         {
-            Form signup = new SignupForm();
-            signup.Show();
-            this.Hide();
+            if (userTextBox.Text == "Username")
+            {
+                userTextBox.Text = "";
+            }
         }
 
-        #endregion
+        private void userTextBox_Leave(object sender, EventArgs e)
+        {
+            if (userTextBox.Text == "")
+            {
+                userTextBox.Text = "Username";
+            }
+        }
+
+        private void passTextBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (passTextBox.Text == "Password")
+            {
+                passTextBox.Text = "";
+            }
+        }
+
+        private void passTextBox_Leave(object sender, EventArgs e)
+        {
+            if (passTextBox.Text == "")
+            {
+                passTextBox.Text = "Password";
+            }
+        }
+
+        private void passTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                loginBtn.PerformClick();
+                e.SuppressKeyPress = true;
+                e.Handled = true;
+            }
+        }
     }
 }

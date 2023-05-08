@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace DAL.Inventory
 {
@@ -20,10 +21,12 @@ namespace DAL.Inventory
         public void addQuery()
         {
             string sql = $"INSERT INTO Goods_Received_Note (received_date, received_from, total_quantity, total_cost) VALUES " +
-                                                         $"('{GRN.ReceivedDate}', " +
+                                                         $"('{GRN.ReceivedDate.ToString("yyyy/MM/dd")}', " +
                                                          $"'{GRN.ReceivedFrom}', " +
                                                          $"{GRN.TotalQuantity}, " +
                                                          $"{GRN.TotalCost})";
+
+
             Connection.actionQuery(sql);
         }
 

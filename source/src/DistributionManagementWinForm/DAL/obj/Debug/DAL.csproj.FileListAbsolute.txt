@@ -55,3 +55,22 @@ E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\D
 E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\obj\Debug\DAL.csproj.CopyComplete
 E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\obj\Debug\DAL.dll
 E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\obj\Debug\DAL.pdb
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\bin\Debug\DAL.dll
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\bin\Debug\DAL.pdb
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\bin\Debug\DTO.dll
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\bin\Debug\System.Data.SqlClient.dll
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\bin\Debug\System.Security.AccessControl.dll
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\bin\Debug\System.Security.Permissions.dll
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\bin\Debug\System.Security.Principal.Windows.dll
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\bin\Debug\DTO.pdb
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\bin\Debug\System.Data.SqlClient.xml
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\bin\Debug\System.Security.AccessControl.xml
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\bin\Debug\System.Security.Permissions.xml
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\bin\Debug\System.Security.Principal.Windows.xml
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\obj\Debug\DAL.dll
+D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DAL\obj\Debug\DAL.pdb

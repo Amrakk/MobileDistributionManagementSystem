@@ -29,137 +29,155 @@ namespace DistributionManagementWinForm.home.Order
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelAccount = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btn_DeleteAccount = new System.Windows.Forms.Button();
-            this.btn_EditAccount = new System.Windows.Forms.Button();
-            this.btn_CreateAccount = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.productGridView = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panelAccount.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productGridView)).BeginInit();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.label_allOrder = new System.Windows.Forms.Label();
+            this.label_pending = new System.Windows.Forms.Label();
+            this.textBox_search = new Guna.UI2.WinForms.Guna2TextBox();
+            this.dataGridView_orderList = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_orderList)).BeginInit();
             this.SuspendLayout();
             // 
-            // panelAccount
+            // label_allOrder
             // 
-            this.panelAccount.Controls.Add(this.button1);
-            this.panelAccount.Controls.Add(this.textBox1);
-            this.panelAccount.Controls.Add(this.btn_DeleteAccount);
-            this.panelAccount.Controls.Add(this.btn_EditAccount);
-            this.panelAccount.Controls.Add(this.btn_CreateAccount);
-            this.panelAccount.Controls.Add(this.panel3);
-            this.panelAccount.Controls.Add(this.productGridView);
-            this.panelAccount.Controls.Add(this.label2);
-            this.panelAccount.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAccount.Location = new System.Drawing.Point(0, 0);
-            this.panelAccount.Name = "panelAccount";
-            this.panelAccount.Size = new System.Drawing.Size(1170, 800);
-            this.panelAccount.TabIndex = 8;
+            this.label_allOrder.AutoSize = true;
+            this.label_allOrder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label_allOrder.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_allOrder.Location = new System.Drawing.Point(31, 32);
+            this.label_allOrder.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_allOrder.Name = "label_allOrder";
+            this.label_allOrder.Size = new System.Drawing.Size(105, 30);
+            this.label_allOrder.TabIndex = 3;
+            this.label_allOrder.Text = "All Orders";
+            this.label_allOrder.Click += new System.EventHandler(this.label_allOrder_Click_1);
+            this.label_allOrder.Leave += new System.EventHandler(this.label_allOrder_Leave_1);
+
             // 
-            // button1
+            // label_pending
             // 
-            this.button1.Location = new System.Drawing.Point(1005, 70);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 24);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
+            this.label_pending.AutoSize = true;
+            this.label_pending.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label_pending.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_pending.Location = new System.Drawing.Point(144, 32);
+            this.label_pending.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_pending.Name = "label_pending";
+            this.label_pending.Size = new System.Drawing.Size(88, 30);
+            this.label_pending.TabIndex = 4;
+            this.label_pending.Text = "Pending";
+            this.label_pending.Click += new System.EventHandler(this.label_pending_Click);
+            this.label_pending.Leave += new System.EventHandler(this.label_pending_Leave_1);
+           
             // 
-            // textBox1
+            // textBox_search
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(60, 70);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(925, 24);
-            this.textBox1.TabIndex = 12;
+            this.textBox_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(154)))), ((int)(((byte)(73)))));
+            this.textBox_search.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(154)))), ((int)(((byte)(73)))));
+            this.textBox_search.BorderThickness = 2;
+            this.textBox_search.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox_search.DefaultText = "";
+            this.textBox_search.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBox_search.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBox_search.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox_search.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox_search.FillColor = System.Drawing.SystemColors.Control;
+            this.textBox_search.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox_search.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_search.ForeColor = System.Drawing.Color.Black;
+            this.textBox_search.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox_search.Location = new System.Drawing.Point(36, 83);
+            this.textBox_search.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox_search.Name = "textBox_search";
+            this.textBox_search.PasswordChar = '\0';
+            this.textBox_search.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.textBox_search.PlaceholderText = " Search By Reseller Name";
+            this.textBox_search.SelectedText = "";
+            this.textBox_search.Size = new System.Drawing.Size(505, 39);
+            this.textBox_search.TabIndex = 6;
+           
+            this.textBox_search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guna2TextBox1_KeyPress);
             // 
-            // btn_DeleteAccount
+            // dataGridView_orderList
             // 
-            this.btn_DeleteAccount.Location = new System.Drawing.Point(525, 700);
-            this.btn_DeleteAccount.Name = "btn_DeleteAccount";
-            this.btn_DeleteAccount.Size = new System.Drawing.Size(175, 40);
-            this.btn_DeleteAccount.TabIndex = 6;
-            this.btn_DeleteAccount.Text = "Delete";
-            this.btn_DeleteAccount.UseVisualStyleBackColor = true;
+            this.dataGridView_orderList.AllowUserToAddRows = false;
+            this.dataGridView_orderList.AllowUserToResizeColumns = false;
+            this.dataGridView_orderList.AllowUserToResizeRows = false;
+            this.dataGridView_orderList.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView_orderList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(154)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(154)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_orderList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView_orderList.ColumnHeadersHeight = 40;
+            this.dataGridView_orderList.Location = new System.Drawing.Point(36, 159);
+            this.dataGridView_orderList.Name = "dataGridView_orderList";
+            this.dataGridView_orderList.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_orderList.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView_orderList.RowHeadersVisible = false;
+            this.dataGridView_orderList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView_orderList.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView_orderList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_orderList.Size = new System.Drawing.Size(1099, 545);
+            this.dataGridView_orderList.TabIndex = 5;
+            this.dataGridView_orderList.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_orderList_CellContentDoubleClick);
             // 
-            // btn_EditAccount
+            // label1
             // 
-            this.btn_EditAccount.Location = new System.Drawing.Point(730, 700);
-            this.btn_EditAccount.Name = "btn_EditAccount";
-            this.btn_EditAccount.Size = new System.Drawing.Size(175, 40);
-            this.btn_EditAccount.TabIndex = 5;
-            this.btn_EditAccount.Text = "Edit";
-            this.btn_EditAccount.UseVisualStyleBackColor = true;
-            // 
-            // btn_CreateAccount
-            // 
-            this.btn_CreateAccount.Location = new System.Drawing.Point(935, 700);
-            this.btn_CreateAccount.Name = "btn_CreateAccount";
-            this.btn_CreateAccount.Size = new System.Drawing.Size(175, 40);
-            this.btn_CreateAccount.TabIndex = 4;
-            this.btn_CreateAccount.Text = "Create";
-            this.btn_CreateAccount.UseVisualStyleBackColor = true;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 799);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1170, 1);
-            this.panel3.TabIndex = 3;
-            // 
-            // productGridView
-            // 
-            this.productGridView.AllowUserToAddRows = false;
-            this.productGridView.AllowUserToDeleteRows = false;
-            this.productGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.productGridView.Location = new System.Drawing.Point(60, 110);
-            this.productGridView.Name = "productGridView";
-            this.productGridView.ReadOnly = true;
-            this.productGridView.Size = new System.Drawing.Size(1050, 550);
-            this.productGridView.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(60, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 25);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Order List";
+            this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(31, 92);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 30);
+            this.label1.TabIndex = 7;
             // 
             // OrderListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1170, 800);
-            this.Controls.Add(this.panelAccount);
+            this.AutoScroll = true;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(1162, 737);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dataGridView_orderList);
+            this.Controls.Add(this.textBox_search);
+            this.Controls.Add(this.label_pending);
+            this.Controls.Add(this.label_allOrder);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "OrderListForm";
             this.Text = "Order List";
-            this.panelAccount.ResumeLayout(false);
-            this.panelAccount.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productGridView)).EndInit();
+            this.Load += new System.EventHandler(this.OrderListForm_Load);
+           
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_orderList)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelAccount;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btn_DeleteAccount;
-        private System.Windows.Forms.Button btn_EditAccount;
-        private System.Windows.Forms.Button btn_CreateAccount;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView productGridView;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label_allOrder;
+        private System.Windows.Forms.Label label_pending;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_search;
+        private System.Windows.Forms.DataGridView dataGridView_orderList;
+        private System.Windows.Forms.Label label1;
     }
 }

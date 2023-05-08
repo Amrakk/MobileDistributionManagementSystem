@@ -48,6 +48,7 @@ namespace DistributionManagementWinForm.home
             this.dashboardBtn = new FontAwesome.Sharp.IconButton();
             this.logoSubPanel = new System.Windows.Forms.Panel();
             this.titlePanel = new System.Windows.Forms.Panel();
+            this.closeBtn = new FontAwesome.Sharp.IconPictureBox();
             this.welcomeLabel = new System.Windows.Forms.Label();
             this.childFormTitleLabel = new System.Windows.Forms.Label();
             this.returnBtn = new FontAwesome.Sharp.IconPictureBox();
@@ -55,16 +56,14 @@ namespace DistributionManagementWinForm.home
             this.mainPanel = new System.Windows.Forms.Panel();
             this.userSubPanel = new System.Windows.Forms.Panel();
             this.signOutBtn = new FontAwesome.Sharp.IconButton();
-            this.profileBtn = new FontAwesome.Sharp.IconButton();
-            this.closeBtn = new FontAwesome.Sharp.IconPictureBox();
             this.sidePanel.SuspendLayout();
             this.reportSubPanel.SuspendLayout();
             this.inventorySubPanel.SuspendLayout();
             this.orderSubPanel.SuspendLayout();
             this.titlePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.returnBtn)).BeginInit();
             this.userSubPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // sidePanel
@@ -137,7 +136,7 @@ namespace DistributionManagementWinForm.home
             this.reportSubPanel.Controls.Add(this.saleReportBtn);
             this.reportSubPanel.Controls.Add(this.stockReportBtn);
             this.reportSubPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.reportSubPanel.Location = new System.Drawing.Point(0, 580);
+            this.reportSubPanel.Location = new System.Drawing.Point(0, 586);
             this.reportSubPanel.Name = "reportSubPanel";
             this.reportSubPanel.Size = new System.Drawing.Size(180, 115);
             this.reportSubPanel.TabIndex = 10;
@@ -196,7 +195,7 @@ namespace DistributionManagementWinForm.home
             this.reportBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.reportBtn.IconSize = 25;
             this.reportBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.reportBtn.Location = new System.Drawing.Point(0, 525);
+            this.reportBtn.Location = new System.Drawing.Point(0, 531);
             this.reportBtn.Name = "reportBtn";
             this.reportBtn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.reportBtn.Size = new System.Drawing.Size(180, 55);
@@ -213,7 +212,7 @@ namespace DistributionManagementWinForm.home
             this.inventorySubPanel.Controls.Add(this.receiptsBtn);
             this.inventorySubPanel.Controls.Add(this.productBtn);
             this.inventorySubPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.inventorySubPanel.Location = new System.Drawing.Point(0, 355);
+            this.inventorySubPanel.Location = new System.Drawing.Point(0, 361);
             this.inventorySubPanel.Name = "inventorySubPanel";
             this.inventorySubPanel.Size = new System.Drawing.Size(180, 170);
             this.inventorySubPanel.TabIndex = 8;
@@ -293,7 +292,7 @@ namespace DistributionManagementWinForm.home
             this.inventoryBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.inventoryBtn.IconSize = 25;
             this.inventoryBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.inventoryBtn.Location = new System.Drawing.Point(0, 300);
+            this.inventoryBtn.Location = new System.Drawing.Point(0, 306);
             this.inventoryBtn.Name = "inventoryBtn";
             this.inventoryBtn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.inventoryBtn.Size = new System.Drawing.Size(180, 55);
@@ -309,7 +308,7 @@ namespace DistributionManagementWinForm.home
             this.orderSubPanel.Controls.Add(this.placeOrderBtn);
             this.orderSubPanel.Controls.Add(this.orderListBtn);
             this.orderSubPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.orderSubPanel.Location = new System.Drawing.Point(0, 185);
+            this.orderSubPanel.Location = new System.Drawing.Point(0, 191);
             this.orderSubPanel.Name = "orderSubPanel";
             this.orderSubPanel.Size = new System.Drawing.Size(180, 115);
             this.orderSubPanel.TabIndex = 2;
@@ -368,7 +367,7 @@ namespace DistributionManagementWinForm.home
             this.orderBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.orderBtn.IconSize = 25;
             this.orderBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.orderBtn.Location = new System.Drawing.Point(0, 130);
+            this.orderBtn.Location = new System.Drawing.Point(0, 136);
             this.orderBtn.Name = "orderBtn";
             this.orderBtn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.orderBtn.Size = new System.Drawing.Size(180, 55);
@@ -390,7 +389,7 @@ namespace DistributionManagementWinForm.home
             this.dashboardBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.dashboardBtn.IconSize = 25;
             this.dashboardBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dashboardBtn.Location = new System.Drawing.Point(0, 75);
+            this.dashboardBtn.Location = new System.Drawing.Point(0, 81);
             this.dashboardBtn.Name = "dashboardBtn";
             this.dashboardBtn.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.dashboardBtn.Size = new System.Drawing.Size(180, 55);
@@ -402,10 +401,12 @@ namespace DistributionManagementWinForm.home
             // 
             // logoSubPanel
             // 
+            this.logoSubPanel.BackgroundImage = global::DistributionManagementWinForm.Properties.Resources.d_low_resolution_logo_white_on_transparent_background;
+            this.logoSubPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.logoSubPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.logoSubPanel.Location = new System.Drawing.Point(0, 0);
             this.logoSubPanel.Name = "logoSubPanel";
-            this.logoSubPanel.Size = new System.Drawing.Size(180, 75);
+            this.logoSubPanel.Size = new System.Drawing.Size(180, 81);
             this.logoSubPanel.TabIndex = 2;
             // 
             // titlePanel
@@ -421,6 +422,22 @@ namespace DistributionManagementWinForm.home
             this.titlePanel.Size = new System.Drawing.Size(1170, 50);
             this.titlePanel.TabIndex = 2;
             this.titlePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.titlePanel_MouseDown);
+            // 
+            // closeBtn
+            // 
+            this.closeBtn.BackColor = System.Drawing.Color.White;
+            this.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.closeBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.closeBtn.IconChar = FontAwesome.Sharp.IconChar.Xmark;
+            this.closeBtn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.closeBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.closeBtn.IconSize = 20;
+            this.closeBtn.Location = new System.Drawing.Point(1147, 3);
+            this.closeBtn.Name = "closeBtn";
+            this.closeBtn.Size = new System.Drawing.Size(20, 20);
+            this.closeBtn.TabIndex = 6;
+            this.closeBtn.TabStop = false;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
             // welcomeLabel
             // 
@@ -469,7 +486,7 @@ namespace DistributionManagementWinForm.home
             this.userLabel.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.userLabel.Location = new System.Drawing.Point(1170, 17);
             this.userLabel.Name = "userLabel";
-            this.userLabel.Size = new System.Drawing.Size(126, 25);
+            this.userLabel.Size = new System.Drawing.Size(177, 25);
             this.userLabel.TabIndex = 4;
             this.userLabel.Text = "Dashboard";
             this.userLabel.Click += new System.EventHandler(this.userLabel_Click);
@@ -489,11 +506,10 @@ namespace DistributionManagementWinForm.home
             // 
             this.userSubPanel.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.userSubPanel.Controls.Add(this.signOutBtn);
-            this.userSubPanel.Controls.Add(this.profileBtn);
             this.userSubPanel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.userSubPanel.Location = new System.Drawing.Point(1170, 50);
             this.userSubPanel.Name = "userSubPanel";
-            this.userSubPanel.Size = new System.Drawing.Size(180, 115);
+            this.userSubPanel.Size = new System.Drawing.Size(180, 55);
             this.userSubPanel.TabIndex = 3;
             // 
             // signOutBtn
@@ -508,7 +524,7 @@ namespace DistributionManagementWinForm.home
             this.signOutBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.signOutBtn.IconSize = 25;
             this.signOutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.signOutBtn.Location = new System.Drawing.Point(0, 55);
+            this.signOutBtn.Location = new System.Drawing.Point(0, 0);
             this.signOutBtn.Name = "signOutBtn";
             this.signOutBtn.Size = new System.Drawing.Size(180, 55);
             this.signOutBtn.TabIndex = 9;
@@ -516,43 +532,6 @@ namespace DistributionManagementWinForm.home
             this.signOutBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.signOutBtn.UseVisualStyleBackColor = true;
             this.signOutBtn.Click += new System.EventHandler(this.signOutBtn_Click);
-            // 
-            // profileBtn
-            // 
-            this.profileBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.profileBtn.FlatAppearance.BorderSize = 0;
-            this.profileBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.profileBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.profileBtn.ForeColor = System.Drawing.Color.White;
-            this.profileBtn.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.profileBtn.IconColor = System.Drawing.Color.White;
-            this.profileBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.profileBtn.IconSize = 25;
-            this.profileBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.profileBtn.Location = new System.Drawing.Point(0, 0);
-            this.profileBtn.Name = "profileBtn";
-            this.profileBtn.Size = new System.Drawing.Size(180, 55);
-            this.profileBtn.TabIndex = 8;
-            this.profileBtn.Text = "Profile";
-            this.profileBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.profileBtn.UseVisualStyleBackColor = true;
-            this.profileBtn.Click += new System.EventHandler(this.profileBtn_Click);
-            // 
-            // closeBtn
-            // 
-            this.closeBtn.BackColor = System.Drawing.Color.White;
-            this.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.closeBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.closeBtn.IconChar = FontAwesome.Sharp.IconChar.Xmark;
-            this.closeBtn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.closeBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.closeBtn.IconSize = 20;
-            this.closeBtn.Location = new System.Drawing.Point(1147, 3);
-            this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(20, 20);
-            this.closeBtn.TabIndex = 6;
-            this.closeBtn.TabStop = false;
-            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
             // Home
             // 
@@ -578,9 +557,9 @@ namespace DistributionManagementWinForm.home
             this.orderSubPanel.ResumeLayout(false);
             this.titlePanel.ResumeLayout(false);
             this.titlePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.returnBtn)).EndInit();
             this.userSubPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -613,7 +592,6 @@ namespace DistributionManagementWinForm.home
         private System.Windows.Forms.Label userLabel;
         private System.Windows.Forms.Panel userSubPanel;
         private FontAwesome.Sharp.IconButton signOutBtn;
-        private FontAwesome.Sharp.IconButton profileBtn;
         private FontAwesome.Sharp.IconPictureBox closeBtn;
     }
 }
