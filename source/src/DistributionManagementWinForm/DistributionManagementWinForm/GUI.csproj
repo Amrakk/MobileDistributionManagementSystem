@@ -159,6 +159,12 @@
     <Compile Include="home\Report\SaleReportForm.Designer.cs">
       <DependentUpon>SaleReportForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="home\Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="home\Setting.Designer.cs">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="auth\LoginForm.resx">
@@ -208,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="home\Report\StockReportForm.resx">
       <DependentUpon>StockReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="home\Setting.resx">
+      <DependentUpon>Setting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

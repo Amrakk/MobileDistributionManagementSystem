@@ -213,7 +213,6 @@ namespace DistributionManagementWinForm.auth
             this.userTextBox.TabIndex = 1;
             this.userTextBox.Text = "Username";
             this.userTextBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.userTextBox_MouseClick);
-            this.userTextBox.TextChanged += new System.EventHandler(this.userTextBox_TextChanged);
             this.userTextBox.Leave += new System.EventHandler(this.userTextBox_Leave);
             // 
             // panel3

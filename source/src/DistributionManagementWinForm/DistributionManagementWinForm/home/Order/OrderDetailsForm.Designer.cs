@@ -92,7 +92,7 @@ namespace DistributionManagementWinForm.home.Order
             this.dragPanel.Margin = new System.Windows.Forms.Padding(4);
             this.dragPanel.Name = "dragPanel";
             this.dragPanel.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.dragPanel.Size = new System.Drawing.Size(660, 38);
+            this.dragPanel.Size = new System.Drawing.Size(680, 38);
             this.dragPanel.TabIndex = 11;
             this.dragPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dragPanel_MouseDown);
             // 
@@ -115,7 +115,7 @@ namespace DistributionManagementWinForm.home.Order
             this.panel2.Location = new System.Drawing.Point(18, 152);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(625, 1);
+            this.panel2.Size = new System.Drawing.Size(645, 1);
             this.panel2.TabIndex = 67;
             // 
             // label_address
@@ -335,7 +335,7 @@ namespace DistributionManagementWinForm.home.Order
             this.panel1.Location = new System.Drawing.Point(18, 418);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(625, 1);
+            this.panel1.Size = new System.Drawing.Size(645, 1);
             this.panel1.TabIndex = 73;
             // 
             // label17
@@ -366,7 +366,7 @@ namespace DistributionManagementWinForm.home.Order
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label19.Location = new System.Drawing.Point(447, 125);
+            this.label19.Location = new System.Drawing.Point(484, 125);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(63, 21);
@@ -378,7 +378,7 @@ namespace DistributionManagementWinForm.home.Order
             this.label_statusName.AutoSize = true;
             this.label_statusName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_statusName.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label_statusName.Location = new System.Drawing.Point(518, 125);
+            this.label_statusName.Location = new System.Drawing.Point(555, 125);
             this.label_statusName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_statusName.Name = "label_statusName";
             this.label_statusName.Size = new System.Drawing.Size(88, 21);
@@ -405,7 +405,7 @@ namespace DistributionManagementWinForm.home.Order
             this.dataGridView_productList.Name = "dataGridView_productList";
             this.dataGridView_productList.RowHeadersVisible = false;
             this.dataGridView_productList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_productList.Size = new System.Drawing.Size(625, 236);
+            this.dataGridView_productList.Size = new System.Drawing.Size(645, 236);
             this.dataGridView_productList.TabIndex = 77;
             // 
             // label9
@@ -436,7 +436,7 @@ namespace DistributionManagementWinForm.home.Order
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(660, 745);
+            this.ClientSize = new System.Drawing.Size(680, 745);
             this.Controls.Add(this.label_totalPrice);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dataGridView_productList);

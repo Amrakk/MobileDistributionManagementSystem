@@ -85,7 +85,7 @@ namespace DistributionManagementWinForm.home.Inventory
 
         }
 
-        private int Product_id(string product_name)
+        public int Product_id(string product_name)
         {
             return int.Parse(Connection.selectQuery("SELECT product_id FROM Product WHERE product_name = '" + product_name + "'").Rows[0][0].ToString());
         }

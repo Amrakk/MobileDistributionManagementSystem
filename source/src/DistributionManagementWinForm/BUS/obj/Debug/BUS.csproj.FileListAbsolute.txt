@@ -9,17 +9,6 @@ C:\Users\hoang\OneDrive\Máy tính\SEFinalProject\source\src\DistributionManagem
 C:\Users\hoang\OneDrive\Máy tính\SEFinalProject\source\src\DistributionManagementWinForm\BUS\obj\Debug\BUS.csproj.CopyComplete
 C:\Users\hoang\OneDrive\Máy tính\SEFinalProject\source\src\DistributionManagementWinForm\BUS\obj\Debug\BUS.dll
 C:\Users\hoang\OneDrive\Máy tính\SEFinalProject\source\src\DistributionManagementWinForm\BUS\obj\Debug\BUS.pdb
-C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\bin\Debug\BUS.dll
-C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\bin\Debug\BUS.pdb
-C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\bin\Debug\DAL.dll
-C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\bin\Debug\DTO.dll
-C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\bin\Debug\DAL.pdb
-C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\bin\Debug\DTO.pdb
-C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
-C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
-C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\obj\Debug\BUS.csproj.CopyComplete
-C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\obj\Debug\BUS.dll
-C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\obj\Debug\BUS.pdb
 E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\bin\Debug\BUS.dll
 E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\bin\Debug\BUS.pdb
 E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\bin\Debug\DAL.dll
@@ -42,3 +31,14 @@ D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\Distributio
 D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\obj\Debug\BUS.csproj.CopyComplete
 D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\obj\Debug\BUS.dll
 D:\TDTU\HK4\Duy - Copy\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\obj\Debug\BUS.pdb
+C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\bin\Debug\BUS.dll
+C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\bin\Debug\BUS.pdb
+C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\bin\Debug\DAL.dll
+C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\bin\Debug\DTO.dll
+C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\bin\Debug\DAL.pdb
+C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\bin\Debug\DTO.pdb
+C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\obj\Debug\BUS.csproj.CopyComplete
+C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\obj\Debug\BUS.dll
+C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\BUS\obj\Debug\BUS.pdb
