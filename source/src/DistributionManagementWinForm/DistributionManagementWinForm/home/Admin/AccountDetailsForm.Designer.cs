@@ -30,6 +30,7 @@ namespace DistributionManagementWinForm.home.Admin
         private void InitializeComponent()
         {
             this.loginPanel = new System.Windows.Forms.Panel();
+            this.label_status = new System.Windows.Forms.Label();
             this.resellerAddPanel = new System.Windows.Forms.Panel();
             this.resellerAddTextBox = new System.Windows.Forms.TextBox();
             this.panel17 = new System.Windows.Forms.Panel();
@@ -56,8 +57,6 @@ namespace DistributionManagementWinForm.home.Admin
             this.panel1 = new System.Windows.Forms.Panel();
             this.lNameTextBox = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.loginBtn = new System.Windows.Forms.LinkLabel();
-            this.errorLabel = new System.Windows.Forms.Label();
             this.signupBtn = new System.Windows.Forms.Button();
             this.userPanel = new System.Windows.Forms.Panel();
             this.fNameTextBox = new System.Windows.Forms.TextBox();
@@ -81,7 +80,8 @@ namespace DistributionManagementWinForm.home.Admin
             // 
             // loginPanel
             // 
-            this.loginPanel.BackColor = System.Drawing.SystemColors.Window;
+            this.loginPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.loginPanel.Controls.Add(this.label_status);
             this.loginPanel.Controls.Add(this.resellerAddPanel);
             this.loginPanel.Controls.Add(this.resellerNamePanel);
             this.loginPanel.Controls.Add(this.panel12);
@@ -92,8 +92,6 @@ namespace DistributionManagementWinForm.home.Admin
             this.loginPanel.Controls.Add(this.panel6);
             this.loginPanel.Controls.Add(this.panel4);
             this.loginPanel.Controls.Add(this.panel1);
-            this.loginPanel.Controls.Add(this.loginBtn);
-            this.loginPanel.Controls.Add(this.errorLabel);
             this.loginPanel.Controls.Add(this.signupBtn);
             this.loginPanel.Controls.Add(this.userPanel);
             this.loginPanel.Controls.Add(this.loginLabel);
@@ -103,6 +101,18 @@ namespace DistributionManagementWinForm.home.Admin
             this.loginPanel.Name = "loginPanel";
             this.loginPanel.Size = new System.Drawing.Size(820, 495);
             this.loginPanel.TabIndex = 7;
+            this.loginPanel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.loginPanel_MouseClick);
+            // 
+            // label_status
+            // 
+            this.label_status.AutoSize = true;
+            this.label_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(154)))), ((int)(((byte)(73)))));
+            this.label_status.Location = new System.Drawing.Point(50, 436);
+            this.label_status.Name = "label_status";
+            this.label_status.Size = new System.Drawing.Size(84, 20);
+            this.label_status.TabIndex = 29;
+            this.label_status.Text = "Creating...";
             // 
             // resellerAddPanel
             // 
@@ -111,11 +121,11 @@ namespace DistributionManagementWinForm.home.Admin
             this.resellerAddPanel.Location = new System.Drawing.Point(461, 422);
             this.resellerAddPanel.Name = "resellerAddPanel";
             this.resellerAddPanel.Size = new System.Drawing.Size(312, 34);
-            this.resellerAddPanel.TabIndex = 12;
+            this.resellerAddPanel.TabIndex = 9;
             // 
             // resellerAddTextBox
             // 
-            this.resellerAddTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.resellerAddTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.resellerAddTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.resellerAddTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resellerAddTextBox.ForeColor = System.Drawing.Color.Gray;
@@ -124,6 +134,8 @@ namespace DistributionManagementWinForm.home.Admin
             this.resellerAddTextBox.Size = new System.Drawing.Size(312, 20);
             this.resellerAddTextBox.TabIndex = 9;
             this.resellerAddTextBox.Text = "Reseller Address";
+            this.resellerAddTextBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.resellerAddTextBox_MouseClick);
+            this.resellerAddTextBox.Leave += new System.EventHandler(this.resellerAddTextBox_Leave);
             // 
             // panel17
             // 
@@ -140,11 +152,11 @@ namespace DistributionManagementWinForm.home.Admin
             this.resellerNamePanel.Location = new System.Drawing.Point(461, 362);
             this.resellerNamePanel.Name = "resellerNamePanel";
             this.resellerNamePanel.Size = new System.Drawing.Size(312, 34);
-            this.resellerNamePanel.TabIndex = 11;
+            this.resellerNamePanel.TabIndex = 8;
             // 
             // resellerNameTextBox
             // 
-            this.resellerNameTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.resellerNameTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.resellerNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.resellerNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resellerNameTextBox.ForeColor = System.Drawing.Color.Gray;
@@ -153,6 +165,8 @@ namespace DistributionManagementWinForm.home.Admin
             this.resellerNameTextBox.Size = new System.Drawing.Size(312, 20);
             this.resellerNameTextBox.TabIndex = 8;
             this.resellerNameTextBox.Text = "Reseller Name";
+            this.resellerNameTextBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.resellerNameTextBox_MouseClick);
+            this.resellerNameTextBox.Leave += new System.EventHandler(this.resellerNameTextBox_Leave);
             // 
             // panel15
             // 
@@ -169,11 +183,11 @@ namespace DistributionManagementWinForm.home.Admin
             this.panel12.Location = new System.Drawing.Point(54, 242);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(312, 34);
-            this.panel12.TabIndex = 10;
+            this.panel12.TabIndex = 3;
             // 
             // confirmPassTextBox
             // 
-            this.confirmPassTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.confirmPassTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.confirmPassTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.confirmPassTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirmPassTextBox.ForeColor = System.Drawing.Color.Gray;
@@ -182,6 +196,9 @@ namespace DistributionManagementWinForm.home.Admin
             this.confirmPassTextBox.Size = new System.Drawing.Size(312, 20);
             this.confirmPassTextBox.TabIndex = 2;
             this.confirmPassTextBox.Text = "Confirm Password";
+            this.confirmPassTextBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.confirmPassTextBox_MouseClick);
+            this.confirmPassTextBox.TextChanged += new System.EventHandler(this.confirmPassTextBox_TextChanged);
+            this.confirmPassTextBox.Leave += new System.EventHandler(this.confirmPassTextBox_Leave);
             // 
             // panel13
             // 
@@ -198,11 +215,11 @@ namespace DistributionManagementWinForm.home.Admin
             this.panel10.Location = new System.Drawing.Point(54, 186);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(312, 34);
-            this.panel10.TabIndex = 10;
+            this.panel10.TabIndex = 2;
             // 
             // passTextBox
             // 
-            this.passTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.passTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.passTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.passTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passTextBox.ForeColor = System.Drawing.Color.Gray;
@@ -211,6 +228,9 @@ namespace DistributionManagementWinForm.home.Admin
             this.passTextBox.Size = new System.Drawing.Size(312, 20);
             this.passTextBox.TabIndex = 1;
             this.passTextBox.Text = "Password";
+            this.passTextBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.passTextBox_MouseClick_1);
+            this.passTextBox.TextChanged += new System.EventHandler(this.passTextBox_TextChanged);
+            this.passTextBox.Leave += new System.EventHandler(this.passTextBox_Leave_1);
             // 
             // panel11
             // 
@@ -227,11 +247,11 @@ namespace DistributionManagementWinForm.home.Admin
             this.panel8.Location = new System.Drawing.Point(54, 126);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(312, 34);
-            this.panel8.TabIndex = 10;
+            this.panel8.TabIndex = 1;
             // 
             // userTextBox
             // 
-            this.userTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.userTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.userTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.userTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userTextBox.ForeColor = System.Drawing.Color.Gray;
@@ -240,6 +260,8 @@ namespace DistributionManagementWinForm.home.Admin
             this.userTextBox.Size = new System.Drawing.Size(312, 20);
             this.userTextBox.TabIndex = 0;
             this.userTextBox.Text = "Username";
+            this.userTextBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.userTextBox_MouseClick_1);
+            this.userTextBox.Leave += new System.EventHandler(this.userTextBox_Leave_1);
             // 
             // panel9
             // 
@@ -260,6 +282,7 @@ namespace DistributionManagementWinForm.home.Admin
             this.resellerRadioButton.TabStop = true;
             this.resellerRadioButton.Text = "Reseller";
             this.resellerRadioButton.UseVisualStyleBackColor = true;
+            this.resellerRadioButton.CheckedChanged += new System.EventHandler(this.resellerRadioButton_CheckedChanged);
             // 
             // accountantRadioButton
             // 
@@ -280,11 +303,11 @@ namespace DistributionManagementWinForm.home.Admin
             this.panel6.Location = new System.Drawing.Point(461, 242);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(312, 34);
-            this.panel6.TabIndex = 11;
+            this.panel6.TabIndex = 7;
             // 
             // phoneTextBox
             // 
-            this.phoneTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.phoneTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.phoneTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.phoneTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phoneTextBox.ForeColor = System.Drawing.Color.Gray;
@@ -293,6 +316,8 @@ namespace DistributionManagementWinForm.home.Admin
             this.phoneTextBox.Size = new System.Drawing.Size(312, 20);
             this.phoneTextBox.TabIndex = 6;
             this.phoneTextBox.Text = "Phone Number";
+            this.phoneTextBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.phoneTextBox_MouseClick);
+            this.phoneTextBox.Leave += new System.EventHandler(this.phoneTextBox_Leave);
             // 
             // panel7
             // 
@@ -309,11 +334,11 @@ namespace DistributionManagementWinForm.home.Admin
             this.panel4.Location = new System.Drawing.Point(461, 182);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(312, 34);
-            this.panel4.TabIndex = 10;
+            this.panel4.TabIndex = 6;
             // 
             // emailTextBox
             // 
-            this.emailTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.emailTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.emailTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.emailTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailTextBox.ForeColor = System.Drawing.Color.Gray;
@@ -322,6 +347,8 @@ namespace DistributionManagementWinForm.home.Admin
             this.emailTextBox.Size = new System.Drawing.Size(312, 20);
             this.emailTextBox.TabIndex = 5;
             this.emailTextBox.Text = "Email";
+            this.emailTextBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.emailTextBox_MouseClick);
+            this.emailTextBox.Leave += new System.EventHandler(this.emailTextBox_Leave);
             // 
             // panel5
             // 
@@ -338,11 +365,11 @@ namespace DistributionManagementWinForm.home.Admin
             this.panel1.Location = new System.Drawing.Point(461, 122);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(312, 34);
-            this.panel1.TabIndex = 10;
+            this.panel1.TabIndex = 5;
             // 
             // lNameTextBox
             // 
-            this.lNameTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.lNameTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lNameTextBox.ForeColor = System.Drawing.Color.Gray;
@@ -351,6 +378,8 @@ namespace DistributionManagementWinForm.home.Admin
             this.lNameTextBox.Size = new System.Drawing.Size(312, 20);
             this.lNameTextBox.TabIndex = 4;
             this.lNameTextBox.Text = "Last Name";
+            this.lNameTextBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lNameTextBox_MouseClick);
+            this.lNameTextBox.Leave += new System.EventHandler(this.lNameTextBox_Leave);
             // 
             // panel2
             // 
@@ -360,41 +389,19 @@ namespace DistributionManagementWinForm.home.Admin
             this.panel2.Size = new System.Drawing.Size(312, 2);
             this.panel2.TabIndex = 8;
             // 
-            // loginBtn
-            // 
-            this.loginBtn.AutoSize = true;
-            this.loginBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginBtn.LinkColor = System.Drawing.SystemColors.GrayText;
-            this.loginBtn.Location = new System.Drawing.Point(188, 424);
-            this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(44, 18);
-            this.loginBtn.TabIndex = 15;
-            this.loginBtn.TabStop = true;
-            this.loginBtn.Text = "Login";
-            // 
-            // errorLabel
-            // 
-            this.errorLabel.AutoSize = true;
-            this.errorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorLabel.ForeColor = System.Drawing.Color.Red;
-            this.errorLabel.Location = new System.Drawing.Point(188, 302);
-            this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(44, 20);
-            this.errorLabel.TabIndex = 12;
-            this.errorLabel.Text = "Error";
-            // 
             // signupBtn
             // 
             this.signupBtn.FlatAppearance.BorderSize = 3;
             this.signupBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signupBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signupBtn.ForeColor = System.Drawing.Color.DarkGreen;
-            this.signupBtn.Location = new System.Drawing.Point(54, 353);
+            this.signupBtn.Location = new System.Drawing.Point(54, 329);
             this.signupBtn.Name = "signupBtn";
             this.signupBtn.Size = new System.Drawing.Size(312, 51);
             this.signupBtn.TabIndex = 11;
-            this.signupBtn.Text = "Sign Up";
+            this.signupBtn.Text = "Submit";
             this.signupBtn.UseVisualStyleBackColor = true;
+            this.signupBtn.Click += new System.EventHandler(this.signupBtn_Click);
             // 
             // userPanel
             // 
@@ -403,11 +410,11 @@ namespace DistributionManagementWinForm.home.Admin
             this.userPanel.Location = new System.Drawing.Point(461, 62);
             this.userPanel.Name = "userPanel";
             this.userPanel.Size = new System.Drawing.Size(312, 34);
-            this.userPanel.TabIndex = 9;
+            this.userPanel.TabIndex = 4;
             // 
             // fNameTextBox
             // 
-            this.fNameTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.fNameTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
             this.fNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.fNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fNameTextBox.ForeColor = System.Drawing.Color.Gray;
@@ -416,6 +423,8 @@ namespace DistributionManagementWinForm.home.Admin
             this.fNameTextBox.Size = new System.Drawing.Size(312, 20);
             this.fNameTextBox.TabIndex = 3;
             this.fNameTextBox.Text = "First Name";
+            this.fNameTextBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.fNameTextBox_MouseClick);
+            this.fNameTextBox.Leave += new System.EventHandler(this.fNameTextBox_Leave);
             // 
             // panel3
             // 
@@ -439,7 +448,7 @@ namespace DistributionManagementWinForm.home.Admin
             // 
             // dragPanel
             // 
-            this.dragPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(0)))));
+            this.dragPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(154)))), ((int)(((byte)(73)))));
             this.dragPanel.Controls.Add(this.closeBtn);
             this.dragPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.dragPanel.Location = new System.Drawing.Point(0, 0);
@@ -447,6 +456,7 @@ namespace DistributionManagementWinForm.home.Admin
             this.dragPanel.Padding = new System.Windows.Forms.Padding(5);
             this.dragPanel.Size = new System.Drawing.Size(820, 30);
             this.dragPanel.TabIndex = 6;
+            this.dragPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dragPanel_MouseDown);
             // 
             // closeBtn
             // 
@@ -457,11 +467,12 @@ namespace DistributionManagementWinForm.home.Admin
             this.closeBtn.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.closeBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.closeBtn.IconSize = 20;
-            this.closeBtn.Location = new System.Drawing.Point(795, 5);
+            this.closeBtn.Location = new System.Drawing.Point(800, 0);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(20, 20);
             this.closeBtn.TabIndex = 0;
             this.closeBtn.TabStop = false;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
             // AccountDetailsForm
             // 
@@ -475,6 +486,7 @@ namespace DistributionManagementWinForm.home.Admin
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AccountDetailsForm";
             this.Text = "AccountDetailsForm";
+            this.Load += new System.EventHandler(this.AccountDetailsForm_Load);
             this.loginPanel.ResumeLayout(false);
             this.loginPanel.PerformLayout();
             this.resellerAddPanel.ResumeLayout(false);
@@ -530,8 +542,6 @@ namespace DistributionManagementWinForm.home.Admin
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox lNameTextBox;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.LinkLabel loginBtn;
-        private System.Windows.Forms.Label errorLabel;
         private System.Windows.Forms.Button signupBtn;
         private System.Windows.Forms.Panel userPanel;
         private System.Windows.Forms.TextBox fNameTextBox;
@@ -539,5 +549,6 @@ namespace DistributionManagementWinForm.home.Admin
         private System.Windows.Forms.Label loginLabel;
         private System.Windows.Forms.Panel dragPanel;
         private FontAwesome.Sharp.IconPictureBox closeBtn;
+        private System.Windows.Forms.Label label_status;
     }
 }

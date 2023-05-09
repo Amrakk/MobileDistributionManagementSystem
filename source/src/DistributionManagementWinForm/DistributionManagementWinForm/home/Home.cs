@@ -159,10 +159,9 @@ namespace DistributionManagementWinForm.home
 
         #region Admin
 
-        private void adminBtn_Click(object sender, EventArgs e)
+        public void adminBtn_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Admin.AdminForm());
-
         }
 
         #endregion

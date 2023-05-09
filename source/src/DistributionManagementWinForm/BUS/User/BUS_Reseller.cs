@@ -27,9 +27,9 @@ namespace BUS.User
             DReseller.updateQuery();
         }
 
-        public void DeleteReseller()
+        public void DeleteReseller(int id)
         {
-            DReseller.deleteQuery();
+            DReseller.deleteQuery(id);
         }
 
         public DataTable SelectResellers()

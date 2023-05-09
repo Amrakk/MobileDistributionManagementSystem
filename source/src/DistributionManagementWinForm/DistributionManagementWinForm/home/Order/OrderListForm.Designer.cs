@@ -53,7 +53,6 @@ namespace DistributionManagementWinForm.home.Order
             this.label_allOrder.Text = "All Orders";
             this.label_allOrder.Click += new System.EventHandler(this.label_allOrder_Click_1);
             this.label_allOrder.Leave += new System.EventHandler(this.label_allOrder_Leave_1);
-
             // 
             // label_pending
             // 
@@ -68,7 +67,6 @@ namespace DistributionManagementWinForm.home.Order
             this.label_pending.Text = "Pending";
             this.label_pending.Click += new System.EventHandler(this.label_pending_Click);
             this.label_pending.Leave += new System.EventHandler(this.label_pending_Leave_1);
-           
             // 
             // textBox_search
             // 
@@ -95,7 +93,6 @@ namespace DistributionManagementWinForm.home.Order
             this.textBox_search.SelectedText = "";
             this.textBox_search.Size = new System.Drawing.Size(505, 39);
             this.textBox_search.TabIndex = 6;
-           
             this.textBox_search.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guna2TextBox1_KeyPress);
             // 
             // dataGridView_orderList
@@ -134,7 +131,7 @@ namespace DistributionManagementWinForm.home.Order
             this.dataGridView_orderList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_orderList.Size = new System.Drawing.Size(1099, 545);
             this.dataGridView_orderList.TabIndex = 5;
-            this.dataGridView_orderList.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_orderList_CellContentDoubleClick);
+            this.dataGridView_orderList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_orderList_CellDoubleClick);
             // 
             // label1
             // 
@@ -166,7 +163,6 @@ namespace DistributionManagementWinForm.home.Order
             this.Name = "OrderListForm";
             this.Text = "Order List";
             this.Load += new System.EventHandler(this.OrderListForm_Load);
-           
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_orderList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
