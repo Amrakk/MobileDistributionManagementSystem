@@ -109,7 +109,7 @@ namespace DistributionManagementWinForm.home.Order
             return Connection.selectQuery("SELECT delivery_method FROM Delivery_Note WHERE delivery_id = '" + order_id + "'").Rows[0][0].ToString();
         }
 
-        private void dataGridView_orderList_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView_orderList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int order_id = int.Parse(dataGridView_orderList.Rows[e.RowIndex].Cells["order_id"].FormattedValue.ToString());
             DateTime order_date = DateTime.Parse(dataGridView_orderList.Rows[e.RowIndex].Cells["order_date"].FormattedValue.ToString());
@@ -124,7 +124,7 @@ namespace DistributionManagementWinForm.home.Order
 
             string address = Address(Reseller_id(reseller_name));
             string delivery_method = Delivery_method(order_id);
-            //string payment_method = dataGridView_orderList.Rows[e.RowIndex].Cells["payment_method"].FormattedValue.ToString();            
+
             OrderDetailsForm orderDetailsForm = new OrderDetailsForm(order_id, order_date, reseller_name, status_name, total_price, Payment_method(order_id), first_name, last_name, email, phone, address, delivery_method);
             orderDetailsForm.ShowDialog();
         }

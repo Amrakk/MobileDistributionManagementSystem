@@ -27,9 +27,9 @@ namespace BUS.User
             DAccount.updateQuery();
         }
 
-        public void DeleteAccount()
+        public void DeleteAccount(int id)
         {
-            DAccount.deleteQuery();
+            DAccount.deleteQuery(id);
         }
 
         public DataTable SelectAccounts()
@@ -48,5 +48,20 @@ namespace BUS.User
             string query = $"SELECT * FROM Account WHERE username = '{username}'";
             return DAccount.selectQuery(query);
         }
+
+        public bool SelectAlreadyExistUsername(string username)
+        {
+            bool exist = false;
+            foreach (DataRow row in SelectAccounts().Rows)
+            {
+                if (row["username"].ToString() == username)
+                {
+                    exist = true;
+                    break;
+                }
+            }
+            return exist;
+        }
+
     }
 }

@@ -38,6 +38,26 @@ namespace DistributionManagementWinForm.home.Inventory
             dataGridView_deliveriedItems.EnableHeadersVisualStyles = false;
         }
 
+        private void loadData(int id, int totalQuantity)
+        {
+            DataTable resellerIdValue = Connection.selectQuery("SELECT reseller_id FROM Order_Note WHERE order_id = " + id);
+            int resellerId = Convert.ToInt32(resellerIdValue.Rows[0][0].ToString());
+
+            DataTable profile = Connection.selectQuery("SELECT * FROM Profile WHERE profile_id = " + resellerId);
+            DataTable reseller = Connection.selectQuery("SELECT * FROM Reseller WHERE reseller_id = " + resellerId);
+
+            label_name.Text = profile.Rows[0][1].ToString() + " " + profile.Rows[0][2].ToString();
+            label_email.Text = profile.Rows[0][3].ToString();
+            label_phone.Text = profile.Rows[0][4].ToString();
+
+            label_resellerName.Text = reseller.Rows[0][1].ToString();
+            label_address.Text = reseller.Rows[0][2].ToString();
+            label_quantity.Text = totalQuantity.ToString();
+
+            label_deliMethod.Text = Connection.selectQuery("SELECT delivery_method FROM Delivery_Note WHERE delivery_id = " + id).Rows[0][0].ToString();
+
+        }
+
         private DataTable GetData(int id)
         {
             DataTable items = Connection.selectQuery("SELECT * FROM Order_Item WHERE order_id = " + id);
@@ -46,6 +66,7 @@ namespace DistributionManagementWinForm.home.Inventory
             data.Columns.Add("Product ID");
             data.Columns.Add("Product Name");
             data.Columns.Add("Quantity");
+            int totalQuantity = 0;
 
             foreach (DataRow row in items.Rows)
             {
@@ -57,13 +78,11 @@ namespace DistributionManagementWinForm.home.Inventory
                 data.Rows.Add(row["product_id"],
                               name,
                               row["quantity"]);
+                totalQuantity += Convert.ToInt32(row["quantity"]);
             }
-
+            loadData(id, totalQuantity);
             return data;
         }
-
-
-
 
 
 

@@ -34,11 +34,12 @@ namespace DAL.User
             Connection.actionQuery(query);
         }
 
-        public void deleteQuery()
+        public void deleteQuery(int id)
         {
-            string query = $"DELETE FROM Reseller WHERE reseller_id = {reseller.Reseller_id}";
+            string query = $"DELETE FROM Reseller WHERE reseller_id = '" + id + "'";
             Connection.actionQuery(query);
         }
+
 
 
         public DataTable selectQuery(string query)

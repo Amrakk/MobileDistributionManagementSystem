@@ -1,4 +1,5 @@
 
+
 create database MobileDistributionManagement
 go
 use MobileDistributionManagement;
@@ -56,19 +57,19 @@ CREATE TABLE Account (
 );
 
 -- Insert data into Account table
-INSERT INTO Account (account_id, username, password, created_date)
+INSERT INTO Account (account_id, username, password, is_activated, created_date)
 VALUES
-(10000, 'admin', '123456', '2022-01-01 10:00:00'),
-(10001, 'admin1', '123456', '2022-01-02 11:00:00'),
-(10002, 'accountant', '123456', '2022-01-09 12:00:00'),
-(10003, 'accountant1', '123456', '2022-01-10 12:00:00'),
-(10004, 'accountant2', '123456', '2022-01-11 12:00:00'),
-(10005, 'accountant3', '123456', '2022-01-12 12:00:00'),
-(10006, 'accountant4', '123456', '2022-01-09 12:00:00'),
-(10007, 'reseller', '123456', '2022-01-03 12:00:00'),
-(10008, 'reseller1', '123456', '2022-01-03 12:00:00'),
-(10009, 'reseller2', '123456', '2022-01-04 12:00:00'),
-(10010, 'reseller3', '123456', '2022-01-05 12:00:00');
+(10000, 'admin', '123456', 1, '2022-01-01 10:00:00'),
+(10001, 'admin1', '123456', 1, '2022-01-02 11:00:00'),
+(10002, 'accountant', '123456', 1, '2022-01-09 12:00:00'),
+(10003, 'accountant1', '123456', 0, '2022-01-10 12:00:00'),
+(10004, 'accountant2', '123456', 1,'2022-01-11 12:00:00'),
+(10005, 'accountant3', '123456', 0, '2022-01-12 12:00:00'),
+(10006, 'accountant4', '123456', 0, '2022-01-09 12:00:00'),
+(10007, 'reseller', '123456', 1, '2022-01-03 12:00:00'),
+(10008, 'reseller1', '123456', 1, '2022-01-03 12:00:00'),
+(10009, 'reseller2', '123456', 0, '2022-01-04 12:00:00'),
+(10010, 'reseller3', '123456', 0, '2022-01-05 12:00:00');
 
 GO
 -- Create Reseller table

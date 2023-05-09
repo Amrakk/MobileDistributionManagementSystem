@@ -27,9 +27,9 @@ namespace BUS.User
             DProfile.updateQuery();
         }
 
-        public void DeleteProfile()
+        public void DeleteProfile(int id)
         {
-            DProfile.deleteQuery();
+            DProfile.deleteQuery(id);
         }
 
         public DataTable SelectProfiles()
@@ -54,6 +54,19 @@ namespace BUS.User
         {
             string query = $"SELECT * FROM Profile WHERE phone LIKE ' %{phone}%'";
             return DProfile.selectQuery(query);
+        }
+        public bool SelectAlreadyExistEmail(string email)
+        {
+            bool exist = false;
+            foreach (DataRow row in SelectProfiles().Rows)
+            {
+                if (row["email"].ToString() == email)
+                {
+                    exist = true;
+                    break;
+                }
+            }
+            return exist;
         }
     }
 }

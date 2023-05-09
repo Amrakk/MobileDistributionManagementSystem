@@ -37,9 +37,9 @@ namespace DAL.User
             Connection.actionQuery(query);
         }
 
-        public void deleteQuery()
+        public void deleteQuery(int id)
         {
-            string query = $"DELETE FROM Account WHERE account_id = {account.Account_id}";
+            string query = $"DELETE FROM Account WHERE account_id = '" + id + "'";
             Connection.actionQuery(query);
         }
 

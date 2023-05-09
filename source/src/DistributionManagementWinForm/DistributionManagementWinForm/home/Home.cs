@@ -159,11 +159,9 @@ namespace DistributionManagementWinForm.home
 
         #region Admin
 
-        private void adminBtn_Click(object sender, EventArgs e)
+        public void adminBtn_Click(object sender, EventArgs e)
         {
-            // check if user is an admin
             OpenChildForm(new Admin.AdminForm());
-
         }
 
         #endregion
@@ -171,7 +169,7 @@ namespace DistributionManagementWinForm.home
         #region Setting
         private void settingBtn_Click(object sender, EventArgs e)
         {
-            childFormTitleLabel.Text = "Setting";
+            OpenChildForm(new home.Setting());
         }
 
         #endregion

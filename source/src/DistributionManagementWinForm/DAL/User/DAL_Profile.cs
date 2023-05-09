@@ -20,9 +20,8 @@ namespace DAL.User
 
         public void addQuery()
         {
-            string query = $"insert into Profile (profile_id, first_name, last_name , email, phone, role_id) values " +
-                                             $"('{profile.Profile_id}'," +
-                                             $"'{profile.Firstname}'," +
+            string query = $"insert into Profile (first_name, last_name , email, phone, role_id) values " +
+                                             $"('{profile.Firstname}'," +
                                              $"'{profile.Lastname}', " +
                                              $"'{profile.Email}', " +
                                              $"'{profile.Phone_number}', " +
@@ -40,9 +39,9 @@ namespace DAL.User
             Connection.actionQuery(query);
         }
 
-        public void deleteQuery()
+        public void deleteQuery(int id)
         {
-            string query = $"delete from Profile where profile_id = {profile.Profile_id}";
+            string query = $"delete from Profile where profile_id = '" + id + "'";
             Connection.actionQuery(query);
         }
 

@@ -22,11 +22,49 @@ namespace DistributionManagementWinForm.auth
         }
 
         #region Styling
-
-        private void userTextBox_TextChanged(object sender, EventArgs e)
+        private void userTextBox_MouseClick(object sender, MouseEventArgs e)
         {
-            //AuthShared.textChangedStyling(userTextBox);
+            if (userTextBox.Text == "Username")
+            {
+                userTextBox.Text = "";
+            }
         }
+
+        private void userTextBox_Leave(object sender, EventArgs e)
+        {
+            if (userTextBox.Text == "")
+            {
+                userTextBox.Text = "Username";
+            }
+        }
+
+        private void passTextBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (passTextBox.Text == "Password")
+            {
+                passTextBox.Text = "";
+            }
+        }
+
+        private void passTextBox_Leave(object sender, EventArgs e)
+        {
+            if (passTextBox.Text == "")
+            {
+                passTextBox.Text = "Password";
+            }
+        }
+
+        private void passTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                loginBtn.PerformClick();
+                e.SuppressKeyPress = true;
+                e.Handled = true;
+            }
+        }
+
+   
 
         private void passTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -34,7 +72,6 @@ namespace DistributionManagementWinForm.auth
                 passTextBox.PasswordChar = '\0';
             else
                 passTextBox.PasswordChar = '•';
-            //AuthShared.textChangedStyling(passTextBox);
 
         }
 
@@ -80,18 +117,22 @@ namespace DistributionManagementWinForm.auth
 
             if (data.Rows.Count == 1)
             {
-                if (pass == data.Rows[0].ItemArray[2].ToString())
+                if (pass == data.Rows[0][2].ToString())
                 {
-                    BUS_Profile BProfile = new BUS_Profile(0, "", "", "", "", 0);
-                    DataTable profile = BProfile.SelectProfileById(Convert.ToInt32(data.Rows[0][0].ToString()));
-                    string name = profile.Rows[0][1].ToString() + " " + profile.Rows[0][2].ToString();
-                    bool isAdmin = (Convert.ToInt32(profile.Rows[0][5].ToString()) == 1);
+                    if(data.Rows[0][3].ToString() == "True")
+                    {
+                        BUS_Profile BProfile = new BUS_Profile(0, "", "", "", "", 0);
+                        DataTable profile = BProfile.SelectProfileById(Convert.ToInt32(data.Rows[0][0].ToString()));
+                        string name = profile.Rows[0][1].ToString() + " " + profile.Rows[0][2].ToString();
+                        bool isAdmin = (Convert.ToInt32(profile.Rows[0][5].ToString()) == 1);
 
-                    Form home = new home.Home(name, isAdmin);
-                    home.Show();
+                        Form home = new home.Home(name, isAdmin);
+                        home.Show();
 
-                    this.Enabled = false;
-                    this.Hide();
+                        this.Enabled = false;
+                        this.Hide();
+                    } else
+                        MessageBox.Show("Your account is not activated! Contact admin for permission" );
                 }
                 else
                     MessageBox.Show("Wrong username or password!");
@@ -105,46 +146,6 @@ namespace DistributionManagementWinForm.auth
 
         #endregion
 
-        private void userTextBox_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (userTextBox.Text == "Username")
-            {
-                userTextBox.Text = "";
-            }
-        }
-
-        private void userTextBox_Leave(object sender, EventArgs e)
-        {
-            if (userTextBox.Text == "")
-            {
-                userTextBox.Text = "Username";
-            }
-        }
-
-        private void passTextBox_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (passTextBox.Text == "Password")
-            {
-                passTextBox.Text = "";
-            }
-        }
-
-        private void passTextBox_Leave(object sender, EventArgs e)
-        {
-            if (passTextBox.Text == "")
-            {
-                passTextBox.Text = "Password";
-            }
-        }
-
-        private void passTextBox_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                loginBtn.PerformClick();
-                e.SuppressKeyPress = true;
-                e.Handled = true;
-            }
-        }
+        
     }
 }
