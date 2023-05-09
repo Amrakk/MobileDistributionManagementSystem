@@ -307,7 +307,6 @@ namespace DistributionManagementWinForm.home.Inventory
             this.loginPanel.Name = "loginPanel";
             this.loginPanel.Size = new System.Drawing.Size(820, 495);
             this.loginPanel.TabIndex = 9;
-            this.loginPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.loginPanel_Paint);
             // 
             // ProductDetailsForm
             // 

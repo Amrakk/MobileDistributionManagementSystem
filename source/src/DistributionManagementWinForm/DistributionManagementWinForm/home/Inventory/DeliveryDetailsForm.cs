@@ -23,11 +23,8 @@ namespace DistributionManagementWinForm.home.Inventory
             dt = GetData(id);
         }
 
-
         private void DeliveryDetailsForm_Load(object sender, EventArgs e)
         {
-
-            // Load delivery item
             dataGridView_deliveriedItems.DataSource = dt;
 
             dataGridView_deliveriedItems.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(24, 154, 73);
@@ -55,7 +52,6 @@ namespace DistributionManagementWinForm.home.Inventory
             label_quantity.Text = totalQuantity.ToString();
 
             label_deliMethod.Text = Connection.selectQuery("SELECT delivery_method FROM Delivery_Note WHERE delivery_id = " + id).Rows[0][0].ToString();
-
         }
 
         private DataTable GetData(int id)

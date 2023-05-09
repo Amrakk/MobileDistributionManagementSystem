@@ -59,8 +59,6 @@ namespace DistributionManagementWinForm.home.Admin
         }
 
 
-
-
         int Id;
         string Username;
         string Password;
@@ -93,7 +91,7 @@ namespace DistributionManagementWinForm.home.Admin
             Phone = Profile(Id).Rows[0][3].ToString();
             Role_id = int.Parse(Profile(Id).Rows[0][4].ToString());
 
-            if (Role_id == 2)
+            if (Role_id == 3)
             {
                 Resellername = Reseller(Id).Rows[0][0].ToString();
                 Reselleraddress = Reseller(Id).Rows[0][1].ToString();
@@ -104,7 +102,6 @@ namespace DistributionManagementWinForm.home.Admin
         {
             AccountDetailsForm accountDetailsForm = new AccountDetailsForm(Id, Username, Password, Firstname, Lastname, Email, Phone, Role_id, Resellername, Reselleraddress, true);
             accountDetailsForm.Show();
-
         }
 
         private void button_delete_Click(object sender, EventArgs e)
@@ -118,14 +115,14 @@ namespace DistributionManagementWinForm.home.Admin
             {
                 if (account_id != "-1")
                 {
-                    if (Role_id == 2)
+                    if (Role_id == 3)
                     {
                         int id = int.Parse(account_id);
                         BReseller.DeleteReseller(id);
                         BAccount.DeleteAccount(id);
                         BProfile.DeleteProfile(id);
                     }
-                    else if (Role_id == 3)
+                    else if (Role_id == 2)
                     {
                         int id = int.Parse(account_id);
                         BAccount.DeleteAccount(id);

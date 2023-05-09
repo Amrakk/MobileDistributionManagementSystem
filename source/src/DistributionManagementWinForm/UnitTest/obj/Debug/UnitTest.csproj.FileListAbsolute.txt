@@ -38,3 +38,44 @@ C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src
 C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\obj\Debug\UnitTest.csproj.CopyComplete
 C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\obj\Debug\UnitTest.dll
 C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\obj\Debug\UnitTest.pdb
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\Microsoft.TestPlatform.AdapterUtilities.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\UnitTest.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\UnitTest.pdb
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\DAL.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\DistributionManagementWinForm.exe
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\DTO.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\FontAwesome.Sharp.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\Guna.UI2.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\BUS.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\BCrypt.Net.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\DAL.pdb
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\DistributionManagementWinForm.pdb
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\DistributionManagementWinForm.exe.config
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\DTO.pdb
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\BUS.pdb
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\BCrypt.Net.xml
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\cs\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\de\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\es\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\it\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\ja\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\ko\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\pl\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\pt-BR\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\ru\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\tr\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\zh-Hans\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\zh-Hant\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\obj\Debug\UnitTest.csproj.AssemblyReference.cache
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\obj\Debug\UnitTest.csproj.CoreCompileInputs.cache
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\obj\Debug\UnitTest.csproj.CopyComplete
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\obj\Debug\UnitTest.dll
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\obj\Debug\UnitTest.pdb
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\UnitTest\bin\Debug\App.config

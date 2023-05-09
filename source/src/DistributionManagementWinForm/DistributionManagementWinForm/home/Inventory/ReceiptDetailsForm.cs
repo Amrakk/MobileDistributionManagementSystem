@@ -31,7 +31,6 @@ namespace DistributionManagementWinForm.home.Inventory
             dataGridView_receivedItemList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             comboBox_productName.DataSource = Connection.listProductName();
             isLoad = false;
-
         }
 
         private void comboBox_productName_SelectedValueChanged(object sender, EventArgs e)
@@ -81,19 +80,21 @@ namespace DistributionManagementWinForm.home.Inventory
                 }
                 textBox_quantity.Text = sum.ToString();
             }
-
-
         }
 
         public int Product_id(string product_name)
         {
-            return int.Parse(Connection.selectQuery("SELECT product_id FROM Product WHERE product_name = '" + product_name + "'").Rows[0][0].ToString());
+            DataTable result = Connection.selectQuery("SELECT product_id FROM Product WHERE product_name = '" + product_name + "'");
+
+            if (result != null && result.Rows.Count > 0)
+                return int.Parse(result.Rows[0][0].ToString());
+            return 0;
         }
+
 
         public int Received_id()
         {
             return int.Parse(Connection.selectQuery("select max(received_id) from Goods_Received_Note").Rows[0][0].ToString());
-
         }
 
         private void button_submit_Click(object sender, EventArgs e)
@@ -157,7 +158,6 @@ namespace DistributionManagementWinForm.home.Inventory
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
-
         }
     }
 }
