@@ -55,7 +55,6 @@ namespace DistributionManagementWinForm.home.Inventory
             this.panelAccount.Name = "panelAccount";
             this.panelAccount.Size = new System.Drawing.Size(1170, 800);
             this.panelAccount.TabIndex = 8;
-            this.panelAccount.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAccount_Paint);
             // 
             // button_delete
             // 

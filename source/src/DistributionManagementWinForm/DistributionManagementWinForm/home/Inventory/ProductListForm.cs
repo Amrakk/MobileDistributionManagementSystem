@@ -45,7 +45,6 @@ namespace DistributionManagementWinForm.home.Inventory
             productGridView.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(24, 154, 73);
             productGridView.RowsDefaultCellStyle.SelectionForeColor = Color.White;
             productGridView.EnableHeadersVisualStyles = false;
-
         }
 
         private void textBox_search_KeyPress(object sender, KeyPressEventArgs e)

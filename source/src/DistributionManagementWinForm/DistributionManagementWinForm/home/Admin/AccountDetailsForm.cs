@@ -27,7 +27,7 @@ namespace DistributionManagementWinForm.home.Admin
             BProfile = new BUS_Profile(id, "", "", "", "", 0);
 
             BReseller = new BUS_Reseller(id, "", "");
-            // TODO - need to check the role if it is reseller
+            
             this.Id = id;
             this.Username = username;
             this.Password = password;
@@ -57,6 +57,7 @@ namespace DistributionManagementWinForm.home.Admin
         {
             return Regex.IsMatch(email, @"^[a-zA-Z0-9]{3,20}@gmail.com(.vn|)$");
         }
+
         #region Style
         private void userTextBox_MouseClick_1(object sender, MouseEventArgs e)
         {
@@ -194,18 +195,41 @@ namespace DistributionManagementWinForm.home.Admin
             }
         }
 
-        private void loginPanel_MouseClick(object sender, MouseEventArgs e)
+        private void resellerRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            resellerAddTextBox_Leave(sender, e);
-            resellerNameTextBox_Leave(sender, e);
-            phoneTextBox_Leave(sender, e);
-            emailTextBox_Leave(sender, e);
-            lNameTextBox_Leave(sender, e);
-            fNameTextBox_Leave(sender, e);
-            confirmPassTextBox_Leave(sender, e);
-            passTextBox_Leave_1(sender, e);
-            userTextBox_Leave_1(sender, e);
+            resellerNamePanel.Visible = true;
+            resellerAddPanel.Visible = true;
         }
+
+        private void accountantRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            resellerNamePanel.Visible = false;
+            resellerAddPanel.Visible = false;
+        }
+        private void passTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (passTextBox.Text == "" || passTextBox.Text == "Password")
+                passTextBox.PasswordChar = '\0';
+            else
+                passTextBox.PasswordChar = '•';
+        }
+
+        private void confirmPassTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (confirmPassTextBox.Text == "" || confirmPassTextBox.Text == "Confirm Password")
+                confirmPassTextBox.PasswordChar = '\0';
+            else
+                confirmPassTextBox.PasswordChar = '•';
+        }
+
+        private void fNameTextBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (fNameTextBox.Text == "First Name")
+            {
+                fNameTextBox.Text = "";
+            }
+        }
+
         #endregion
 
         private int Account_id()
@@ -229,20 +253,25 @@ namespace DistributionManagementWinForm.home.Admin
             List<Form> form = Application.OpenForms.Cast<Form>().ToList();
             Home forms;
 
-
+            // Creating
             if (Status == false)
             {
+                // Check validation of Email
                 if (checkEmail(email))
                 {
+                    // Check if Email has existed
                     if (BProfile.SelectAlreadyExistEmail(email) == false)
                     {
+                        // Check input password == confirm password
                         if (password == confirmPassword)
                         {
+                            // Check if Username has existed
                             if (BAccount.SelectAlreadyExistUsername(username) == false)
                             {
+                                // Check if it is a Reseller
                                 if (resellerRadioButton.Checked)
                                 {
-                                    role_id = 2;
+                                    role_id = 3;
                                     BUS_Profile BProfile = new BUS_Profile(0, firstname, lastname, email, phone, role_id);
                                     BProfile.AddProfile();
 
@@ -263,9 +292,10 @@ namespace DistributionManagementWinForm.home.Admin
                                     }
 
                                 }
+                                // Check if it is an Accountant
                                 else if (accountantRadioButton.Checked)
                                 {
-                                    role_id = 3;
+                                    role_id = 2;
                                     BUS_Profile BProfile = new BUS_Profile(0, firstname, lastname, email, phone, role_id);
                                     BProfile.AddProfile();
 
@@ -309,18 +339,22 @@ namespace DistributionManagementWinForm.home.Admin
                     MessageBox.Show("Email is invalid");
                 }
             }
+            // Editing
             else
             {
                 BProfile = new BUS_Profile(Id, "", "", "", "", 0);
                 BReseller = new BUS_Reseller(Id, "", "");
 
+                // Check validation of Email
                 if (checkEmail(email))
                 {
+                    // Check if input Email == Email before changed
                     if (email == Email)
                     {
+                        // Check if it is a Reseller
                         if (resellerRadioButton.Checked)
                         {
-                            role_id = 2;
+                            role_id = 3;
                             BUS_Profile BProfile = new BUS_Profile(Id, firstname, lastname, email, phone, role_id);
                             BProfile.UpdateProfile();
 
@@ -335,9 +369,10 @@ namespace DistributionManagementWinForm.home.Admin
                                 }
                             }
                         }
+                        // Check if it is an Accountant
                         else if (accountantRadioButton.Checked)
                         {
-                            role_id = 3;
+                            role_id = 2;
                             BUS_Profile BProfile = new BUS_Profile(Id, firstname, lastname, email, phone, role_id);
                             BProfile.UpdateProfile();
                             this.Hide();
@@ -356,8 +391,10 @@ namespace DistributionManagementWinForm.home.Admin
                             MessageBox.Show("Please select role");
                         }
                     }
+                    // Check if Email has existed
                     else if (BProfile.SelectAlreadyExistEmail(email) == false)
                     {
+                        // Check if it is a Reseller
                         if (resellerRadioButton.Checked)
                         {
                             role_id = 2;
@@ -375,9 +412,10 @@ namespace DistributionManagementWinForm.home.Admin
                                 }
                             }
                         }
+                        // Check if it is an Accountant
                         else if (accountantRadioButton.Checked)
                         {
-                            role_id = 3;
+                            role_id = 2;
                             BUS_Profile BProfile = new BUS_Profile(Id, firstname, lastname, email, phone, role_id);
                             BProfile.UpdateProfile();
 
@@ -427,30 +465,6 @@ namespace DistributionManagementWinForm.home.Admin
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void passTextBox_TextChanged(object sender, EventArgs e)
-        {
-            if (passTextBox.Text == "" || passTextBox.Text == "Password")
-                passTextBox.PasswordChar = '\0';
-            else
-                passTextBox.PasswordChar = '•';
-        }
-
-        private void confirmPassTextBox_TextChanged(object sender, EventArgs e)
-        {
-            if (confirmPassTextBox.Text == "" || confirmPassTextBox.Text == "Confirm Password")
-                confirmPassTextBox.PasswordChar = '\0';
-            else
-                confirmPassTextBox.PasswordChar = '•';
-        }
-
-        private void fNameTextBox_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (fNameTextBox.Text == "First Name")
-            {
-                fNameTextBox.Text = "";
-            }
-        }
-
         private void AccountDetailsForm_Load(object sender, EventArgs e)
         {
             userTextBox.Text = Username;
@@ -461,11 +475,11 @@ namespace DistributionManagementWinForm.home.Admin
             phoneTextBox.Text = Phone;
             confirmPassTextBox.Text = Password;
 
-            if (Role_id == 2)
+            if (Role_id == 3)
             {
                 resellerRadioButton.Checked = true;
             }
-            else if (Role_id == 3)
+            else if (Role_id == 2)
             {
                 accountantRadioButton.Checked = true;
             }
@@ -502,18 +516,6 @@ namespace DistributionManagementWinForm.home.Admin
                 resellerNamePanel.Visible = true;
                 resellerAddPanel.Visible = true;
             }
-        }
-
-        private void resellerRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            resellerNamePanel.Visible = true;
-            resellerAddPanel.Visible = true;
-        }
-
-        private void accountantRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            resellerNamePanel.Visible = false;
-            resellerAddPanel.Visible = false;
         }
     }
 }

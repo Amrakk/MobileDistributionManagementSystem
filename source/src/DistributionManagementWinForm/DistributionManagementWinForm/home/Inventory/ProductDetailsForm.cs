@@ -16,7 +16,6 @@ namespace DistributionManagementWinForm.home.Inventory
 {
     public partial class ProductDetailsForm : Form
     {
-
         public ProductDetailsForm(int product_id, string product_name, string model, string product_description, int product_price, int product_quantity, bool status)
         {
             InitializeComponent();
@@ -27,7 +26,6 @@ namespace DistributionManagementWinForm.home.Inventory
             this.Product_price = product_price;
             this.Product_quantity = product_quantity;
             this.Status = status;
-
         }
 
         public int Product_id { get; set; }
@@ -37,10 +35,6 @@ namespace DistributionManagementWinForm.home.Inventory
         public int Product_price { get; set; }
         public int Product_quantity { get; set; }
         public bool Status { get; set; }
-        private void loginPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -57,8 +51,6 @@ namespace DistributionManagementWinForm.home.Inventory
         {
             this.Hide();
         }
-
-
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
@@ -113,9 +105,6 @@ namespace DistributionManagementWinForm.home.Inventory
                 }
 
             }
-
-
-
         }
 
         private void ProductDetailsForm_Load(object sender, EventArgs e)

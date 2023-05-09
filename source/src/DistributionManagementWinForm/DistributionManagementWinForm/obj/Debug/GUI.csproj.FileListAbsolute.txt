@@ -180,3 +180,5 @@ C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src
 C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\GUI.csproj.CopyComplete
 C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.exe
 C:\Users\hoang\OneDrive\Máy tính\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.pdb
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\obj\Debug\DistributionManagementWinForm.home.Setting.resources
+E:\MobileDistributionManagementSystem\source\src\DistributionManagementWinForm\DistributionManagementWinForm\bin\Debug\App.config

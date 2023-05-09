@@ -80,7 +80,7 @@ namespace DistributionManagementWinForm.home.Admin
             // 
             // loginPanel
             // 
-            this.loginPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.loginPanel.BackColor = System.Drawing.SystemColors.Window;
             this.loginPanel.Controls.Add(this.label_status);
             this.loginPanel.Controls.Add(this.resellerAddPanel);
             this.loginPanel.Controls.Add(this.resellerNamePanel);
@@ -101,7 +101,6 @@ namespace DistributionManagementWinForm.home.Admin
             this.loginPanel.Name = "loginPanel";
             this.loginPanel.Size = new System.Drawing.Size(820, 495);
             this.loginPanel.TabIndex = 7;
-            this.loginPanel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.loginPanel_MouseClick);
             // 
             // label_status
             // 
@@ -125,7 +124,7 @@ namespace DistributionManagementWinForm.home.Admin
             // 
             // resellerAddTextBox
             // 
-            this.resellerAddTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.resellerAddTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.resellerAddTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.resellerAddTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resellerAddTextBox.ForeColor = System.Drawing.Color.Gray;
@@ -156,7 +155,7 @@ namespace DistributionManagementWinForm.home.Admin
             // 
             // resellerNameTextBox
             // 
-            this.resellerNameTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.resellerNameTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.resellerNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.resellerNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resellerNameTextBox.ForeColor = System.Drawing.Color.Gray;
@@ -187,7 +186,7 @@ namespace DistributionManagementWinForm.home.Admin
             // 
             // confirmPassTextBox
             // 
-            this.confirmPassTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.confirmPassTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.confirmPassTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.confirmPassTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirmPassTextBox.ForeColor = System.Drawing.Color.Gray;
@@ -219,7 +218,7 @@ namespace DistributionManagementWinForm.home.Admin
             // 
             // passTextBox
             // 
-            this.passTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.passTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.passTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.passTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passTextBox.ForeColor = System.Drawing.Color.Gray;
@@ -251,7 +250,7 @@ namespace DistributionManagementWinForm.home.Admin
             // 
             // userTextBox
             // 
-            this.userTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.userTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.userTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.userTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userTextBox.ForeColor = System.Drawing.Color.Gray;
@@ -295,6 +294,7 @@ namespace DistributionManagementWinForm.home.Admin
             this.accountantRadioButton.TabStop = true;
             this.accountantRadioButton.Text = "Accountant";
             this.accountantRadioButton.UseVisualStyleBackColor = true;
+            this.accountantRadioButton.CheckedChanged += new System.EventHandler(this.accountantRadioButton_CheckedChanged);
             // 
             // panel6
             // 
@@ -307,7 +307,7 @@ namespace DistributionManagementWinForm.home.Admin
             // 
             // phoneTextBox
             // 
-            this.phoneTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.phoneTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.phoneTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.phoneTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phoneTextBox.ForeColor = System.Drawing.Color.Gray;
@@ -338,7 +338,7 @@ namespace DistributionManagementWinForm.home.Admin
             // 
             // emailTextBox
             // 
-            this.emailTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.emailTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.emailTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.emailTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailTextBox.ForeColor = System.Drawing.Color.Gray;
@@ -369,7 +369,7 @@ namespace DistributionManagementWinForm.home.Admin
             // 
             // lNameTextBox
             // 
-            this.lNameTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lNameTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.lNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lNameTextBox.ForeColor = System.Drawing.Color.Gray;
@@ -414,7 +414,7 @@ namespace DistributionManagementWinForm.home.Admin
             // 
             // fNameTextBox
             // 
-            this.fNameTextBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.fNameTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.fNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.fNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fNameTextBox.ForeColor = System.Drawing.Color.Gray;
@@ -460,7 +460,7 @@ namespace DistributionManagementWinForm.home.Admin
             // 
             // closeBtn
             // 
-            this.closeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(70)))), ((int)(((byte)(0)))));
+            this.closeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(154)))), ((int)(((byte)(73)))));
             this.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closeBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.closeBtn.IconChar = FontAwesome.Sharp.IconChar.Xmark;

@@ -23,7 +23,7 @@ namespace DAL.User
                                                $"('{account.Account_id}', " +
                                                $"'{account.Username}', " +
                                                $"'{account.Password}'," +
-                                               $"'{account.Created_date}')";
+                                               $"'{account.Created_date.ToString("yyyy/MM/dd")}')";
             Connection.actionQuery(query);
         }
 

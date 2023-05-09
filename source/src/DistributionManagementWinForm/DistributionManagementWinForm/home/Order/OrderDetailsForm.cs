@@ -75,7 +75,6 @@ namespace DistributionManagementWinForm.home.Order
             dataGridView_productList.RowsDefaultCellStyle.SelectionBackColor = Color.FromArgb(24, 154, 73);
             dataGridView_productList.RowsDefaultCellStyle.SelectionForeColor = Color.White;
 
-            //dataGridView_orderList.BackColor = Color.FromArgb(150, 164, 190, 123);
             dataGridView_productList.EnableHeadersVisualStyles = false;
         }
 
@@ -87,14 +86,8 @@ namespace DistributionManagementWinForm.home.Order
         public DataTable LoadProductList(int order_id)
         {
             return Connection.selectQuery("SELECT product_name, quantity, product_price, (quantity * product_price) as subTotal FROM Order_Item " +
-                                            "LEFT JOIN Product ON Product.product_id = Order_Item.product_id " +
-                                            "WHERE order_id = " + order_id);
-
-        }
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
+                                          "LEFT JOIN Product ON Product.product_id = Order_Item.product_id " +
+                                          "WHERE order_id = " + order_id);
 
         }
 
